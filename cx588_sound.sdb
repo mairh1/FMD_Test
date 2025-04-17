@@ -1,0 +1,64 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC RSC14 PICREGULAR PICMID SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip FT60F21X ]
+[d frameptr 6 ]
+"89 E:\program\FMD\Project\CX588_SOUND\CX588.c
+[e E873 . `uc
+SoundLeve_0 224
+SoundLeve_1 225
+SoundLeve_2 226
+SoundLeve_3 227
+SoundLeve_4 228
+SoundLeve_5 229
+SoundLeve_6 230
+SoundLeve_7 231
+SoundLeve_8 232
+SoundLeve_9 233
+SoundLeve_10 234
+SoundLeve_11 235
+SoundLeve_12 236
+SoundLeve_13 237
+SoundLeve_14 238
+SoundLeve_15 239
+]
+"12
+[v _DelayUs DelayUs `(v  1 e 1 0 ]
+"55
+[v _CX588_OneWire_WriteBit CX588_OneWire_WriteBit `(v  1 s 1 CX588_OneWire_WriteBit ]
+"74
+[v _CX588_OneWire_WriteByte CX588_OneWire_WriteByte `(v  1 s 1 CX588_OneWire_WriteByte ]
+"10 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+"28
+[v _main main `(v  1 e 1 0 ]
+"62 E:\Program Files (x86)\Compiler\data\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 E:\Program Files (x86)\Compiler\data\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"59 E:\Program Files (x86)\Compiler\data\include\FT60F21X.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"115
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"438
+[v _OPTION OPTION `VEuc  1 e 1 @129 ]
+"467
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"493
+[v _PSRCA PSRCA `VEuc  1 e 1 @136 ]
+"586
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"651
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
+"739
+[v _PSINKA PSINKA `VEuc  1 e 1 @151 ]
+"28 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+[v _main main `(v  1 e 1 0 ]
+{
+"36
+} 0
+"10
+[v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
+{
+"21
+} 0
