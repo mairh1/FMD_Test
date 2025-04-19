@@ -11,32 +11,58 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$C:\Users\Mai\AppData\Local\Temp\sam0.obj
+reset_vec CODE 0 0 0 1 2
+end_init CODE 0 D D 1 2
 $cx588_sound.obj
-cinit CODE 0 3FE 3FE 2 2
-text1 CODE 0 3F1 3F1 D 2
-maintext CODE 0 3EF 3EF 2 2
-$C:\Users\Mai\AppData\Local\Temp\s4g8.obj
-end_init CODE 0 0 0 1 2
+cinit CODE 0 E E B 2
+text1 CODE 0 DF DF 12 2
+text2 CODE 0 98 98 1E 2
+text3 CODE 0 138 138 7 2
+text4 CODE 0 4C 4C 2D 2
+text5 CODE 0 19 19 33 2
+text6 CODE 0 10F 10F D 2
+text7 CODE 0 13F 13F 3 2
+text8 CODE 0 101 101 E 2
+text9 CODE 0 142 142 3 2
+text10 CODE 0 CC CC 13 2
+text11 CODE 0 B6 B6 16 2
+text12 CODE 0 F1 F1 10 2
+text13 CODE 0 12F 12F 9 2
+text14 CODE 0 11C 11C A 2
+text15 CODE 0 79 79 1F 2
+maintext CODE 0 126 126 9 2
+cstackCOMMON COMMON 1 70 70 9 1
+cstackBANK0 BANK0 1 40 40 A 1
+intentry CODE 0 4 4 9 2
+bssBANK0 BANK0 1 4E 4E 2 1
+dataBANK0 BANK0 1 4A 4A 4 1
+bssCOMMON COMMON 1 79 79 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 40-6F 1
-BANK0 40-6F 1
-CONST 1-3EE 2
-ENTRY 1-3EE 2
+RAM 50-6F 1
+BANK0 50-6F 1
+CONST 1-3 2
+CONST 145-3FF 2
+ENTRY 1-3 2
+ENTRY 145-3FF 2
 IDLOC 2000-2003 2
-STACK 40-6F 1
-CODE 1-3EE 2
+STACK 50-6F 1
+CODE 1-3 2
+CODE 145-3FF 2
 SFR0 0-3F 1
 SFR1 80-EF 1
-COMMON 70-7D 1
+COMMON 7B-7D 1
 CONFIG 2007-2007 2
 EEDATA 2100-217F 2
-STRCODE 1-3EE 2
-STRING 1-3EE 2
+STRCODE 1-3 2
+STRCODE 145-3FF 2
+STRING 1-3 2
+STRING 145-3FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -51,24 +77,132 @@ STRING 1-3EE 2
 # All other numeric values are in decimal.
 %LINETAB
 $cx588_sound.obj
-3FE cinit CODE >51:C:\Users\Mai\AppData\Local\Temp\s4g8.
-3FE cinit CODE >54:C:\Users\Mai\AppData\Local\Temp\s4g8.
-3FE cinit CODE >60:C:\Users\Mai\AppData\Local\Temp\s4g8.
-3FE cinit CODE >62:C:\Users\Mai\AppData\Local\Temp\s4g8.
-3FF cinit CODE >63:C:\Users\Mai\AppData\Local\Temp\s4g8.
-3F1 text1 CODE >10:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3F1 text1 CODE >12:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3F4 text1 CODE >13:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3F5 text1 CODE >15:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3F6 text1 CODE >16:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3F7 text1 CODE >17:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3F8 text1 CODE >18:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3F9 text1 CODE >19:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3FB text1 CODE >20:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3FD text1 CODE >21:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3EF maintext CODE >28:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3EF maintext CODE >30:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-3F0 maintext CODE >32:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+E cinit CODE >3:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
+E cinit CODE >110:C:\Users\Mai\AppData\Local\Temp\sam0.
+E cinit CODE >113:C:\Users\Mai\AppData\Local\Temp\sam0.
+F cinit CODE >140:C:\Users\Mai\AppData\Local\Temp\sam0.
+10 cinit CODE >142:C:\Users\Mai\AppData\Local\Temp\sam0.
+11 cinit CODE >144:C:\Users\Mai\AppData\Local\Temp\sam0.
+12 cinit CODE >146:C:\Users\Mai\AppData\Local\Temp\sam0.
+13 cinit CODE >150:C:\Users\Mai\AppData\Local\Temp\sam0.
+14 cinit CODE >151:C:\Users\Mai\AppData\Local\Temp\sam0.
+15 cinit CODE >154:C:\Users\Mai\AppData\Local\Temp\sam0.
+16 cinit CODE >155:C:\Users\Mai\AppData\Local\Temp\sam0.
+17 cinit CODE >161:C:\Users\Mai\AppData\Local\Temp\sam0.
+17 cinit CODE >163:C:\Users\Mai\AppData\Local\Temp\sam0.
+18 cinit CODE >164:C:\Users\Mai\AppData\Local\Temp\sam0.
+4 intentry CODE >67:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+79 text15 CODE >67:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+79 text15 CODE >69:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+7F text15 CODE >71:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+80 text15 CODE >73:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+8B text15 CODE >74:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+8E text15 CODE >86:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+11C text14 CODE >39:E:\program\FMD\Project\CX588_SOUND\CX588.c
+11C text14 CODE >41:E:\program\FMD\Project\CX588_SOUND\CX588.c
+11E text14 CODE >42:E:\program\FMD\Project\CX588_SOUND\CX588.c
+11F text14 CODE >48:E:\program\FMD\Project\CX588_SOUND\CX588.c
+120 text14 CODE >49:E:\program\FMD\Project\CX588_SOUND\CX588.c
+123 text14 CODE >50:E:\program\FMD\Project\CX588_SOUND\CX588.c
+125 text14 CODE >51:E:\program\FMD\Project\CX588_SOUND\CX588.c
+12F text13 CODE >12:E:\program\FMD\Project\CX588_SOUND\CX588.c
+130 text13 CODE >15:E:\program\FMD\Project\CX588_SOUND\CX588.c
+135 text13 CODE >17:E:\program\FMD\Project\CX588_SOUND\CX588.c
+136 text13 CODE >15:E:\program\FMD\Project\CX588_SOUND\CX588.c
+F1 text12 CODE >27:E:\program\FMD\Project\CX588_SOUND\CX588.c
+F2 text12 CODE >30:E:\program\FMD\Project\CX588_SOUND\CX588.c
+F7 text12 CODE >32:E:\program\FMD\Project\CX588_SOUND\CX588.c
+F8 text12 CODE >34:E:\program\FMD\Project\CX588_SOUND\CX588.c
+FA text12 CODE >32:E:\program\FMD\Project\CX588_SOUND\CX588.c
+FF text12 CODE >30:E:\program\FMD\Project\CX588_SOUND\CX588.c
+B6 text11 CODE >55:E:\program\FMD\Project\CX588_SOUND\CX588.c
+B7 text11 CODE >57:E:\program\FMD\Project\CX588_SOUND\CX588.c
+BA text11 CODE >59:E:\program\FMD\Project\CX588_SOUND\CX588.c
+BB text11 CODE >60:E:\program\FMD\Project\CX588_SOUND\CX588.c
+BD text11 CODE >61:E:\program\FMD\Project\CX588_SOUND\CX588.c
+BF text11 CODE >62:E:\program\FMD\Project\CX588_SOUND\CX588.c
+C1 text11 CODE >63:E:\program\FMD\Project\CX588_SOUND\CX588.c
+C3 text11 CODE >65:E:\program\FMD\Project\CX588_SOUND\CX588.c
+C3 text11 CODE >67:E:\program\FMD\Project\CX588_SOUND\CX588.c
+C4 text11 CODE >68:E:\program\FMD\Project\CX588_SOUND\CX588.c
+C6 text11 CODE >69:E:\program\FMD\Project\CX588_SOUND\CX588.c
+C8 text11 CODE >70:E:\program\FMD\Project\CX588_SOUND\CX588.c
+CA text11 CODE >71:E:\program\FMD\Project\CX588_SOUND\CX588.c
+CC text10 CODE >76:E:\program\FMD\Project\CX588_SOUND\CX588.c
+CD text10 CODE >78:E:\program\FMD\Project\CX588_SOUND\CX588.c
+CE text10 CODE >79:E:\program\FMD\Project\CX588_SOUND\CX588.c
+D0 text10 CODE >81:E:\program\FMD\Project\CX588_SOUND\CX588.c
+D2 text10 CODE >83:E:\program\FMD\Project\CX588_SOUND\CX588.c
+D5 text10 CODE >81:E:\program\FMD\Project\CX588_SOUND\CX588.c
+D6 text10 CODE >84:E:\program\FMD\Project\CX588_SOUND\CX588.c
+D9 text10 CODE >81:E:\program\FMD\Project\CX588_SOUND\CX588.c
+DD text10 CODE >86:E:\program\FMD\Project\CX588_SOUND\CX588.c
+DE text10 CODE >87:E:\program\FMD\Project\CX588_SOUND\CX588.c
+142 text9 CODE >90:E:\program\FMD\Project\CX588_SOUND\CX588.c
+144 text9 CODE >92:E:\program\FMD\Project\CX588_SOUND\CX588.c
+101 text8 CODE >94:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+101 text8 CODE >96:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+104 text8 CODE >97:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+105 text8 CODE >99:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+106 text8 CODE >100:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+108 text8 CODE >101:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+109 text8 CODE >102:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+10A text8 CODE >103:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+10C text8 CODE >104:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+10E text8 CODE >105:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+13F text7 CODE >115:E:\program\FMD\Project\CX588_SOUND\CX588.c
+13F text7 CODE >117:E:\program\FMD\Project\CX588_SOUND\CX588.c
+140 text7 CODE >118:E:\program\FMD\Project\CX588_SOUND\CX588.c
+141 text7 CODE >120:E:\program\FMD\Project\CX588_SOUND\CX588.c
+10F text6 CODE >96:E:\program\FMD\Project\CX588_SOUND\CX588.c
+110 text6 CODE >98:E:\program\FMD\Project\CX588_SOUND\CX588.c
+114 text6 CODE >100:E:\program\FMD\Project\CX588_SOUND\CX588.c
+118 text6 CODE >102:E:\program\FMD\Project\CX588_SOUND\CX588.c
+11A text6 CODE >103:E:\program\FMD\Project\CX588_SOUND\CX588.c
+19 text5 CODE >15:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
+19 text5 CODE >119:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
+1D text5 CODE >120:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
+1D text5 CODE >121:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
+1F text5 CODE >122:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
+33 text5 CODE >123:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
+38 text5 CODE >124:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
+3D text5 CODE >125:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
+43 text5 CODE >128:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
+4B text5 CODE >129:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
+4C text4 CODE >12:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
+4C text4 CODE >14:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
+65 text4 CODE >15:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
+73 text4 CODE >16:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
+78 text4 CODE >17:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
+138 text3 CODE >6:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
+138 text3 CODE >8:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
+13E text3 CODE >9:C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
+98 text2 CODE >16:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+98 text2 CODE >18:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+9B text2 CODE >20:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+9D text2 CODE >21:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+A0 text2 CODE >23:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+A5 text2 CODE >25:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+A6 text2 CODE >26:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+AC text2 CODE >27:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+DF text1 CODE >112:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+DF text1 CODE >114:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+E2 text1 CODE >118:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+E5 text1 CODE >119:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+E7 text1 CODE >120:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+E8 text1 CODE >121:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+EB text1 CODE >122:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+ED text1 CODE >124:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+EF text1 CODE >125:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+F0 text1 CODE >127:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+126 maintext CODE >148:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+126 maintext CODE >150:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+127 maintext CODE >151:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+128 maintext CODE >152:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+129 maintext CODE >153:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+12B maintext CODE >154:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+12D maintext CODE >156:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+12D maintext CODE >158:E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -82,43 +216,80 @@ $cx588_sound.obj
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 0 0 ABS 0 - cx588_sound.obj
-__Hspace_0 400 0 ABS 0 - -
-__Hspace_1 0 0 ABS 0 - -
+__size_of_DelayMs 0 0 ABS 0 - cx588_sound.obj
+__size_of_DelayUs 0 0 ABS 0 - cx588_sound.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__Hspace_0 145 0 ABS 0 - -
+__Hspace_1 7B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-_POWER_INITIAL 7E2 0 CODE 0 text1 cx588_sound.obj
+_CX588_OneWire_WriteBit 16C 0 CODE 0 text11 cx588_sound.obj
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+_CX588_GPIO_Init 238 0 CODE 0 text14 cx588_sound.obj
+_POWER_INITIAL 202 0 CODE 0 text8 cx588_sound.obj
+__end_of_CX588_Get_Busy_State 284 0 CODE 0 text7 cx588_sound.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
+PL2 162 0 CODE 0 text2 cx588_sound.obj
+__size_of_Play_Sound 0 0 ABS 0 - cx588_sound.obj
 __Hstrings 0 0 ABS 0 strings -
+_PR2H 92 0 ABS 0 - cx588_sound.obj
+_PR2L 91 0 ABS 0 - cx588_sound.obj
 _WPUA 95 0 ABS 0 - cx588_sound.obj
-___sp 0 0 STACK 2 stack C:\Users\Mai\AppData\Local\Temp\s4g8.obj
-_main 7DE 0 CODE 0 maintext cx588_sound.obj
+___sp 0 0 STACK 2 stack C:\Users\Mai\AppData\Local\Temp\sam0.obj
+_main 24C 0 CODE 0 maintext cx588_sound.obj
+_rand 98 0 CODE 0 text4 cx588_sound.obj
 btemp 7E 0 ABS 0 - cx588_sound.obj
-start 0 0 CODE 0 init C:\Users\Mai\AppData\Local\Temp\s4g8.obj
+start 1A 0 CODE 0 init C:\Users\Mai\AppData\Local\Temp\sam0.obj
 __size_of_main 0 0 ABS 0 - cx588_sound.obj
+__size_of_rand 0 0 ABS 0 - cx588_sound.obj
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+?___lmul 40 0 BANK0 1 cstackBANK0 cx588_sound.obj
+_Seed_Val 4E 0 BANK0 1 bssBANK0 cx588_sound.obj
+CX588_OneWire_WriteByte@byte_byte 40 0 BANK0 1 cstackBANK0 cx588_sound.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+DelayUs@Time 73 0 COMMON 1 cstackCOMMON cx588_sound.obj
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\s4g8.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\s4g8.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\s4g8.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\s4g8.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\s4g8.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\s4g8.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\sam0.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\sam0.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\sam0.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\sam0.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\sam0.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\Mai\AppData\Local\Temp\sam0.obj
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - cx588_sound.obj
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
+__end_of_DelayMs 202 0 CODE 0 text12 cx588_sound.obj
+__end_of_DelayUs 270 0 CODE 0 text13 cx588_sound.obj
+__size_of_CX588_GPIO_Init 0 0 ABS 0 - cx588_sound.obj
 __Hpa_nodes0 0 0 ABS 0 pa_nodes0 -
+__end_of___lmul 98 0 CODE 0 text5 cx588_sound.obj
 __size_of_POWER_INITIAL 0 0 ABS 0 - cx588_sound.obj
 __Lmaintext 0 0 ABS 0 maintext -
 _INTCON B 0 ABS 0 - cx588_sound.obj
 __Lpa_nodes0 0 0 ABS 0 pa_nodes0 -
-__end_of_POWER_INITIAL 7FC 0 CODE 0 text1 cx588_sound.obj
-start_initialization 7FC 0 CODE 0 cinit cx588_sound.obj
+__size_of_srand 0 0 ABS 0 - cx588_sound.obj
+__end_of_POWER_INITIAL 21E 0 CODE 0 text8 cx588_sound.obj
+_CX588_Play_Sound 21E 0 CODE 0 text6 cx588_sound.obj
+_CX588_SET_Sound_Size 284 0 CODE 0 text9 cx588_sound.obj
+start_initialization 1C 0 CODE 0 cinit cx588_sound.obj
+__end_of_CX588_OneWire_WriteBit 198 0 CODE 0 text11 cx588_sound.obj
 _OPTION 81 0 ABS 0 - cx588_sound.obj
 _OSCCON 8F 0 ABS 0 - cx588_sound.obj
 _PSINKA 97 0 ABS 0 - cx588_sound.obj
-___int_sp 0 0 STACK 2 stack C:\Users\Mai\AppData\Local\Temp\s4g8.obj
+_TIMER2_INITIAL 1BE 0 CODE 0 text1 cx588_sound.obj
+__end_ofPL2 16C 0 CODE 0 text2 cx588_sound.obj
+__pcstackBANK0 40 0 BANK0 1 cstackBANK0 cx588_sound.obj
+_T2CON0 12 0 ABS 0 - cx588_sound.obj
+_T2CON1 9E 0 ABS 0 - cx588_sound.obj
+_TIME_OUT 79 0 COMMON 1 bssCOMMON cx588_sound.obj
+_TMR2IE 461 0 ABS 0 - cx588_sound.obj
+_TMR2IF 61 0 ABS 0 - cx588_sound.obj
+_TMR2ON 92 0 ABS 0 - cx588_sound.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Mai\AppData\Local\Temp\sam0.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 BANK1 1 bank1 -
-__Hcinit 800 0 CODE 0 cinit -
+__Hcinit 32 0 CODE 0 cinit -
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
@@ -126,60 +297,129 @@ __Hcommon 0 0 ABS 0 common -
 __Hconfig 0 0 CONFIG 0 config -
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 BANK1 1 bank1 -
-__Lcinit 7FC 0 CODE 0 cinit -
+__Lcinit 1C 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Lstack 0 0 STACK 2 stack -
+__end_of_TIMER2_INITIAL 1E2 0 CODE 0 text1 cx588_sound.obj
+_CX588_Get_Busy_State 27E 0 CODE 0 text7 cx588_sound.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit 0 0 CODE 0 init -
+__Hinit 1A 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Linit 0 0 CODE 0 init -
+__Linit 1A 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Ltext 0 0 ABS 0 text -
+___lmul 32 0 CODE 0 text5 cx588_sound.obj
+_CX588_OneWire_WriteByte 198 0 CODE 0 text10 cx588_sound.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 400 0 ABS 0 - -
-__S1 0 0 ABS 0 - -
+__end_of_CX588_Play_Sound 238 0 CODE 0 text6 cx588_sound.obj
+_ISR F2 0 CODE 0 text15 cx588_sound.obj
+_PA0 28 0 ABS 0 - cx588_sound.obj
+_PA2 2A 0 ABS 0 - cx588_sound.obj
+_PA4 2C 0 ABS 0 - cx588_sound.obj
+__S0 145 0 ABS 0 - -
+__S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-__Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Mai\AppData\Local\Temp\s4g8.obj
-__pmaintext 7DE 0 CODE 0 maintext cx588_sound.obj
+__end_of_CX588_OneWire_WriteByte 1BE 0 CODE 0 text10 cx588_sound.obj
+DelayMs@a 76 0 COMMON 1 cstackCOMMON cx588_sound.obj
+DelayMs@b 77 0 COMMON 1 cstackCOMMON cx588_sound.obj
+DelayUs@a 74 0 COMMON 1 cstackCOMMON cx588_sound.obj
+__size_of_CX588_Play_Sound 0 0 ABS 0 - cx588_sound.obj
+saved_w 7E 0 ABS 0 - cx588_sound.obj
+__end_of_ISR 130 0 CODE 0 text15 cx588_sound.obj
+_DelayMs 1E2 0 CODE 0 text12 cx588_sound.obj
+_DelayUs 25E 0 CODE 0 text13 cx588_sound.obj
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Mai\AppData\Local\Temp\sam0.obj
+__pdataBANK0 4A 0 BANK0 1 dataBANK0 cx588_sound.obj
+__size_of___lmul 0 0 ABS 0 - cx588_sound.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+CX588_Play_Sound@Sound_Code 42 0 BANK0 1 cstackBANK0 cx588_sound.obj
+_Play_Sound 130 0 CODE 0 text2 cx588_sound.obj
+__ptext10 198 0 CODE 0 text10 cx588_sound.obj
+__ptext11 16C 0 CODE 0 text11 cx588_sound.obj
+__ptext12 1E2 0 CODE 0 text12 cx588_sound.obj
+__ptext13 25E 0 CODE 0 text13 cx588_sound.obj
+__ptext14 238 0 CODE 0 text14 cx588_sound.obj
+__ptext15 F2 0 CODE 0 text15 cx588_sound.obj
+__pmaintext 24C 0 CODE 0 maintext cx588_sound.obj
+___lmul@multiplier 40 0 BANK0 1 cstackBANK0 cx588_sound.obj
+?_rand 48 0 BANK0 1 cstackBANK0 cx588_sound.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 0 config -
-stackhi 0 0 ABS 0 - C:\Users\Mai\AppData\Local\Temp\s4g8.obj
-stacklo 0 0 ABS 0 - C:\Users\Mai\AppData\Local\Temp\s4g8.obj
+__size_of_CX588_OneWire_WriteBit 0 0 ABS 0 - cx588_sound.obj
+srand@x 73 0 COMMON 1 cstackCOMMON cx588_sound.obj
+stackhi 0 0 ABS 0 - C:\Users\Mai\AppData\Local\Temp\sam0.obj
+stacklo 0 0 ABS 0 - C:\Users\Mai\AppData\Local\Temp\sam0.obj
+DelayMs@Time 75 0 COMMON 1 cstackCOMMON cx588_sound.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__Lend_init 0 0 CODE 0 end_init -
+__pbssCOMMON 79 0 COMMON 1 bssCOMMON cx588_sound.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+CX588_OneWire_WriteByte@i 41 0 BANK0 1 cstackBANK0 cx588_sound.obj
+__Lend_init 1A 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization 7FC 0 CODE 0 cinit cx588_sound.obj
-__Hintentry 0 0 CODE 0 intentry -
+end_of_initialization 2E 0 CODE 0 cinit cx588_sound.obj
+__Hintentry 1A 0 CODE 0 intentry -
+__end_of_Play_Sound 162 0 CODE 0 text2 cx588_sound.obj
 __Lstrings 0 0 ABS 0 strings -
-__Hreset_vec 0 0 CODE 0 reset_vec -
-__ptext0 0 0 CODE 0 text0 cx588_sound.obj
-__ptext1 7E2 0 CODE 0 text1 cx588_sound.obj
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext1 1BE 0 CODE 0 text1 cx588_sound.obj
+__ptext2 130 0 CODE 0 text2 cx588_sound.obj
+__ptext3 270 0 CODE 0 text3 cx588_sound.obj
+__ptext4 98 0 CODE 0 text4 cx588_sound.obj
+__ptext5 32 0 CODE 0 text5 cx588_sound.obj
+__ptext6 21E 0 CODE 0 text6 cx588_sound.obj
+__ptext7 27E 0 CODE 0 text7 cx588_sound.obj
+__ptext8 202 0 CODE 0 text8 cx588_sound.obj
+__ptext9 284 0 CODE 0 text9 cx588_sound.obj
+CX588_OneWire_WriteBit@bit_bit 78 0 COMMON 1 cstackCOMMON cx588_sound.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of__initialization 7FC 0 CODE 0 cinit cx588_sound.obj
+__end_of__initialization 2E 0 CODE 0 cinit cx588_sound.obj
 __Lfunctab 0 0 ENTRY 0 functab -
+__size_of_CX588_SET_Sound_Size 0 0 ABS 0 - cx588_sound.obj
+__pidataBANK0 0 0 CODE 0 idataBANK0 cx588_sound.obj
 __Lclrtext 0 0 ABS 0 clrtext -
-__pcstackCOMMON 0 0 COMMON 1 cstackCOMMON cx588_sound.obj
-__Hend_init 2 0 CODE 0 end_init -
-__end_of_main 7E2 0 CODE 0 maintext cx588_sound.obj
+___lmul@product 73 0 COMMON 1 cstackCOMMON cx588_sound.obj
+___lmul@multiplicand 44 0 BANK0 1 cstackBANK0 cx588_sound.obj
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON cx588_sound.obj
+__size_of_TIMER2_INITIAL 0 0 ABS 0 - cx588_sound.obj
+__end_of_CX588_SET_Sound_Size 28A 0 CODE 0 text9 cx588_sound.obj
+__Hend_init 1C 0 CODE 0 end_init -
+__end_of_CX588_GPIO_Init 24C 0 CODE 0 text14 cx588_sound.obj
+__end_of_main 25E 0 CODE 0 maintext cx588_sound.obj
+__end_of_rand F2 0 CODE 0 text4 cx588_sound.obj
 _PORTA 5 0 ABS 0 - cx588_sound.obj
 _PSRCA 88 0 ABS 0 - cx588_sound.obj
+_TMR2H 13 0 ABS 0 - cx588_sound.obj
+_TMR2L 11 0 ABS 0 - cx588_sound.obj
 _TRISA 85 0 ABS 0 - cx588_sound.obj
+__end_of_srand 27E 0 CODE 0 text3 cx588_sound.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__initialization 7FC 0 CODE 0 cinit cx588_sound.obj
+interrupt_function 8 0 CODE 0 intentry cx588_sound.obj
+_randx 4A 0 BANK0 1 dataBANK0 cx588_sound.obj
+_srand 270 0 CODE 0 text3 cx588_sound.obj
+__pintentry 8 0 CODE 0 intentry cx588_sound.obj
+__size_of_ISR 0 0 ABS 0 - cx588_sound.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+__initialization 1C 0 CODE 0 cinit cx588_sound.obj
+CX588_SET_Sound_Size@Sound_Code 42 0 BANK0 1 cstackBANK0 cx588_sound.obj
+__pbssBANK0 4E 0 BANK0 1 bssBANK0 cx588_sound.obj
+__size_of_CX588_OneWire_WriteByte 0 0 ABS 0 - cx588_sound.obj
+__size_of_CX588_Get_Busy_State 0 0 ABS 0 - cx588_sound.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -205,7 +445,7 @@ __initialization 7FC 0 CODE 0 cinit cx588_sound.obj
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 3FE 7FC 2 2
-text1 0 3F1 7E2 D 2
-maintext 0 3EF 7DE 2 2
+cstackCOMMON 1 70 70 B 1
+cstackBANK0 1 40 40 10 1
+intentry 0 4 8 141 2
 reset_vec 0 0 0 1 2

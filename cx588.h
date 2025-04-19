@@ -3,8 +3,8 @@
 
 #include "FT60F21X.h"
 
-#define	GPIO_OneLine PA1
-#define GPIO_Busy	 PA2
+#define	GPIO_OneLine PA4
+#define GPIO_Busy	 PA0
 
 
 typedef enum
@@ -28,6 +28,7 @@ typedef enum
 }CX588_SoundSize;
 
 #define CX588_STOPPLAY_CMD  0xF0
+#define CX588_MAX_SOUND_CODE 0xCF
 
 void DelayUs(unsigned char Time);
 void DelayMs(unsigned char Time);

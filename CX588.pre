@@ -1,7 +1,7 @@
 
 # 1 "CX588.c"
 
-# 6 "E:\Program Files (x86)\Compiler\data\include\FT60F21X.h"
+# 6 "C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F21X.h"
 volatile unsigned char INDF @ 0x000;
 
 
@@ -941,6 +941,7 @@ SoundLeve_15
 
 
 
+
 void DelayUs(unsigned char Time);
 void DelayMs(unsigned char Time);
 void CX588_GPIO_Init(void);
@@ -949,32 +950,32 @@ void CX588_Play_Sound(unsigned char Sound_Code);
 void CX588_Stop_Sound(void);
 unsigned char CX588_Get_Busy_State(void);
 
-# 26 "E:\Program Files (x86)\Compiler\data\include\fmd.h"
+# 26 "C:\Program Files (x86)\CCompiler\Compiler\data\include\fmd.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "E:\Program Files (x86)\Compiler\data\include\gcc8debug.h"
+# 13 "C:\Program Files (x86)\CCompiler\Compiler\data\include\gcc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
 
-# 30 "E:\Program Files (x86)\Compiler\data\include\SYSCFG.h"
+# 30 "C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
 # 61
 extern unsigned int flash_read(unsigned short addr);
 
-# 41 "E:\Program Files (x86)\Compiler\data\include\eeprom_routines.h"
+# 41 "C:\Program Files (x86)\CCompiler\Compiler\data\include\eeprom_routines.h"
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 134 "E:\Program Files (x86)\Compiler\data\include\SYSCFG.h"
+# 134 "C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h"
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
@@ -1008,13 +1009,13 @@ DelayUs(98);
 
 void CX588_GPIO_Init(void)
 {
-TRISA |= 0b00000000;
+TRISA |= 0b00000001;
 PSRCA |= 0b00000000;
 
 # 48
 PSINKA |= 0b00000000;
-PORTA |= 0b00000000;
-WPUA |= 0b00000000;
+PORTA |= 0b00010001;
+WPUA |= 0b00000001;
 }
 
 
@@ -1023,32 +1024,34 @@ static void CX588_OneWire_WriteBit(unsigned char bit_bit)
 {
 if (bit_bit)
 {
-PA1 = 1;
-Delay_Us(1200);
-PA1 = 0;
-Delay_Us(400);
+PA4 = 1;
+DelayMs(1);
+DelayUs(100);
+PA4 = 0;
+DelayUs(200);
 }
 else
 {
-PA1 = 1;
-Delay_Us(400);
-PA1 = 0;
-Delay_Us(1200);
+PA4 = 1;
+DelayUs(200);
+PA4 = 0;
+DelayMs(1);
+DelayUs(100);
 }
 }
 
 
 static void CX588_OneWire_WriteByte(unsigned char byte_byte)
 {
-PA1 = 0;
-Delay_Ms(6);
+PA4 = 0;
+DelayMs(6);
 
 for (unsigned char i = 0; i < 8; i++)
 {
 CX588_OneWire_WriteBit(byte_byte & 0x01);
 byte_byte >>= 1;
 }
-PA1 = 1;
+PA4 = 1;
 }
 
 
@@ -1062,8 +1065,11 @@ void CX588_Play_Sound(unsigned char Sound_Code)
 {
 if (Sound_Code < 0xCF)
 {
+if(CX588_Get_Busy_State())
+{
 CX588_OneWire_WriteByte(Sound_Code);
-Delay_Ms(20);
+DelayMs(20);
+}
 }
 }
 
@@ -1076,7 +1082,7 @@ CX588_OneWire_WriteByte(0xF0);
 
 unsigned char CX588_Get_Busy_State(void)
 {
-if(PA2)
+if(PA0)
 return 1;
 else
 return 0;

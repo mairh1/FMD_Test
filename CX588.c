@@ -38,7 +38,7 @@ void DelayMs(unsigned char Time)
 
 void CX588_GPIO_Init(void)//(根据实际情况更改)
 {
-	TRISA |= 0b00000000;				//1:输入 0:输出 
+	TRISA |= 0b00000001;				//1:输入 0:输出 
     PSRCA |= 0b00000000;
     //00:	4mA		
     //01/10:8mA
@@ -46,8 +46,8 @@ void CX588_GPIO_Init(void)//(根据实际情况更改)
     //Bit[3:2]:控制PA5源电流
     //Bit[1:0]:控制PA4源电流
     PSINKA |= 0b00000000;				//Bit[1:0]:控制PA5和PA4 0:灌电流最小 1:灌电流最大
-    PORTA  |= 0b00000000;				//1:PAx输出高电平	0:PAx输出低电平
- 	WPUA   |= 0b00000000;				//1:使能PA口上拉	0:关闭PA口上拉   
+    PORTA  |= 0b00010001;				//1:PAx输出高电平	0:PAx输出低电平
+ 	WPUA   |= 0b00000001;				//1:使能PA口上拉	0:关闭PA口上拉   
 }
 
 
@@ -57,16 +57,18 @@ static void CX588_OneWire_WriteBit(unsigned char bit_bit)
     if (bit_bit) // 写1时，高电平1200us，低电平400us
     {     
 		GPIO_OneLine = 1;
-        Delay_Us(1200);
+		DelayMs(1);
+        DelayUs(100);//100*2=200
         GPIO_OneLine = 0;
-        Delay_Us(400);
+		DelayUs(200);//200*2=400
     } 
     else // 写0时，高电平400us，低电平1200us
     {         
         GPIO_OneLine = 1;
-        Delay_Us(400);
+        DelayUs(200);
         GPIO_OneLine = 0;
-        Delay_Us(1200);
+		DelayMs(1);
+        DelayUs(100);
     }
 }
 
@@ -74,7 +76,7 @@ static void CX588_OneWire_WriteBit(unsigned char bit_bit)
 static void CX588_OneWire_WriteByte(unsigned char byte_byte) 
 {
 	GPIO_OneLine = 0;
-    Delay_Ms(6);//拉低总线6ms
+    DelayMs(6);//拉低总线6ms
 
     for (unsigned char i = 0; i < 8; i++) 
     {
@@ -93,10 +95,13 @@ void CX588_SET_Sound_Size(CX588_SoundSize Sound_Code)
 //CX588播放当前语音
 void CX588_Play_Sound(unsigned char Sound_Code)
 {
-    if (Sound_Code < 0xCF) 
+    if (Sound_Code < CX588_MAX_SOUND_CODE) 
     {
-        CX588_OneWire_WriteByte(Sound_Code);
-        Delay_Ms(20);
+		if(CX588_Get_Busy_State())
+        {
+			CX588_OneWire_WriteByte(Sound_Code);
+			DelayMs(20);
+        }
     }
 }
 
