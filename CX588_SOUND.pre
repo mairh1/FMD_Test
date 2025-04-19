@@ -1056,14 +1056,10 @@ void CX588_Play_Sound(unsigned char Sound_Code);
 void CX588_Stop_Sound(void);
 unsigned char CX588_Get_Busy_State(void);
 
-# 8 "CX588_SOUND.C"
-unsigned char ReadAPin;
-
-int TIME_OUT = 0;
-
+# 7 "CX588_SOUND.C"
 int Seed_Val = 0;
 
-void PA2_Level_Change_INITIAL();
+
 
 void Play_Sound(void)
 {
@@ -1074,58 +1070,20 @@ if(PA2 == 0)
 {
 if(CX588_Get_Busy_State())
 {
-srand(Seed_Val);
-Seed_Val = Seed_Val + TIME_OUT;
 CX588_Play_Sound((rand()%8)+1);
-
+Seed_Val++;
 }
 }
 }
 }
 
-void TIME_OUT_Enter_Sleep(void)
-{
-if(CX588_Get_Busy_State() == 1)
-{
-TMR2IE = 1;
-PEIE=1;
-GIE = 1;
-if(TIME_OUT > 5)
-{
-TIME_OUT = 0;
-TMR2IE = 0;
-PEIE = 0;
-GIE = 0;
-
-PA2_Level_Change_INITIAL();
-asm("sleep");
-__nop();
-}
-}
-else
-{
-TIME_OUT = 0;
-TMR2IE = 0;
-PEIE = 0;
-GIE = 0;
-}
-}
-
-# 67
+# 33
 void interrupt ISR(void)
 {
-if(TMR2IE && TMR2IF)
-{
-TMR2IF = 0;
 
-if(TIME_OUT < 0xff)
-TIME_OUT++;
 }
 
-# 86
-}
-
-# 94
+# 44
 void POWER_INITIAL (void)
 {
 OSCCON = 0B01110001;
@@ -1139,39 +1097,11 @@ PORTA = 0B00000000;
 WPUA = 0B00000100;
 }
 
-# 112
-void TIMER2_INITIAL (void)
-{
-T2CON0 = 0B01001011;
-
-
-
-T2CON1 = 0B00001000;
-TMR2H = 0;
-TMR2L = 0;
-PR2H = 100;
-PR2L = 250;
-
-TMR2IF = 0;
-TMR2ON = 1;
-
-}
-
-# 134
-void PA2_Level_Change_INITIAL(void)
-{
-TRISA2 = 1;
-ReadAPin = PORTA;
-PAIF = 0;
-IOCA2 = 1;
-PAIE = 1;
-}
-
-# 148
+# 62
 void main()
 {
 POWER_INITIAL();
-TIMER2_INITIAL();
+
 CX588_GPIO_Init();
 CX588_SET_Sound_Size(SoundLeve_10);
 srand(Seed_Val);
@@ -1179,7 +1109,6 @@ srand(Seed_Val);
 while(1)
 {
 Play_Sound();
-
-
+srand(Seed_Val);
 }
 }
