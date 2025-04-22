@@ -1,262 +1,262 @@
 Version 3.2   GCC8 Compiled Intermediate Code
 "35 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F21X.h
-[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2 . CARRY DC ZERO nPD nTO RP ]
-"43
-[s S3 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S3 . C HC Z nPF nTF PAGE ]
-"34
-[u S1 `S2 1 `S3 1 ]
-[n S1 . . . ]
-"76
-[s S5 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S5 . RA0 RA1 RA2 RA3 RA4 RA5 ]
-"84
 [s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S6 . PA0 PA1 PA2 PA3 PA4 PA5 ]
+[n S6 . CARRY DC ZERO nPD nTO RP ]
+"43
+[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S7 . C HC Z nPF nTF PAGE ]
+"34
+[u S5 `S6 1 `S7 1 ]
+[n S5 . . . ]
+"76
+[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S9 . RA0 RA1 RA2 RA3 RA4 RA5 ]
+"84
+[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S10 . PA0 PA1 PA2 PA3 PA4 PA5 ]
 "75
-[u S4 `S5 1 `S6 1 ]
-[n S4 . . . ]
+[u S8 `S9 1 `S10 1 ]
+[n S8 . . . ]
 "108
-[s S8 :5 `uc 1 ]
-[n S8 . PCLATH ]
+[s S12 :5 `uc 1 ]
+[n S12 . PCLATH ]
 "107
-[u S7 `S8 1 ]
-[n S7 . . ]
-"127
-[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S10 . PAIF INTF T0IF PAIE INTE T0IE PEIE GIE ]
-"126
-[u S9 `S10 1 ]
-[n S9 . . ]
-"150
-[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S12 . . TMR2IF OSFIF . . LVDIF CKMIF EEIF ]
-"149
 [u S11 `S12 1 ]
 [n S11 . . ]
-"169
-[s S14 :5 `uc 1 ]
-[n S14 . FOSCCAL ]
-"168
+"127
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . PAIF INTF T0IF PAIE INTE T0IE PEIE GIE ]
+"126
 [u S13 `S14 1 ]
 [n S13 . . ]
+"150
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . . TMR2IF OSFIF . . LVDIF CKMIF EEIF ]
+"149
+[u S15 `S16 1 ]
+[n S15 . . ]
+"169
+[s S18 :5 `uc 1 ]
+[n S18 . FOSCCAL ]
+"168
+[u S17 `S18 1 ]
+[n S17 . . ]
 "202
-[s S16 :2 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
-[n S16 . T2CKPS TMR2ON TOUTPS PR2U ]
+[s S20 :2 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S20 . T2CKPS TMR2ON TOUTPS PR2U ]
 "208
-[s S17 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S17 . T2CKPS0 T2CKPS1 . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
+[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S21 . T2CKPS0 T2CKPS1 . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
 "201
-[u S15 `S16 1 `S17 1 ]
-[n S15 . . . ]
+[u S19 `S20 1 `S21 1 ]
+[n S19 . . . ]
 "245
-[s S19 :7 `uc 1 :1 `uc 1 ]
-[n S19 . P1DC P1AUE ]
+[s S23 :7 `uc 1 :1 `uc 1 ]
+[n S23 . P1DC P1AUE ]
 "249
-[s S20 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S20 . P1DC0 P1DC1 P1DC2 P1DC3 P1DC4 P1DC5 P1DC6 ]
+[s S24 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S24 . P1DC0 P1DC1 P1DC2 P1DC3 P1DC4 P1DC5 P1DC6 ]
 "244
-[u S18 `S19 1 `S20 1 ]
-[n S18 . . . ]
+[u S22 `S23 1 `S24 1 ]
+[n S22 . . . ]
 "274
-[s S22 :2 `uc 1 :2 `uc 1 :3 `uc 1 ]
-[n S22 . P1ASS P1BSS P1BKS ]
+[s S26 :2 `uc 1 :2 `uc 1 :3 `uc 1 ]
+[n S26 . P1ASS P1BSS P1BKS ]
 "279
-[s S23 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S23 . P1ASS0 P1ASS1 P1BSS0 P1BSS1 P1BKS0 P1BKS1 P1BKS2 P1BEVT ]
+[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S27 . P1ASS0 P1ASS1 P1BSS0 P1BSS1 P1BKS0 P1BKS1 P1BKS2 P1BEVT ]
 "273
-[u S21 `S22 1 `S23 1 ]
-[n S21 . . . ]
+[u S25 `S26 1 `S27 1 ]
+[n S25 . . . ]
 "304
-[s S25 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S25 . SWDTEN WDTPS WCKSRC . LVDP ]
+[s S29 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S29 . SWDTEN WDTPS WCKSRC . LVDP ]
 "311
-[s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S26 . . WDTPS0 WDTPS1 WDTPS2 WDTPS3 ]
+[s S30 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . . WDTPS0 WDTPS1 WDTPS2 WDTPS3 ]
 "303
-[u S24 `S25 1 `S26 1 ]
-[n S24 . . . ]
+[u S28 `S29 1 `S30 1 ]
+[n S28 . . . ]
 "334
-[s S28 :2 `uc 1 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S28 . P1CSS . P1D2SS P1DSS ]
+[s S32 :2 `uc 1 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S32 . P1CSS . P1D2SS P1DSS ]
 "340
-[s S29 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S29 . P1CSS0 P1CSS1 P1DALT P1CALT P1D2SS0 P1D2SS1 P1DSS0 P1DSS1 ]
+[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S33 . P1CSS0 P1CSS1 P1DALT P1CALT P1D2SS0 P1D2SS1 P1DSS0 P1DSS1 ]
 "333
-[u S27 `S28 1 `S29 1 ]
-[n S27 . . . ]
+[u S31 `S32 1 `S33 1 ]
+[n S31 . . . ]
 "369
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . T2CKRUN CKCNTI CKMAVG SLVREN . LVROE BGRBOE ]
+[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S35 . T2CKRUN CKCNTI CKMAVG SLVREN . LVROE BGRBOE ]
 "368
-[u S30 `S31 1 ]
-[n S30 . . ]
-"390
-[s S33 :4 `uc 1 ]
-[n S33 . SOSCPRH ]
-"389
-[u S32 `S33 1 ]
-[n S32 . . ]
-"404
-[s S35 :1 `uc 1 :1 `uc 1 ]
-[n S35 . P1DF2 P1DF2E ]
-"403
 [u S34 `S35 1 ]
 [n S34 . . ]
+"390
+[s S37 :4 `uc 1 ]
+[n S37 . SOSCPRH ]
+"389
+[u S36 `S37 1 ]
+[n S36 . . ]
+"404
+[s S39 :1 `uc 1 :1 `uc 1 ]
+[n S39 . P1DF2 P1DF2E ]
+"403
+[u S38 `S39 1 ]
+[n S38 . . ]
 "421
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . T0CKSRC0 T0CKSRC1 T0CKRUN T0ON ]
+[s S41 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S41 . T0CKSRC0 T0CKSRC1 T0CKRUN T0ON ]
 "427
-[s S38 :2 `uc 1 ]
-[n S38 . T0CKSRC ]
+[s S42 :2 `uc 1 ]
+[n S42 . T0CKSRC ]
 "420
-[u S36 `S37 1 `S38 1 ]
-[n S36 . . . ]
+[u S40 `S41 1 `S42 1 ]
+[n S40 . . . ]
 "450
-[s S40 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S40 . PS PSA T0SE T0CS INTEDG nPAPU ]
+[s S44 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S44 . PS PSA T0SE T0CS INTEDG nPAPU ]
 "458
-[s S41 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S41 . PS0 PS1 PS2 ]
+[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . PS0 PS1 PS2 ]
 "449
-[u S39 `S40 1 `S41 1 ]
-[n S39 . . . ]
+[u S43 `S44 1 `S45 1 ]
+[n S43 . . . ]
 "477
-[s S43 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S43 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 ]
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S47 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 ]
 "485
-[s S44 :6 `uc 1 ]
-[n S44 . TRISA ]
+[s S48 :6 `uc 1 ]
+[n S48 . TRISA ]
 "476
-[u S42 `S43 1 `S44 1 ]
-[n S42 . . . ]
+[u S46 `S47 1 `S48 1 ]
+[n S46 . . . ]
 "501
-[s S46 :2 `uc 1 :2 `uc 1 ]
-[n S46 . PSRCA4 PSRCA5 ]
+[s S50 :2 `uc 1 :2 `uc 1 ]
+[n S50 . PSRCA4 PSRCA5 ]
 "505
-[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S47 . PSRCA40 PSRCA41 PSRCA50 PSRCA51 ]
+[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . PSRCA40 PSRCA41 PSRCA50 PSRCA51 ]
 "500
-[u S45 `S46 1 `S47 1 ]
-[n S45 . . . ]
+[u S49 `S50 1 `S51 1 ]
+[n S49 . . . ]
 "524
-[s S49 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S49 . . TMR2IE OSFIE . LVDIE CKMEAIE EEIE ]
+[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S53 . . TMR2IE OSFIE . LVDIE CKMEAIE EEIE ]
 "523
-[u S48 `S49 1 ]
-[n S48 . . ]
+[u S52 `S53 1 ]
+[n S52 . . ]
 "544
-[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S51 . LVDM0 LVDM1 LVDDEB ]
+[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S55 . LVDM0 LVDM1 LVDDEB ]
 "549
-[s S52 :2 `uc 1 ]
-[n S52 . LVDM ]
+[s S56 :2 `uc 1 ]
+[n S56 . LVDM ]
 "543
-[u S50 `S51 1 `S52 1 ]
-[n S50 . . . ]
+[u S54 `S55 1 `S56 1 ]
+[n S54 . . . ]
 "568
-[s S54 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S54 . nBOR nPOR LVDW LVDEN LVDL0 LVDL1 LVDL2 LVDL3 ]
+[s S58 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S58 . nBOR nPOR LVDW LVDEN LVDL0 LVDL1 LVDL2 LVDL3 ]
 "578
-[s S55 :4 `uc 1 :4 `uc 1 ]
-[n S55 . . LVDL ]
+[s S59 :4 `uc 1 :4 `uc 1 ]
+[n S59 . . LVDL ]
 "567
-[u S53 `S54 1 `S55 1 ]
-[n S53 . . . ]
+[u S57 `S58 1 `S59 1 ]
+[n S57 . . . ]
 "596
-[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S57 . . LTS HTS . IRCF0 IRCF1 IRCF2 LFMOD ]
+[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S61 . . LTS HTS . IRCF0 IRCF1 IRCF2 LFMOD ]
 "606
-[s S58 :4 `uc 1 :3 `uc 1 ]
-[n S58 . . IRCF ]
+[s S62 :4 `uc 1 :3 `uc 1 ]
+[n S62 . . IRCF ]
 "595
-[u S56 `S57 1 `S58 1 ]
-[n S56 . . . ]
+[u S60 `S61 1 `S62 1 ]
+[n S60 . . . ]
 "625
-[s S60 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S60 . P1A0OE P1A0NOE P1C2SS0 P1C2SS1 . P1DOE P1BOE P1COE ]
+[s S64 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S64 . P1A0OE P1A0NOE P1C2SS0 P1C2SS1 . P1DOE P1BOE P1COE ]
 "635
-[s S61 :2 `uc 1 :2 `uc 1 ]
-[n S61 . . P1C2SS ]
+[s S65 :2 `uc 1 :2 `uc 1 ]
+[n S65 . . P1C2SS ]
 "624
-[u S59 `S60 1 `S61 1 ]
-[n S59 . . . ]
+[u S63 `S64 1 `S65 1 ]
+[n S63 . . . ]
 "669
-[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S63 . WPUA0 WPUA1 WPUA2 WPUA3 WPUA4 WPUA5 ]
+[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S67 . WPUA0 WPUA1 WPUA2 WPUA3 WPUA4 WPUA5 ]
 "677
-[s S64 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S64 . WPU0 WPU1 WPU2 WPU3 WPU4 WPU5 ]
-"685
-[s S65 :6 `uc 1 ]
-[n S65 . WPUA ]
-"688
-[s S66 :6 `uc 1 ]
-[n S66 . WPU ]
-"668
-[u S62 `S63 1 `S64 1 `S65 1 `S66 1 ]
-[n S62 . . . . . ]
-"713
 [s S68 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S68 . IOCA0 IOCA1 IOCA2 IOCA3 IOCA4 IOCA5 ]
-"721
-[s S69 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S69 . IOC0 IOC1 IOC2 IOC3 IOC4 IOC5 ]
-"729
+[n S68 . WPU0 WPU1 WPU2 WPU3 WPU4 WPU5 ]
+"685
+[s S69 :6 `uc 1 ]
+[n S69 . WPUA ]
+"688
 [s S70 :6 `uc 1 ]
-[n S70 . IOCA ]
+[n S70 . WPU ]
+"668
+[u S66 `S67 1 `S68 1 `S69 1 `S70 1 ]
+[n S66 . . . . . ]
+"713
+[s S72 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S72 . IOCA0 IOCA1 IOCA2 IOCA3 IOCA4 IOCA5 ]
+"721
+[s S73 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S73 . IOC0 IOC1 IOC2 IOC3 IOC4 IOC5 ]
+"729
+[s S74 :6 `uc 1 ]
+[n S74 . IOCA ]
 "732
-[s S71 :6 `uc 1 ]
-[n S71 . IOC ]
+[s S75 :6 `uc 1 ]
+[n S75 . IOC ]
 "712
-[u S67 `S68 1 `S69 1 `S70 1 `S71 1 ]
-[n S67 . . . . . ]
+[u S71 `S72 1 `S73 1 `S74 1 `S75 1 ]
+[n S71 . . . . . ]
 "745
-[s S73 :1 `uc 1 :1 `uc 1 ]
-[n S73 . PSINKA0 PSINKA1 ]
+[s S77 :1 `uc 1 :1 `uc 1 ]
+[n S77 . PSINKA0 PSINKA1 ]
 "749
-[s S74 :2 `uc 1 ]
-[n S74 . PSINKA ]
+[s S78 :2 `uc 1 ]
+[n S78 . PSINKA ]
 "744
-[u S72 `S73 1 `S74 1 ]
-[n S72 . . . ]
+[u S76 `S77 1 `S78 1 ]
+[n S76 . . . ]
 "762
-[s S76 :1 `uc 1 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S76 . . SCKOE . SCKEN ]
+[s S80 :1 `uc 1 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S80 . . SCKOE . SCKEN ]
 "761
-[u S75 `S76 1 ]
-[n S75 . . ]
-"781
-[s S78 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S78 . P1A0P P1A0NP . P1DP P1BP P1CP ]
-"780
-[u S77 `S78 1 ]
-[n S77 . . ]
-"811
-[s S80 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S80 . RD . WREN1 WRERR WREN2 WREN3 ]
-"810
 [u S79 `S80 1 ]
 [n S79 . . ]
-"828
-[s S82 :1 `uc 1 ]
-[n S82 . WR ]
-"827
+"781
+[s S82 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . P1A0P P1A0NP . P1DP P1BP P1CP ]
+"780
 [u S81 `S82 1 ]
 [n S81 . . ]
+"811
+[s S84 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S84 . RD . WREN1 WRERR WREN2 WREN3 ]
+"810
+[u S83 `S84 1 ]
+[n S83 . . ]
+"828
+[s S86 :1 `uc 1 ]
+[n S86 . WR ]
+"827
+[u S85 `S86 1 ]
+[n S85 . . ]
 "845
-[s S84 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S84 . T2CKSRC0 T2CKSRC1 T2CKSRC2 P1BZM P1OS ]
+[s S88 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S88 . T2CKSRC0 T2CKSRC1 T2CKSRC2 P1BZM P1OS ]
 "852
-[s S85 :3 `uc 1 ]
-[n S85 . T2CKSRC ]
+[s S89 :3 `uc 1 ]
+[n S89 . T2CKSRC ]
 "844
-[u S83 `S84 1 `S85 1 ]
-[n S83 . . . ]
+[u S87 `S88 1 `S89 1 ]
+[n S87 . . . ]
 "39 CX588.h
 [v _CX588_Get_Busy_State `(uc ~T0 @X0 0 ef ]
-"12 CX588_SOUND.C
+"7 CX588_SOUND.h
 [v _PA2_Level_Change_INITIAL `(v ~T0 @X0 0 ef ]
 "31 C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h
 [v ___nop `(v ~T0 @X0 0 ef ]
@@ -270,16 +270,67 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [p mainexit ]
 "35 CX588.h
 [v _CX588_GPIO_Init `(v ~T0 @X0 0 ef ]
-"129 CX588_SOUND.C
-[c E1021 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 .. ]
-[n E1021 . SoundLeve_0 SoundLeve_1 SoundLeve_2 SoundLeve_3 SoundLeve_4 SoundLeve_5 SoundLeve_6 SoundLeve_7 SoundLeve_8 SoundLeve_9 SoundLeve_10 SoundLeve_11 SoundLeve_12 SoundLeve_13 SoundLeve_14 SoundLeve_15  ]
+"155 CX588_SOUND.C
+[c E1026 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 .. ]
+[n E1026 . SoundLeve_0 SoundLeve_1 SoundLeve_2 SoundLeve_3 SoundLeve_4 SoundLeve_5 SoundLeve_6 SoundLeve_7 SoundLeve_8 SoundLeve_9 SoundLeve_10 SoundLeve_11 SoundLeve_12 SoundLeve_13 SoundLeve_14 SoundLeve_15  ]
 "36 CX588.h
-[v _CX588_SET_Sound_Size `(v ~T0 @X0 0 ef1`E1021 ]
+[v _CX588_SET_Sound_Size `(v ~T0 @X0 0 ef1`E1026 ]
 "61 C:\Program Files (x86)\CCompiler\Compiler\data\include\stdlib.h
 [v _srand `(v ~T0 @X0 0 ef1`ui ]
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdlib.h: 7: typedef unsigned short wchar_t;
+[; ;stdlib.h: 15: typedef struct {
+[; ;stdlib.h: 16: int rem;
+[; ;stdlib.h: 17: int quot;
+[; ;stdlib.h: 18: } div_t;
+[; ;stdlib.h: 19: typedef struct {
+[; ;stdlib.h: 20: unsigned rem;
+[; ;stdlib.h: 21: unsigned quot;
+[; ;stdlib.h: 22: } udiv_t;
+[; ;stdlib.h: 23: typedef struct {
+[; ;stdlib.h: 24: long quot;
+[; ;stdlib.h: 25: long rem;
+[; ;stdlib.h: 26: } ldiv_t;
+[; ;stdlib.h: 27: typedef struct {
+[; ;stdlib.h: 28: unsigned long quot;
+[; ;stdlib.h: 29: unsigned long rem;
+[; ;stdlib.h: 30: } uldiv_t;
+[; ;stdlib.h: 53: extern double atof(const char *);
+[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 55: extern int atoi(const char *);
+[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 57: extern long atol(const char *);
+[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 60: extern int rand(void);
+[; ;stdlib.h: 61: extern void srand(unsigned int);
+[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 75: extern void * malloc(size_t);
+[; ;stdlib.h: 76: extern void free(void *);
+[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
+[; ;gcc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+[; ;stdlib.h: 86: extern int atexit(void (*)(void));
+[; ;stdlib.h: 87: extern char * getenv(const char *);
+[; ;stdlib.h: 88: extern char ** environ;
+[; ;stdlib.h: 89: extern int system(char *);
+[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 92: extern int abs(int);
+[; ;stdlib.h: 93: extern long labs(long);
+[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
 [; ;fmd.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;fmd.h: 28: extern double __fpnormalize(double);
-[; ;gcc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 "6 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F21X.h
 [v _INDF `Vuc ~T0 @X0 1 e@0 ]
 [; ;FT60F21X.h: 6: volatile unsigned char INDF @ 0x000;
@@ -329,7 +380,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _PAGE `Vb ~T0 @X0 1 e@29 ]
 [; ;FT60F21X.h: 32: volatile bit PAGE @ ((unsigned)&STATUS*8)+5;
 "51
-[v _STATUSbits `VS1 ~T0 @X0 1 e@3 ]
+[v _STATUSbits `VS5 ~T0 @X0 1 e@3 ]
 [; ;FT60F21X.h: 34: volatile union {
 [; ;FT60F21X.h: 35: struct {
 [; ;FT60F21X.h: 36: unsigned CARRY : 1;
@@ -391,7 +442,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _PA5 `Vb ~T0 @X0 1 e@45 ]
 [; ;FT60F21X.h: 73: volatile bit PA5 @ ((unsigned)&PORTA*8)+5;
 "92
-[v _PORTAbits `VS4 ~T0 @X0 1 e@5 ]
+[v _PORTAbits `VS8 ~T0 @X0 1 e@5 ]
 [; ;FT60F21X.h: 75: volatile union {
 [; ;FT60F21X.h: 76: struct {
 [; ;FT60F21X.h: 77: unsigned RA0 : 1;
@@ -420,7 +471,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _PCLATH `Vuc ~T0 @X0 1 e@10 ]
 [; ;FT60F21X.h: 104: volatile unsigned char PCLATH @ 0x00A;
 "111
-[v _PCLATHbits `VS7 ~T0 @X0 1 e@10 ]
+[v _PCLATHbits `VS11 ~T0 @X0 1 e@10 ]
 [; ;FT60F21X.h: 107: volatile union {
 [; ;FT60F21X.h: 108: struct {
 [; ;FT60F21X.h: 109: unsigned PCLATH : 5;
@@ -454,7 +505,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _GIE `Vb ~T0 @X0 1 e@95 ]
 [; ;FT60F21X.h: 124: volatile bit GIE @ ((unsigned)&INTCON*8)+7;
 "137
-[v _INTCONbits `VS9 ~T0 @X0 1 e@11 ]
+[v _INTCONbits `VS13 ~T0 @X0 1 e@11 ]
 [; ;FT60F21X.h: 126: volatile union {
 [; ;FT60F21X.h: 127: struct {
 [; ;FT60F21X.h: 128: unsigned PAIF : 1;
@@ -486,7 +537,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _EEIF `Vb ~T0 @X0 1 e@103 ]
 [; ;FT60F21X.h: 147: volatile bit EEIF @ ((unsigned)&PIR1*8)+7;
 "160
-[v _PIR1bits `VS11 ~T0 @X0 1 e@12 ]
+[v _PIR1bits `VS15 ~T0 @X0 1 e@12 ]
 [; ;FT60F21X.h: 149: volatile union {
 [; ;FT60F21X.h: 150: struct {
 [; ;FT60F21X.h: 151: unsigned : 1;
@@ -503,7 +554,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _FOSCCAL `Vuc ~T0 @X0 1 e@13 ]
 [; ;FT60F21X.h: 165: volatile unsigned char FOSCCAL @ 0x00D;
 "172
-[v _FOSCCALbits `VS13 ~T0 @X0 1 e@13 ]
+[v _FOSCCALbits `VS17 ~T0 @X0 1 e@13 ]
 [; ;FT60F21X.h: 168: volatile union {
 [; ;FT60F21X.h: 169: struct {
 [; ;FT60F21X.h: 170: unsigned FOSCCAL : 5;
@@ -549,7 +600,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _PR2U `Vb ~T0 @X0 1 e@151 ]
 [; ;FT60F21X.h: 199: volatile bit PR2U @ ((unsigned)&T2CON0*8)+7;
 "217
-[v _T2CON0bits `VS15 ~T0 @X0 1 e@18 ]
+[v _T2CON0bits `VS19 ~T0 @X0 1 e@18 ]
 [; ;FT60F21X.h: 201: volatile union {
 [; ;FT60F21X.h: 202: struct {
 [; ;FT60F21X.h: 203: unsigned T2CKPS : 2;
@@ -604,7 +655,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _P1AUE `Vb ~T0 @X0 1 e@183 ]
 [; ;FT60F21X.h: 242: volatile bit P1AUE @ ((unsigned)&P1CON*8)+7;
 "258
-[v _P1CONbits `VS18 ~T0 @X0 1 e@22 ]
+[v _P1CONbits `VS22 ~T0 @X0 1 e@22 ]
 [; ;FT60F21X.h: 244: volatile union {
 [; ;FT60F21X.h: 245: struct {
 [; ;FT60F21X.h: 246: unsigned P1DC : 7;
@@ -648,7 +699,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _P1BEVT `Vb ~T0 @X0 1 e@191 ]
 [; ;FT60F21X.h: 271: volatile bit P1BEVT @ ((unsigned)&P1BR0*8)+7;
 "289
-[v _P1BR0bits `VS21 ~T0 @X0 1 e@23 ]
+[v _P1BR0bits `VS25 ~T0 @X0 1 e@23 ]
 [; ;FT60F21X.h: 273: volatile union {
 [; ;FT60F21X.h: 274: struct {
 [; ;FT60F21X.h: 275: unsigned P1ASS : 2;
@@ -691,7 +742,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _LVDP `Vb ~T0 @X0 1 e@199 ]
 [; ;FT60F21X.h: 301: volatile bit LVDP @ ((unsigned)&WDTCON*8)+7;
 "318
-[v _WDTCONbits `VS24 ~T0 @X0 1 e@24 ]
+[v _WDTCONbits `VS28 ~T0 @X0 1 e@24 ]
 [; ;FT60F21X.h: 303: volatile union {
 [; ;FT60F21X.h: 304: struct {
 [; ;FT60F21X.h: 305: unsigned SWDTEN : 1;
@@ -736,7 +787,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _P1DSS1 `Vb ~T0 @X0 1 e@207 ]
 [; ;FT60F21X.h: 331: volatile bit P1DSS1 @ ((unsigned)&P1BR1*8)+7;
 "350
-[v _P1BR1bits `VS27 ~T0 @X0 1 e@25 ]
+[v _P1BR1bits `VS31 ~T0 @X0 1 e@25 ]
 [; ;FT60F21X.h: 333: volatile union {
 [; ;FT60F21X.h: 334: struct {
 [; ;FT60F21X.h: 335: unsigned P1CSS : 2;
@@ -780,7 +831,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _BGRBOE `Vb ~T0 @X0 1 e@223 ]
 [; ;FT60F21X.h: 365: volatile bit BGRBOE @ ((unsigned)&MSCON*8)+7;
 "378
-[v _MSCONbits `VS30 ~T0 @X0 1 e@27 ]
+[v _MSCONbits `VS34 ~T0 @X0 1 e@27 ]
 [; ;FT60F21X.h: 368: volatile union {
 [; ;FT60F21X.h: 369: struct {
 [; ;FT60F21X.h: 370: unsigned T2CKRUN : 1;
@@ -799,7 +850,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _SOSCPRH `Vuc ~T0 @X0 1 e@29 ]
 [; ;FT60F21X.h: 386: volatile unsigned char SOSCPRH @ 0x01D;
 "393
-[v _SOSCPRHbits `VS32 ~T0 @X0 1 e@29 ]
+[v _SOSCPRHbits `VS36 ~T0 @X0 1 e@29 ]
 [; ;FT60F21X.h: 389: volatile union {
 [; ;FT60F21X.h: 390: struct {
 [; ;FT60F21X.h: 391: unsigned SOSCPRH : 4;
@@ -815,7 +866,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _P1DF2E `Vb ~T0 @X0 1 e@241 ]
 [; ;FT60F21X.h: 400: volatile bit P1DF2E @ ((unsigned)&P1AUX*8)+1;
 "408
-[v _P1AUXbits `VS34 ~T0 @X0 1 e@30 ]
+[v _P1AUXbits `VS38 ~T0 @X0 1 e@30 ]
 [; ;FT60F21X.h: 403: volatile union {
 [; ;FT60F21X.h: 404: struct {
 [; ;FT60F21X.h: 405: unsigned P1DF2 : 1;
@@ -838,7 +889,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _T0ON `Vb ~T0 @X0 1 e@251 ]
 [; ;FT60F21X.h: 417: volatile bit T0ON @ ((unsigned)&T0CON0*8)+3;
 "430
-[v _T0CON0bits `VS36 ~T0 @X0 1 e@31 ]
+[v _T0CON0bits `VS40 ~T0 @X0 1 e@31 ]
 [; ;FT60F21X.h: 420: volatile union {
 [; ;FT60F21X.h: 421: struct {
 [; ;FT60F21X.h: 422: unsigned T0CKSRC0 : 1;
@@ -878,7 +929,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _nPAPU `Vb ~T0 @X0 1 e@1039 ]
 [; ;FT60F21X.h: 447: volatile bit nPAPU @ ((unsigned)&OPTION*8)+7;
 "463
-[v _OPTIONbits `VS39 ~T0 @X0 1 e@129 ]
+[v _OPTIONbits `VS43 ~T0 @X0 1 e@129 ]
 [; ;FT60F21X.h: 449: volatile union {
 [; ;FT60F21X.h: 450: struct {
 [; ;FT60F21X.h: 451: unsigned PS : 3;
@@ -916,7 +967,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _TRISA5 `Vb ~T0 @X0 1 e@1069 ]
 [; ;FT60F21X.h: 474: volatile bit TRISA5 @ ((unsigned)&TRISA*8)+5;
 "488
-[v _TRISAbits `VS42 ~T0 @X0 1 e@133 ]
+[v _TRISAbits `VS46 ~T0 @X0 1 e@133 ]
 [; ;FT60F21X.h: 476: volatile union {
 [; ;FT60F21X.h: 477: struct {
 [; ;FT60F21X.h: 478: unsigned TRISA0 : 1;
@@ -946,7 +997,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _PSRCA51 `Vb ~T0 @X0 1 e@1091 ]
 [; ;FT60F21X.h: 498: volatile bit PSRCA51 @ ((unsigned)&PSRCA*8)+3;
 "511
-[v _PSRCAbits `VS45 ~T0 @X0 1 e@136 ]
+[v _PSRCAbits `VS49 ~T0 @X0 1 e@136 ]
 [; ;FT60F21X.h: 500: volatile union {
 [; ;FT60F21X.h: 501: struct {
 [; ;FT60F21X.h: 502: unsigned PSRCA4 : 2;
@@ -978,7 +1029,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _EEIE `Vb ~T0 @X0 1 e@1127 ]
 [; ;FT60F21X.h: 521: volatile bit EEIE @ ((unsigned)&PIE1*8)+7;
 "533
-[v _PIE1bits `VS48 ~T0 @X0 1 e@140 ]
+[v _PIE1bits `VS52 ~T0 @X0 1 e@140 ]
 [; ;FT60F21X.h: 523: volatile union {
 [; ;FT60F21X.h: 524: struct {
 [; ;FT60F21X.h: 525: unsigned : 1;
@@ -1003,7 +1054,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _LVDDEB `Vb ~T0 @X0 1 e@1130 ]
 [; ;FT60F21X.h: 541: volatile bit LVDDEB @ ((unsigned)&LVDCON*8)+2;
 "552
-[v _LVDCONbits `VS50 ~T0 @X0 1 e@141 ]
+[v _LVDCONbits `VS54 ~T0 @X0 1 e@141 ]
 [; ;FT60F21X.h: 543: volatile union {
 [; ;FT60F21X.h: 544: struct {
 [; ;FT60F21X.h: 545: unsigned LVDM0 : 1;
@@ -1042,7 +1093,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _LVDL3 `Vb ~T0 @X0 1 e@1143 ]
 [; ;FT60F21X.h: 565: volatile bit LVDL3 @ ((unsigned)&PCON*8)+7;
 "582
-[v _PCONbits `VS53 ~T0 @X0 1 e@142 ]
+[v _PCONbits `VS57 ~T0 @X0 1 e@142 ]
 [; ;FT60F21X.h: 567: volatile union {
 [; ;FT60F21X.h: 568: struct {
 [; ;FT60F21X.h: 569: unsigned nBOR : 1;
@@ -1081,7 +1132,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _LFMOD `Vb ~T0 @X0 1 e@1151 ]
 [; ;FT60F21X.h: 593: volatile bit LFMOD @ ((unsigned)&OSCCON*8)+7;
 "610
-[v _OSCCONbits `VS56 ~T0 @X0 1 e@143 ]
+[v _OSCCONbits `VS60 ~T0 @X0 1 e@143 ]
 [; ;FT60F21X.h: 595: volatile union {
 [; ;FT60F21X.h: 596: struct {
 [; ;FT60F21X.h: 597: unsigned : 1;
@@ -1123,7 +1174,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _P1COE `Vb ~T0 @X0 1 e@1159 ]
 [; ;FT60F21X.h: 622: volatile bit P1COE @ ((unsigned)&P1OE*8)+7;
 "639
-[v _P1OEbits `VS59 ~T0 @X0 1 e@144 ]
+[v _P1OEbits `VS63 ~T0 @X0 1 e@144 ]
 [; ;FT60F21X.h: 624: volatile union {
 [; ;FT60F21X.h: 625: struct {
 [; ;FT60F21X.h: 626: unsigned P1A0OE : 1;
@@ -1189,7 +1240,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _WPU5 `Vb ~T0 @X0 1 e@1197 ]
 [; ;FT60F21X.h: 666: volatile bit WPU5 @ ((unsigned)&WPUA*8)+5;
 "691
-[v _WPUAbits `VS62 ~T0 @X0 1 e@149 ]
+[v _WPUAbits `VS66 ~T0 @X0 1 e@149 ]
 [; ;FT60F21X.h: 668: volatile union {
 [; ;FT60F21X.h: 669: struct {
 [; ;FT60F21X.h: 670: unsigned WPUA0 : 1;
@@ -1257,7 +1308,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _IOC5 `Vb ~T0 @X0 1 e@1205 ]
 [; ;FT60F21X.h: 710: volatile bit IOC5 @ ((unsigned)&IOCA*8)+5;
 "735
-[v _IOCAbits `VS67 ~T0 @X0 1 e@150 ]
+[v _IOCAbits `VS71 ~T0 @X0 1 e@150 ]
 [; ;FT60F21X.h: 712: volatile union {
 [; ;FT60F21X.h: 713: struct {
 [; ;FT60F21X.h: 714: unsigned IOCA0 : 1;
@@ -1292,7 +1343,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _PSINKA1 `Vb ~T0 @X0 1 e@1209 ]
 [; ;FT60F21X.h: 742: volatile bit PSINKA1 @ ((unsigned)&PSINKA*8)+1;
 "752
-[v _PSINKAbits `VS72 ~T0 @X0 1 e@151 ]
+[v _PSINKAbits `VS76 ~T0 @X0 1 e@151 ]
 [; ;FT60F21X.h: 744: volatile union {
 [; ;FT60F21X.h: 745: struct {
 [; ;FT60F21X.h: 746: unsigned PSINKA0 : 1;
@@ -1312,7 +1363,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _SCKEN `Vb ~T0 @X0 1 e@1223 ]
 [; ;FT60F21X.h: 759: volatile bit SCKEN @ ((unsigned)&SCKCFG*8)+7;
 "768
-[v _SCKCFGbits `VS75 ~T0 @X0 1 e@152 ]
+[v _SCKCFGbits `VS79 ~T0 @X0 1 e@152 ]
 [; ;FT60F21X.h: 761: volatile union {
 [; ;FT60F21X.h: 762: struct {
 [; ;FT60F21X.h: 763: unsigned : 1;
@@ -1340,7 +1391,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _P1CP `Vb ~T0 @X0 1 e@1231 ]
 [; ;FT60F21X.h: 778: volatile bit P1CP @ ((unsigned)&P1POL*8)+7;
 "789
-[v _P1POLbits `VS77 ~T0 @X0 1 e@153 ]
+[v _P1POLbits `VS81 ~T0 @X0 1 e@153 ]
 [; ;FT60F21X.h: 780: volatile union {
 [; ;FT60F21X.h: 781: struct {
 [; ;FT60F21X.h: 782: unsigned P1A0P : 1;
@@ -1379,7 +1430,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _WREN3 `Vb ~T0 @X0 1 e@1253 ]
 [; ;FT60F21X.h: 808: volatile bit WREN3 @ ((unsigned)&EECON1*8)+5;
 "819
-[v _EECON1bits `VS79 ~T0 @X0 1 e@156 ]
+[v _EECON1bits `VS83 ~T0 @X0 1 e@156 ]
 [; ;FT60F21X.h: 810: volatile union {
 [; ;FT60F21X.h: 811: struct {
 [; ;FT60F21X.h: 812: unsigned RD : 1;
@@ -1397,7 +1448,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _WR `Vb ~T0 @X0 1 e@1256 ]
 [; ;FT60F21X.h: 825: volatile bit WR @ ((unsigned)&EECON2*8)+0;
 "831
-[v _EECON2bits `VS81 ~T0 @X0 1 e@157 ]
+[v _EECON2bits `VS85 ~T0 @X0 1 e@157 ]
 [; ;FT60F21X.h: 827: volatile union {
 [; ;FT60F21X.h: 828: struct {
 [; ;FT60F21X.h: 829: unsigned WR : 1;
@@ -1422,7 +1473,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [v _P1OS `Vb ~T0 @X0 1 e@1268 ]
 [; ;FT60F21X.h: 842: volatile bit P1OS @ ((unsigned)&T2CON1*8)+4;
 "855
-[v _T2CON1bits `VS83 ~T0 @X0 1 e@158 ]
+[v _T2CON1bits `VS87 ~T0 @X0 1 e@158 ]
 [; ;FT60F21X.h: 844: volatile union {
 [; ;FT60F21X.h: 845: struct {
 [; ;FT60F21X.h: 846: unsigned T2CKSRC0 : 1;
@@ -1637,57 +1688,9 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;SYSCFG.h: 157: extern unsigned char __resetbits;
 [; ;SYSCFG.h: 158: extern __bit __powerdown;
 [; ;SYSCFG.h: 159: extern __bit __timeout;
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdlib.h: 7: typedef unsigned short wchar_t;
-[; ;stdlib.h: 15: typedef struct {
-[; ;stdlib.h: 16: int rem;
-[; ;stdlib.h: 17: int quot;
-[; ;stdlib.h: 18: } div_t;
-[; ;stdlib.h: 19: typedef struct {
-[; ;stdlib.h: 20: unsigned rem;
-[; ;stdlib.h: 21: unsigned quot;
-[; ;stdlib.h: 22: } udiv_t;
-[; ;stdlib.h: 23: typedef struct {
-[; ;stdlib.h: 24: long quot;
-[; ;stdlib.h: 25: long rem;
-[; ;stdlib.h: 26: } ldiv_t;
-[; ;stdlib.h: 27: typedef struct {
-[; ;stdlib.h: 28: unsigned long quot;
-[; ;stdlib.h: 29: unsigned long rem;
-[; ;stdlib.h: 30: } uldiv_t;
-[; ;stdlib.h: 53: extern double atof(const char *);
-[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 55: extern int atoi(const char *);
-[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 57: extern long atol(const char *);
-[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 60: extern int rand(void);
-[; ;stdlib.h: 61: extern void srand(unsigned int);
-[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 75: extern void * malloc(size_t);
-[; ;stdlib.h: 76: extern void free(void *);
-[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
-[; ;stdlib.h: 86: extern int atexit(void (*)(void));
-[; ;stdlib.h: 87: extern char * getenv(const char *);
-[; ;stdlib.h: 88: extern char ** environ;
-[; ;stdlib.h: 89: extern int system(char *);
-[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 92: extern int abs(int);
-[; ;stdlib.h: 93: extern long labs(long);
-[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
+[; ;CX588_SOUND.h: 7: void PA2_Level_Change_INITIAL();
+[; ;CX588_SOUND.h: 8: void TIME_OUT_Enter_Sleep(void);
+[; ;CX588_SOUND.h: 9: void Play_Sound(void);
 [; ;CX588.h: 10: typedef enum
 [; ;CX588.h: 11: {
 [; ;CX588.h: 12: SoundLeve_0=0xE0,
@@ -1715,322 +1718,360 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;CX588.h: 38: void CX588_Stop_Sound(void);
 [; ;CX588.h: 39: unsigned char CX588_Get_Busy_State(void);
 "7 CX588_SOUND.C
+[v _ReadAPin `uc ~T0 @X0 1 e ]
+[; ;CX588_SOUND.C: 7: unsigned char ReadAPin;
+"8
 [v _Seed_Val `i ~T0 @X0 1 e ]
 [i _Seed_Val
 -> 0 `i
 ]
-[; ;CX588_SOUND.C: 7: int Seed_Val = 0;
+[; ;CX588_SOUND.C: 8: int Seed_Val = 0;
 "9
-[v _ReadAPin `uc ~T0 @X0 1 e ]
-[; ;CX588_SOUND.C: 9: unsigned char ReadAPin;
-"11
 [v _TIME_OUT `i ~T0 @X0 1 e ]
 [i _TIME_OUT
 -> 0 `i
 ]
-[; ;CX588_SOUND.C: 11: int TIME_OUT = 0;
-[; ;CX588_SOUND.C: 12: void PA2_Level_Change_INITIAL();
-"14
+[; ;CX588_SOUND.C: 9: int TIME_OUT = 0;
+"11
 [v _TIME_OUT_Enter_Sleep `(v ~T0 @X0 1 ef ]
-"15
+"12
 {
-[; ;CX588_SOUND.C: 14: void TIME_OUT_Enter_Sleep(void)
-[; ;CX588_SOUND.C: 15: {
+[; ;CX588_SOUND.C: 11: void TIME_OUT_Enter_Sleep(void)
+[; ;CX588_SOUND.C: 12: {
 [e :U _TIME_OUT_Enter_Sleep ]
 [f ]
-[; ;CX588_SOUND.C: 16: if(CX588_Get_Busy_State() == 1)
-"16
+[; ;CX588_SOUND.C: 13: if(CX588_Get_Busy_State() == 1)
+"13
 [e $ ! == -> ( _CX588_Get_Busy_State ..  `i -> 1 `i 91  ]
-[; ;CX588_SOUND.C: 17: {
-"17
+[; ;CX588_SOUND.C: 14: {
+"14
 {
-[; ;CX588_SOUND.C: 18: TMR2IE = 1;
-"18
+[; ;CX588_SOUND.C: 15: TMR2IE = 1;
+"15
 [e = _TMR2IE -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 19: PEIE=1;
-"19
+[; ;CX588_SOUND.C: 16: PEIE=1;
+"16
 [e = _PEIE -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 20: GIE = 1;
-"20
+[; ;CX588_SOUND.C: 17: GIE = 1;
+"17
 [e = _GIE -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 21: if(TIME_OUT > 5)
-"21
+[; ;CX588_SOUND.C: 18: if(TIME_OUT > 5)
+"18
 [e $ ! > _TIME_OUT -> 5 `i 92  ]
-[; ;CX588_SOUND.C: 22: {
-"22
+[; ;CX588_SOUND.C: 19: {
+"19
 {
-[; ;CX588_SOUND.C: 23: TIME_OUT = 0;
-"23
+[; ;CX588_SOUND.C: 20: TIME_OUT = 0;
+"20
 [e = _TIME_OUT -> 0 `i ]
-[; ;CX588_SOUND.C: 24: TMR2IE = 0;
-"24
+[; ;CX588_SOUND.C: 21: TMR2IE = 0;
+"21
 [e = _TMR2IE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 25: PEIE = 0;
-"25
+[; ;CX588_SOUND.C: 22: PEIE = 0;
+"22
 [e = _PEIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 26: GIE = 0;
-"26
+[; ;CX588_SOUND.C: 23: GIE = 0;
+"23
 [e = _GIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 28: PA2_Level_Change_INITIAL();
-"28
+[; ;CX588_SOUND.C: 25: PA2_Level_Change_INITIAL();
+"25
 [e ( _PA2_Level_Change_INITIAL ..  ]
-[; ;CX588_SOUND.C: 29: asm("sleep");
-"29
+[; ;CX588_SOUND.C: 26: asm("sleep");
+"26
 [; <" sleep ;# ">
-[; ;CX588_SOUND.C: 30: __nop();
-"30
+[; ;CX588_SOUND.C: 27: __nop();
+"27
 [e ( ___nop ..  ]
-"31
+"28
 }
 [e :U 92 ]
-"32
+"29
 }
-[; ;CX588_SOUND.C: 31: }
-[; ;CX588_SOUND.C: 32: }
+[; ;CX588_SOUND.C: 28: }
+[; ;CX588_SOUND.C: 29: }
 [e $U 93  ]
-"33
+"30
 [e :U 91 ]
-[; ;CX588_SOUND.C: 33: else
-[; ;CX588_SOUND.C: 34: {
-"34
+[; ;CX588_SOUND.C: 30: else
+[; ;CX588_SOUND.C: 31: {
+"31
 {
-[; ;CX588_SOUND.C: 35: TIME_OUT = 0;
-"35
+[; ;CX588_SOUND.C: 32: TIME_OUT = 0;
+"32
 [e = _TIME_OUT -> 0 `i ]
-[; ;CX588_SOUND.C: 36: TMR2IE = 0;
-"36
+[; ;CX588_SOUND.C: 33: TMR2IE = 0;
+"33
 [e = _TMR2IE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 37: PEIE = 0;
-"37
+[; ;CX588_SOUND.C: 34: PEIE = 0;
+"34
 [e = _PEIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 38: GIE = 0;
-"38
+[; ;CX588_SOUND.C: 35: GIE = 0;
+"35
 [e = _GIE -> -> 0 `i `b ]
-"39
+"36
 }
 [e :U 93 ]
-[; ;CX588_SOUND.C: 39: }
-[; ;CX588_SOUND.C: 40: }
-"40
+[; ;CX588_SOUND.C: 36: }
+[; ;CX588_SOUND.C: 37: }
+"37
 [e :UE 90 ]
 }
-"42
+"45
 [v _Play_Sound `(v ~T0 @X0 1 ef ]
-"43
+"46
 {
-[; ;CX588_SOUND.C: 42: void Play_Sound(void)
-[; ;CX588_SOUND.C: 43: {
+[; ;CX588_SOUND.C: 45: void Play_Sound(void)
+[; ;CX588_SOUND.C: 46: {
 [e :U _Play_Sound ]
 [f ]
-[; ;CX588_SOUND.C: 44: if(PA2 == 0)
-"44
-[e $ ! == -> _PA2 `i -> 0 `i 95  ]
-[; ;CX588_SOUND.C: 45: {
-"45
-{
-[; ;CX588_SOUND.C: 46: DelayMs(20);
-"46
-[e ( _DelayMs (1 -> -> 20 `i `uc ]
 [; ;CX588_SOUND.C: 47: if(PA2 == 0)
 "47
-[e $ ! == -> _PA2 `i -> 0 `i 96  ]
+[e $ ! == -> _PA2 `i -> 0 `i 95  ]
 [; ;CX588_SOUND.C: 48: {
 "48
 {
-[; ;CX588_SOUND.C: 49: if(CX588_Get_Busy_State())
+[; ;CX588_SOUND.C: 49: DelayMs(20);
 "49
-[e $ ! != -> ( _CX588_Get_Busy_State ..  `i -> -> -> 0 `i `uc `i 97  ]
-[; ;CX588_SOUND.C: 50: {
+[e ( _DelayMs (1 -> -> 20 `i `uc ]
+[; ;CX588_SOUND.C: 50: if(PA2 == 0)
 "50
-{
-[; ;CX588_SOUND.C: 51: CX588_Play_Sound((rand()%8)+1);
+[e $ ! == -> _PA2 `i -> 0 `i 96  ]
+[; ;CX588_SOUND.C: 51: {
 "51
-[e ( _CX588_Play_Sound (1 -> + % ( _rand ..  -> 8 `i -> 1 `i `uc ]
-[; ;CX588_SOUND.C: 52: Seed_Val++;
+{
+[; ;CX588_SOUND.C: 52: if(CX588_Get_Busy_State())
 "52
-[e ++ _Seed_Val -> 1 `i ]
+[e $ ! != -> ( _CX588_Get_Busy_State ..  `i -> -> -> 0 `i `uc `i 97  ]
+[; ;CX588_SOUND.C: 53: {
 "53
+{
+[; ;CX588_SOUND.C: 54: CX588_Play_Sound((rand()%8)+1);
+"54
+[e ( _CX588_Play_Sound (1 -> + % ( _rand ..  -> 8 `i -> 1 `i `uc ]
+[; ;CX588_SOUND.C: 55: Seed_Val++;
+"55
+[e ++ _Seed_Val -> 1 `i ]
+"56
 }
 [e :U 97 ]
-"54
+"57
 }
 [e :U 96 ]
-"55
+"58
 }
 [e :U 95 ]
-[; ;CX588_SOUND.C: 53: }
-[; ;CX588_SOUND.C: 54: }
-[; ;CX588_SOUND.C: 55: }
 [; ;CX588_SOUND.C: 56: }
-"56
+[; ;CX588_SOUND.C: 57: }
+[; ;CX588_SOUND.C: 58: }
+[; ;CX588_SOUND.C: 59: }
+"59
 [e :UE 94 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-[v F1063 `(v ~T0 @X0 1 tf ]
-"64
-[v _ISR `IF1063 ~T0 @X0 1 e ]
-"65
+[v F1065 `(v ~T0 @X0 1 tf ]
+"67
+[v _ISR `IF1065 ~T0 @X0 1 e ]
+"68
 {
-[; ;CX588_SOUND.C: 64: void interrupt ISR(void)
-[; ;CX588_SOUND.C: 65: {
+[; ;CX588_SOUND.C: 67: void interrupt ISR(void)
+[; ;CX588_SOUND.C: 68: {
 [e :U _ISR ]
 [f ]
-[; ;CX588_SOUND.C: 66: if(TMR2IE && TMR2IF)
-"66
-[e $ ! && _TMR2IE _TMR2IF 99  ]
-[; ;CX588_SOUND.C: 67: {
-"67
-{
-[; ;CX588_SOUND.C: 68: TMR2IF = 0;
-"68
-[e = _TMR2IF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 70: if(TIME_OUT < 0xff)
+[; ;CX588_SOUND.C: 70: if(TMR2IE && TMR2IF)
 "70
-[e $ ! < _TIME_OUT -> 255 `i 100  ]
-[; ;CX588_SOUND.C: 71: TIME_OUT++;
+[e $ ! && _TMR2IE _TMR2IF 99  ]
+[; ;CX588_SOUND.C: 71: {
 "71
+{
+[; ;CX588_SOUND.C: 72: TMR2IF = 0;
+"72
+[e = _TMR2IF -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 74: if(TIME_OUT < 0xff)
+"74
+[e $ ! < _TIME_OUT -> 255 `i 100  ]
+[; ;CX588_SOUND.C: 75: TIME_OUT++;
+"75
 [e ++ _TIME_OUT -> 1 `i ]
 [e :U 100 ]
-"72
+"76
 }
 [e :U 99 ]
-[; ;CX588_SOUND.C: 72: }
-[; ;CX588_SOUND.C: 75: if(PAIE && PAIF)
-"75
-[e $ ! && _PAIE _PAIF 101  ]
-[; ;CX588_SOUND.C: 76: {
-"76
-{
-[; ;CX588_SOUND.C: 77: ReadAPin = PORTA;
-"77
-[e = _ReadAPin _PORTA ]
-[; ;CX588_SOUND.C: 78: PAIF = 0;
-"78
-[e = _PAIF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 79: PAIE = 0;
+[; ;CX588_SOUND.C: 76: }
+[; ;CX588_SOUND.C: 79: if(PAIE && PAIF)
 "79
-[e = _PAIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 80: IOCA2 =0;
+[e $ ! && _PAIE _PAIF 101  ]
+[; ;CX588_SOUND.C: 80: {
 "80
-[e = _IOCA2 -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 81: GIE = 1;
+{
+[; ;CX588_SOUND.C: 81: ReadAPin = PORTA;
 "81
-[e = _GIE -> -> 1 `i `b ]
+[e = _ReadAPin _PORTA ]
+[; ;CX588_SOUND.C: 82: PAIF = 0;
 "82
+[e = _PAIF -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 83: PAIE = 0;
+"83
+[e = _PAIE -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 84: IOCA2 =0;
+"84
+[e = _IOCA2 -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 85: GIE = 1;
+"85
+[e = _GIE -> -> 1 `i `b ]
+"86
 }
 [e :U 101 ]
-[; ;CX588_SOUND.C: 82: }
-[; ;CX588_SOUND.C: 83: }
-"83
+[; ;CX588_SOUND.C: 86: }
+[; ;CX588_SOUND.C: 87: }
+"87
 [e :UE 98 ]
 }
-"91
+"95
 [v _PA2_Level_Change_INITIAL `(v ~T0 @X0 1 ef ]
-"92
+"96
 {
-[; ;CX588_SOUND.C: 91: void PA2_Level_Change_INITIAL(void)
-[; ;CX588_SOUND.C: 92: {
+[; ;CX588_SOUND.C: 95: void PA2_Level_Change_INITIAL(void)
+[; ;CX588_SOUND.C: 96: {
 [e :U _PA2_Level_Change_INITIAL ]
 [f ]
-[; ;CX588_SOUND.C: 93: TRISA2 = 1;
-"93
-[e = _TRISA2 -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 94: ReadAPin = PORTA;
-"94
-[e = _ReadAPin _PORTA ]
-[; ;CX588_SOUND.C: 95: PAIF = 0;
-"95
-[e = _PAIF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 96: IOCA2 = 1;
-"96
-[e = _IOCA2 -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 97: PAIE = 1;
+[; ;CX588_SOUND.C: 97: TRISA2 = 1;
 "97
-[e = _PAIE -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 98: }
+[e = _TRISA2 -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 98: ReadAPin = PORTA;
 "98
+[e = _ReadAPin _PORTA ]
+[; ;CX588_SOUND.C: 99: PAIF = 0;
+"99
+[e = _PAIF -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 100: IOCA2 = 1;
+"100
+[e = _IOCA2 -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 101: PAIE = 1;
+"101
+[e = _PAIE -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 102: }
+"102
 [e :UE 102 ]
 }
-"106
-[v _POWER_INITIAL `(v ~T0 @X0 1 ef ]
-"107
-{
-[; ;CX588_SOUND.C: 106: void POWER_INITIAL (void)
-[; ;CX588_SOUND.C: 107: {
-[e :U _POWER_INITIAL ]
-[f ]
-[; ;CX588_SOUND.C: 108: OSCCON = 0B01110001;
-"108
-[e = _OSCCON -> -> 113 `i `uc ]
-[; ;CX588_SOUND.C: 109: INTCON = 0;
-"109
-[e = _INTCON -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 111: OPTION = 0;
+"110
+[v _TIMER2_INITIAL `(v ~T0 @X0 1 ef ]
 "111
-[e = _OPTION -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 112: TRISA = 0B00000100;
+{
+[; ;CX588_SOUND.C: 110: void TIMER2_INITIAL (void)
+[; ;CX588_SOUND.C: 111: {
+[e :U _TIMER2_INITIAL ]
+[f ]
+[; ;CX588_SOUND.C: 112: T2CON0 = 0B01001011;
 "112
-[e = _TRISA -> -> 4 `i `uc ]
-[; ;CX588_SOUND.C: 113: PSRCA = 0;
-"113
-[e = _PSRCA -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 114: PSINKA = 0;
-"114
-[e = _PSINKA -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 115: PORTA = 0B00000000;
-"115
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 116: WPUA = 0B00000100;
+[e = _T2CON0 -> -> 75 `i `uc ]
+[; ;CX588_SOUND.C: 116: T2CON1 = 0B00001000;
 "116
-[e = _WPUA -> -> 4 `i `uc ]
-[; ;CX588_SOUND.C: 117: }
+[e = _T2CON1 -> -> 8 `i `uc ]
+[; ;CX588_SOUND.C: 117: TMR2H = 0;
 "117
+[e = _TMR2H -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 118: TMR2L = 0;
+"118
+[e = _TMR2L -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 119: PR2H = 100;
+"119
+[e = _PR2H -> -> 100 `i `uc ]
+[; ;CX588_SOUND.C: 120: PR2L = 250;
+"120
+[e = _PR2L -> -> 250 `i `uc ]
+[; ;CX588_SOUND.C: 122: TMR2IF = 0;
+"122
+[e = _TMR2IF -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 123: TMR2ON = 1;
+"123
+[e = _TMR2ON -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 124: }
+"124
 [e :UE 103 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"124
-[v _main `(v ~T0 @X0 1 ef ]
-"125
-{
-[; ;CX588_SOUND.C: 124: void main()
-[; ;CX588_SOUND.C: 125: {
-[e :U _main ]
-[f ]
-[; ;CX588_SOUND.C: 126: POWER_INITIAL();
-"126
-[e ( _POWER_INITIAL ..  ]
-[; ;CX588_SOUND.C: 128: CX588_GPIO_Init();
-"128
-[e ( _CX588_GPIO_Init ..  ]
-[; ;CX588_SOUND.C: 129: CX588_SET_Sound_Size(SoundLeve_10);
-"129
-[e ( _CX588_SET_Sound_Size (1 . `E1021 10 ]
-[; ;CX588_SOUND.C: 130: srand(Seed_Val);
-"130
-[e ( _srand (1 -> _Seed_Val `ui ]
-[; ;CX588_SOUND.C: 132: while(1)
 "132
-[e :U 106 ]
-[; ;CX588_SOUND.C: 133: {
+[v _POWER_INITIAL `(v ~T0 @X0 1 ef ]
 "133
 {
-[; ;CX588_SOUND.C: 134: Play_Sound();
+[; ;CX588_SOUND.C: 132: void POWER_INITIAL (void)
+[; ;CX588_SOUND.C: 133: {
+[e :U _POWER_INITIAL ]
+[f ]
+[; ;CX588_SOUND.C: 134: OSCCON = 0B01110001;
 "134
-[e ( _Play_Sound ..  ]
-[; ;CX588_SOUND.C: 135: TIME_OUT_Enter_Sleep();
+[e = _OSCCON -> -> 113 `i `uc ]
+[; ;CX588_SOUND.C: 135: INTCON = 0;
 "135
-[e ( _TIME_OUT_Enter_Sleep ..  ]
-[; ;CX588_SOUND.C: 136: srand(Seed_Val);
-"136
-[e ( _srand (1 -> _Seed_Val `ui ]
+[e = _INTCON -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 137: OPTION = 0;
 "137
-}
-[e :U 105 ]
-"132
-[e $U 106  ]
-[e :U 107 ]
-[; ;CX588_SOUND.C: 137: }
-[; ;CX588_SOUND.C: 138: }
+[e = _OPTION -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 138: TRISA = 0B00000100;
 "138
+[e = _TRISA -> -> 4 `i `uc ]
+[; ;CX588_SOUND.C: 139: PSRCA = 0;
+"139
+[e = _PSRCA -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 140: PSINKA = 0;
+"140
+[e = _PSINKA -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 141: PORTA = 0B00000000;
+"141
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 142: WPUA = 0B00000100;
+"142
+[e = _WPUA -> -> 4 `i `uc ]
+[; ;CX588_SOUND.C: 143: }
+"143
 [e :UE 104 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"150
+[v _main `(v ~T0 @X0 1 ef ]
+"151
+{
+[; ;CX588_SOUND.C: 150: void main()
+[; ;CX588_SOUND.C: 151: {
+[e :U _main ]
+[f ]
+[; ;CX588_SOUND.C: 152: POWER_INITIAL();
+"152
+[e ( _POWER_INITIAL ..  ]
+[; ;CX588_SOUND.C: 153: TIMER2_INITIAL();
+"153
+[e ( _TIMER2_INITIAL ..  ]
+[; ;CX588_SOUND.C: 154: CX588_GPIO_Init();
+"154
+[e ( _CX588_GPIO_Init ..  ]
+[; ;CX588_SOUND.C: 155: CX588_SET_Sound_Size(SoundLeve_10);
+"155
+[e ( _CX588_SET_Sound_Size (1 . `E1026 10 ]
+[; ;CX588_SOUND.C: 156: srand(Seed_Val);
+"156
+[e ( _srand (1 -> _Seed_Val `ui ]
+[; ;CX588_SOUND.C: 158: while(1)
+"158
+[e :U 107 ]
+[; ;CX588_SOUND.C: 159: {
+"159
+{
+[; ;CX588_SOUND.C: 160: Play_Sound();
+"160
+[e ( _Play_Sound ..  ]
+[; ;CX588_SOUND.C: 161: TIME_OUT_Enter_Sleep();
+"161
+[e ( _TIME_OUT_Enter_Sleep ..  ]
+[; ;CX588_SOUND.C: 162: srand(Seed_Val);
+"162
+[e ( _srand (1 -> _Seed_Val `ui ]
+"163
+}
+[e :U 106 ]
+"158
+[e $U 107  ]
+[e :U 108 ]
+[; ;CX588_SOUND.C: 163: }
+[; ;CX588_SOUND.C: 164: }
+"164
+[e :UE 105 ]
 }

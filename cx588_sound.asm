@@ -8,6 +8,7 @@
 		_PEIE		EQU		0BH
 		_GIE		EQU		0BH
 		_TMR2IF		EQU		0CH
+		_TMR2ON		EQU		12H
 		_TRISA2		EQU		85H
 		_TMR2IE		EQU		8CH
 		_IOCA2		EQU		96H
@@ -64,7 +65,7 @@
 		CLRR 	79H 			//0015 	0179
 		CLRR 	7AH 			//0016 	017A
 		CLRR 	STATUS 			//0017 	0103
-		LJUMP 	12CH 			//0018 	392C
+		LJUMP 	131H 			//0018 	3931
 		CLRR 	73H 			//0019 	0173
 		CLRR 	74H 			//001A 	0174
 		CLRR 	75H 			//001B 	0175
@@ -162,7 +163,7 @@
 		BCR 	49H,7 			//0077 	13C9
 		RET		 					//0078 	0004
 
-		//;CX588_SOUND.C: 66: if(TMR2IE && TMR2IF)
+		//;CX588_SOUND.C: 70: if(TMR2IE && TMR2IF)
 		BSR 	STATUS,5 		//0079 	1A83
 		BTSS 	CH,1 			//007A 	1C8C
 		LJUMP 	8BH 			//007B 	388B
@@ -170,11 +171,11 @@
 		BTSS 	CH,1 			//007D 	1C8C
 		LJUMP 	8BH 			//007E 	388B
 
-		//;CX588_SOUND.C: 67: {
-		//;CX588_SOUND.C: 68: TMR2IF = 0;
+		//;CX588_SOUND.C: 71: {
+		//;CX588_SOUND.C: 72: TMR2IF = 0;
 		BCR 	CH,1 			//007F 	108C
 
-		//;CX588_SOUND.C: 70: if(TIME_OUT < 0xff)
+		//;CX588_SOUND.C: 74: if(TIME_OUT < 0xff)
 		LCALL 	9FH 			//0080 	309F
 		BTSS 	STATUS,2 		//0081 	1D03
 		LJUMP 	85H 			//0082 	3885
@@ -183,34 +184,34 @@
 		BTSC 	STATUS,0 		//0085 	1403
 		LJUMP 	8BH 			//0086 	388B
 
-		//;CX588_SOUND.C: 71: TIME_OUT++;
+		//;CX588_SOUND.C: 75: TIME_OUT++;
 		BCR 	STATUS,5 		//0087 	1283
 		INCR	4EH,1 			//0088 	09CE
 		BTSC 	STATUS,2 		//0089 	1503
 		INCR	4FH,1 			//008A 	09CF
 
-		//;CX588_SOUND.C: 72: }
-		//;CX588_SOUND.C: 75: if(PAIE && PAIF)
+		//;CX588_SOUND.C: 76: }
+		//;CX588_SOUND.C: 79: if(PAIE && PAIF)
 		BTSC 	INTCON,3 		//008B 	158B
 		BTSS 	INTCON,0 		//008C 	1C0B
 		LJUMP 	95H 			//008D 	3895
 
-		//;CX588_SOUND.C: 76: {
-		//;CX588_SOUND.C: 77: ReadAPin = PORTA;
+		//;CX588_SOUND.C: 80: {
+		//;CX588_SOUND.C: 81: ReadAPin = PORTA;
 		BCR 	STATUS,5 		//008E 	1283
 		LDR 	5H,0 			//008F 	0805
 
-		//;CX588_SOUND.C: 78: PAIF = 0;
+		//;CX588_SOUND.C: 82: PAIF = 0;
 		BCR 	INTCON,0 		//0090 	100B
 
-		//;CX588_SOUND.C: 79: PAIE = 0;
+		//;CX588_SOUND.C: 83: PAIE = 0;
 		BCR 	INTCON,3 		//0091 	118B
 
-		//;CX588_SOUND.C: 80: IOCA2 =0;
+		//;CX588_SOUND.C: 84: IOCA2 =0;
 		BSR 	STATUS,5 		//0092 	1A83
 		BCR 	16H,2 			//0093 	1116
 
-		//;CX588_SOUND.C: 81: GIE = 1;
+		//;CX588_SOUND.C: 85: GIE = 1;
 		BSR 	INTCON,7 		//0094 	1B8B
 		LDR 	72H,0 			//0095 	0872
 		BCR 	STATUS,5 		//0096 	1283
@@ -229,24 +230,24 @@
 		SUBWR 	7FH,0 			//00A3 	0C7F
 		RET		 					//00A4 	0004
 
-		//;CX588_SOUND.C: 16: if(CX588_Get_Busy_State() == 1)
-		LCALL 	15AH 			//00A5 	315A
+		//;CX588_SOUND.C: 13: if(CX588_Get_Busy_State() == 1)
+		LCALL 	16EH 			//00A5 	316E
 		XORWI 	1H 			//00A6 	2601
 		BTSS 	STATUS,2 		//00A7 	1D03
 		LJUMP 	BBH 			//00A8 	38BB
 
-		//;CX588_SOUND.C: 17: {
-		//;CX588_SOUND.C: 18: TMR2IE = 1;
+		//;CX588_SOUND.C: 14: {
+		//;CX588_SOUND.C: 15: TMR2IE = 1;
 		BSR 	STATUS,5 		//00A9 	1A83
 		BSR 	CH,1 			//00AA 	188C
 
-		//;CX588_SOUND.C: 19: PEIE=1;
+		//;CX588_SOUND.C: 16: PEIE=1;
 		BSR 	INTCON,6 		//00AB 	1B0B
 
-		//;CX588_SOUND.C: 20: GIE = 1;
+		//;CX588_SOUND.C: 17: GIE = 1;
 		BSR 	INTCON,7 		//00AC 	1B8B
 
-		//;CX588_SOUND.C: 21: if(TIME_OUT > 5)
+		//;CX588_SOUND.C: 18: if(TIME_OUT > 5)
 		BCR 	STATUS,5 		//00AD 	1283
 		LCALL 	9FH 			//00AE 	309F
 		BTSS 	STATUS,2 		//00AF 	1D03
@@ -256,29 +257,29 @@
 		BTSS 	STATUS,0 		//00B3 	1C03
 		RET		 					//00B4 	0004
 
-		//;CX588_SOUND.C: 22: {
-		//;CX588_SOUND.C: 23: TIME_OUT = 0;
+		//;CX588_SOUND.C: 19: {
+		//;CX588_SOUND.C: 20: TIME_OUT = 0;
 		BCR 	STATUS,5 		//00B5 	1283
 
-		//;CX588_SOUND.C: 24: TMR2IE = 0;
-		//;CX588_SOUND.C: 25: PEIE = 0;
-		//;CX588_SOUND.C: 26: GIE = 0;
+		//;CX588_SOUND.C: 21: TMR2IE = 0;
+		//;CX588_SOUND.C: 22: PEIE = 0;
+		//;CX588_SOUND.C: 23: GIE = 0;
 		LCALL 	BDH 			//00B6 	30BD
 
-		//;CX588_SOUND.C: 28: PA2_Level_Change_INITIAL();
-		LCALL 	152H 			//00B7 	3152
+		//;CX588_SOUND.C: 25: PA2_Level_Change_INITIAL();
+		LCALL 	166H 			//00B7 	3166
 		SLEEP	 			//00B8 	0002
 
-		//;CX588_SOUND.C: 30: __nop();
+		//;CX588_SOUND.C: 27: __nop();
 		NOP		 					//00B9 	0000
 		RET		 					//00BA 	0004
 
-		//;CX588_SOUND.C: 33: else
-		//;CX588_SOUND.C: 34: {
-		//;CX588_SOUND.C: 35: TIME_OUT = 0;
-		//;CX588_SOUND.C: 36: TMR2IE = 0;
-		//;CX588_SOUND.C: 37: PEIE = 0;
-		//;CX588_SOUND.C: 38: GIE = 0;
+		//;CX588_SOUND.C: 30: else
+		//;CX588_SOUND.C: 31: {
+		//;CX588_SOUND.C: 32: TIME_OUT = 0;
+		//;CX588_SOUND.C: 33: TMR2IE = 0;
+		//;CX588_SOUND.C: 34: PEIE = 0;
+		//;CX588_SOUND.C: 35: GIE = 0;
 		LCALL 	BDH 			//00BB 	30BD
 		RET		 					//00BC 	0004
 		CLRR 	4EH 			//00BD 	014E
@@ -301,11 +302,11 @@
 
 		//;CX588.c: 60: DelayMs(1);
 		LDWI 	1H 			//00C9 	2A01
-		LCALL 	101H 			//00CA 	3101
+		LCALL 	113H 			//00CA 	3113
 
 		//;CX588.c: 61: DelayUs(100);
 		LDWI 	64H 			//00CB 	2A64
-		LCALL 	138H 			//00CC 	3138
+		LCALL 	155H 			//00CC 	3155
 
 		//;CX588.c: 62: PA4 = 0;
 		BCR 	STATUS,5 		//00CD 	1283
@@ -313,7 +314,7 @@
 
 		//;CX588.c: 63: DelayUs(200);
 		LDWI 	C8H 			//00CF 	2AC8
-		LJUMP 	138H 			//00D0 	3938
+		LJUMP 	155H 			//00D0 	3955
 
 		//;CX588.c: 64: }
 		//;CX588.c: 65: else
@@ -323,7 +324,7 @@
 
 		//;CX588.c: 68: DelayUs(200);
 		LDWI 	C8H 			//00D2 	2AC8
-		LCALL 	138H 			//00D3 	3138
+		LCALL 	155H 			//00D3 	3155
 
 		//;CX588.c: 69: PA4 = 0;
 		BCR 	STATUS,5 		//00D4 	1283
@@ -331,42 +332,42 @@
 
 		//;CX588.c: 70: DelayMs(1);
 		LDWI 	1H 			//00D6 	2A01
-		LCALL 	101H 			//00D7 	3101
+		LCALL 	113H 			//00D7 	3113
 
 		//;CX588.c: 71: DelayUs(100);
 		LDWI 	64H 			//00D8 	2A64
-		LJUMP 	138H 			//00D9 	3938
+		LJUMP 	155H 			//00D9 	3955
 
-		//;CX588_SOUND.C: 44: if(PA2 == 0)
+		//;CX588_SOUND.C: 47: if(PA2 == 0)
 		BTSC 	5H,2 			//00DA 	1505
 		RET		 					//00DB 	0004
 
-		//;CX588_SOUND.C: 45: {
-		//;CX588_SOUND.C: 46: DelayMs(20);
+		//;CX588_SOUND.C: 48: {
+		//;CX588_SOUND.C: 49: DelayMs(20);
 		LDWI 	14H 			//00DC 	2A14
-		LCALL 	101H 			//00DD 	3101
+		LCALL 	113H 			//00DD 	3113
 
-		//;CX588_SOUND.C: 47: if(PA2 == 0)
+		//;CX588_SOUND.C: 50: if(PA2 == 0)
 		BCR 	STATUS,5 		//00DE 	1283
 		BTSC 	5H,2 			//00DF 	1505
 		RET		 					//00E0 	0004
 
-		//;CX588_SOUND.C: 48: {
-		//;CX588_SOUND.C: 49: if(CX588_Get_Busy_State())
-		LCALL 	15AH 			//00E1 	315A
+		//;CX588_SOUND.C: 51: {
+		//;CX588_SOUND.C: 52: if(CX588_Get_Busy_State())
+		LCALL 	16EH 			//00E1 	316E
 		XORWI 	0H 			//00E2 	2600
 		BTSC 	STATUS,2 		//00E3 	1503
 		RET		 					//00E4 	0004
 
-		//;CX588_SOUND.C: 50: {
-		//;CX588_SOUND.C: 51: CX588_Play_Sound((rand()%8)+1);
+		//;CX588_SOUND.C: 53: {
+		//;CX588_SOUND.C: 54: CX588_Play_Sound((rand()%8)+1);
 		LCALL 	4CH 			//00E5 	304C
 		LDR 	48H,0 			//00E6 	0848
 		ANDWI 	7H 			//00E7 	2407
 		ADDWI 	1H 			//00E8 	2701
-		LCALL 	11FH 			//00E9 	311F
+		LCALL 	13EH 			//00E9 	313E
 
-		//;CX588_SOUND.C: 52: Seed_Val++;
+		//;CX588_SOUND.C: 55: Seed_Val++;
 		INCR	79H,1 			//00EA 	09F9
 		BTSC 	STATUS,2 		//00EB 	1503
 		INCR	7AH,1 			//00EC 	09FA
@@ -378,7 +379,7 @@
 
 		//;CX588.c: 79: DelayMs(6);
 		LDWI 	6H 			//00F0 	2A06
-		LCALL 	101H 			//00F1 	3101
+		LCALL 	113H 			//00F1 	3113
 
 		//;CX588.c: 81: for (unsigned char i = 0; i < 8; i++)
 		BCR 	STATUS,5 		//00F2 	1283
@@ -404,186 +405,224 @@
 		//;CX588.c: 86: PA4 = 1;
 		BSR 	5H,4 			//00FF 	1A05
 		RET		 					//0100 	0004
-		STR 	75H 			//0101 	01F5
+
+		//;CX588_SOUND.C: 112: T2CON0 = 0B01001011;
+		LDWI 	4BH 			//0101 	2A4B
+		BCR 	STATUS,5 		//0102 	1283
+		STR 	12H 			//0103 	0192
+
+		//;CX588_SOUND.C: 116: T2CON1 = 0B00001000;
+		LDWI 	8H 			//0104 	2A08
+		BSR 	STATUS,5 		//0105 	1A83
+		STR 	1EH 			//0106 	019E
+
+		//;CX588_SOUND.C: 117: TMR2H = 0;
+		BCR 	STATUS,5 		//0107 	1283
+		CLRR 	13H 			//0108 	0113
+
+		//;CX588_SOUND.C: 118: TMR2L = 0;
+		CLRR 	11H 			//0109 	0111
+
+		//;CX588_SOUND.C: 119: PR2H = 100;
+		LDWI 	64H 			//010A 	2A64
+		BSR 	STATUS,5 		//010B 	1A83
+		STR 	12H 			//010C 	0192
+
+		//;CX588_SOUND.C: 120: PR2L = 250;
+		LDWI 	FAH 			//010D 	2AFA
+		STR 	11H 			//010E 	0191
+
+		//;CX588_SOUND.C: 122: TMR2IF = 0;
+		BCR 	STATUS,5 		//010F 	1283
+		BCR 	CH,1 			//0110 	108C
+
+		//;CX588_SOUND.C: 123: TMR2ON = 1;
+		BSR 	12H,2 			//0111 	1912
+		RET		 					//0112 	0004
+		STR 	75H 			//0113 	01F5
 
 		//;CX588.c: 29: unsigned char a,b;
 		//;CX588.c: 30: for(a=0;a<Time;a++)
-		CLRR 	76H 			//0102 	0176
-		LDR 	75H,0 			//0103 	0875
-		SUBWR 	76H,0 			//0104 	0C76
-		BTSC 	STATUS,0 		//0105 	1403
-		RET		 					//0106 	0004
+		CLRR 	76H 			//0114 	0176
+		LDR 	75H,0 			//0115 	0875
+		SUBWR 	76H,0 			//0116 	0C76
+		BTSC 	STATUS,0 		//0117 	1403
+		RET		 					//0118 	0004
 
 		//;CX588.c: 31: {
 		//;CX588.c: 32: for(b=0;b<5;b++)
-		CLRR 	77H 			//0107 	0177
+		CLRR 	77H 			//0119 	0177
 
 		//;CX588.c: 33: {
 		//;CX588.c: 34: DelayUs(98);
-		LDWI 	62H 			//0108 	2A62
-		LCALL 	138H 			//0109 	3138
-		LDWI 	5H 			//010A 	2A05
-		INCR	77H,1 			//010B 	09F7
-		SUBWR 	77H,0 			//010C 	0C77
-		BTSS 	STATUS,0 		//010D 	1C03
-		LJUMP 	108H 			//010E 	3908
-		INCR	76H,1 			//010F 	09F6
-		LJUMP 	103H 			//0110 	3903
+		LDWI 	62H 			//011A 	2A62
+		LCALL 	155H 			//011B 	3155
+		LDWI 	5H 			//011C 	2A05
+		INCR	77H,1 			//011D 	09F7
+		SUBWR 	77H,0 			//011E 	0C77
+		BTSS 	STATUS,0 		//011F 	1C03
+		LJUMP 	11AH 			//0120 	391A
+		INCR	76H,1 			//0121 	09F6
+		LJUMP 	115H 			//0122 	3915
 
-		//;CX588_SOUND.C: 108: OSCCON = 0B01110001;
-		LDWI 	71H 			//0111 	2A71
-		BSR 	STATUS,5 		//0112 	1A83
-		STR 	FH 			//0113 	018F
+		//;CX588_SOUND.C: 134: OSCCON = 0B01110001;
+		LDWI 	71H 			//0123 	2A71
+		BSR 	STATUS,5 		//0124 	1A83
+		STR 	FH 			//0125 	018F
 
-		//;CX588_SOUND.C: 109: INTCON = 0;
-		CLRR 	INTCON 			//0114 	010B
+		//;CX588_SOUND.C: 135: INTCON = 0;
+		CLRR 	INTCON 			//0126 	010B
 
-		//;CX588_SOUND.C: 111: OPTION = 0;
-		CLRR 	1H 			//0115 	0101
+		//;CX588_SOUND.C: 137: OPTION = 0;
+		CLRR 	1H 			//0127 	0101
 
-		//;CX588_SOUND.C: 112: TRISA = 0B00000100;
-		LDWI 	4H 			//0116 	2A04
-		STR 	5H 			//0117 	0185
+		//;CX588_SOUND.C: 138: TRISA = 0B00000100;
+		LDWI 	4H 			//0128 	2A04
+		STR 	5H 			//0129 	0185
 
-		//;CX588_SOUND.C: 113: PSRCA = 0;
-		CLRR 	8H 			//0118 	0108
+		//;CX588_SOUND.C: 139: PSRCA = 0;
+		CLRR 	8H 			//012A 	0108
 
-		//;CX588_SOUND.C: 114: PSINKA = 0;
-		CLRR 	17H 			//0119 	0117
+		//;CX588_SOUND.C: 140: PSINKA = 0;
+		CLRR 	17H 			//012B 	0117
 
-		//;CX588_SOUND.C: 115: PORTA = 0B00000000;
-		BCR 	STATUS,5 		//011A 	1283
-		CLRR 	5H 			//011B 	0105
+		//;CX588_SOUND.C: 141: PORTA = 0B00000000;
+		BCR 	STATUS,5 		//012C 	1283
+		CLRR 	5H 			//012D 	0105
 
-		//;CX588_SOUND.C: 116: WPUA = 0B00000100;
-		BSR 	STATUS,5 		//011C 	1A83
-		STR 	15H 			//011D 	0195
-		RET		 					//011E 	0004
-		STR 	42H 			//011F 	01C2
+		//;CX588_SOUND.C: 142: WPUA = 0B00000100;
+		BSR 	STATUS,5 		//012E 	1A83
+		STR 	15H 			//012F 	0195
+		RET		 					//0130 	0004
+
+		//;CX588_SOUND.C: 152: POWER_INITIAL();
+		LCALL 	123H 			//0131 	3123
+
+		//;CX588_SOUND.C: 153: TIMER2_INITIAL();
+		LCALL 	101H 			//0132 	3101
+
+		//;CX588_SOUND.C: 154: CX588_GPIO_Init();
+		LCALL 	14BH 			//0133 	314B
+
+		//;CX588_SOUND.C: 155: CX588_SET_Sound_Size(SoundLeve_10);
+		LDWI 	EAH 			//0134 	2AEA
+		LCALL 	172H 			//0135 	3172
+
+		//;CX588_SOUND.C: 156: srand(Seed_Val);
+		LDR 	7AH,0 			//0136 	087A
+		STR 	74H 			//0137 	01F4
+		LDR 	79H,0 			//0138 	0879
+		STR 	73H 			//0139 	01F3
+		LCALL 	15EH 			//013A 	315E
+
+		//;CX588_SOUND.C: 159: {
+		//;CX588_SOUND.C: 160: Play_Sound();
+		//;CX588_SOUND.C: 158: while(1)
+		LCALL 	DAH 			//013B 	30DA
+
+		//;CX588_SOUND.C: 161: TIME_OUT_Enter_Sleep();
+		LCALL 	A5H 			//013C 	30A5
+		LJUMP 	136H 			//013D 	3936
+		STR 	42H 			//013E 	01C2
 
 		//;CX588.c: 98: if (Sound_Code < 0xCF)
-		LDWI 	CFH 			//0120 	2ACF
-		SUBWR 	42H,0 			//0121 	0C42
-		BTSC 	STATUS,0 		//0122 	1403
-		RET		 					//0123 	0004
+		LDWI 	CFH 			//013F 	2ACF
+		SUBWR 	42H,0 			//0140 	0C42
+		BTSC 	STATUS,0 		//0141 	1403
+		RET		 					//0142 	0004
 
 		//;CX588.c: 99: {
 		//;CX588.c: 100: if(CX588_Get_Busy_State())
-		LCALL 	15AH 			//0124 	315A
-		XORWI 	0H 			//0125 	2600
-		BTSC 	STATUS,2 		//0126 	1503
-		RET		 					//0127 	0004
+		LCALL 	16EH 			//0143 	316E
+		XORWI 	0H 			//0144 	2600
+		BTSC 	STATUS,2 		//0145 	1503
+		RET		 					//0146 	0004
 
 		//;CX588.c: 101: {
 		//;CX588.c: 102: CX588_OneWire_WriteByte(Sound_Code);
-		LDR 	42H,0 			//0128 	0842
-		LCALL 	EEH 			//0129 	30EE
+		LDR 	42H,0 			//0147 	0842
+		LCALL 	EEH 			//0148 	30EE
 
 		//;CX588.c: 103: DelayMs(20);
-		LDWI 	14H 			//012A 	2A14
-		LJUMP 	101H 			//012B 	3901
+		LDWI 	14H 			//0149 	2A14
+		LJUMP 	113H 			//014A 	3913
 
-		//;CX588_SOUND.C: 126: POWER_INITIAL();
-		LCALL 	111H 			//012C 	3111
+		//;CX588.c: 41: TRISA |= 0b00000001;
+		BSR 	STATUS,5 		//014B 	1A83
+		BSR 	5H,0 			//014C 	1805
 
-		//;CX588_SOUND.C: 128: CX588_GPIO_Init();
-		LCALL 	141H 			//012D 	3141
+		//;CX588.c: 42: PSRCA |= 0b00000000;
+		LDR 	8H,0 			//014D 	0808
 
-		//;CX588_SOUND.C: 129: CX588_SET_Sound_Size(SoundLeve_10);
-		LDWI 	EAH 			//012E 	2AEA
-		LCALL 	15EH 			//012F 	315E
+		//;CX588.c: 48: PSINKA |= 0b00000000;
+		LDR 	17H,0 			//014E 	0817
 
-		//;CX588_SOUND.C: 130: srand(Seed_Val);
-		LDR 	7AH,0 			//0130 	087A
-		STR 	74H 			//0131 	01F4
-		LDR 	79H,0 			//0132 	0879
-		STR 	73H 			//0133 	01F3
-		LCALL 	14AH 			//0134 	314A
+		//;CX588.c: 49: PORTA |= 0b00010001;
+		LDWI 	11H 			//014F 	2A11
+		BCR 	STATUS,5 		//0150 	1283
+		IORWR 	5H,1 			//0151 	0385
 
-		//;CX588_SOUND.C: 133: {
-		//;CX588_SOUND.C: 134: Play_Sound();
-		//;CX588_SOUND.C: 132: while(1)
-		LCALL 	DAH 			//0135 	30DA
-
-		//;CX588_SOUND.C: 135: TIME_OUT_Enter_Sleep();
-		LCALL 	A5H 			//0136 	30A5
-		LJUMP 	130H 			//0137 	3930
-		STR 	73H 			//0138 	01F3
+		//;CX588.c: 50: WPUA |= 0b00000001;
+		BSR 	STATUS,5 		//0152 	1A83
+		BSR 	15H,0 			//0153 	1815
+		RET		 					//0154 	0004
+		STR 	73H 			//0155 	01F3
 
 		//;CX588.c: 14: unsigned char a;
 		//;CX588.c: 15: for(a=0;a<Time;a++)
-		CLRR 	74H 			//0139 	0174
-		LDR 	73H,0 			//013A 	0873
-		SUBWR 	74H,0 			//013B 	0C74
-		BTSC 	STATUS,0 		//013C 	1403
-		RET		 					//013D 	0004
+		CLRR 	74H 			//0156 	0174
+		LDR 	73H,0 			//0157 	0873
+		SUBWR 	74H,0 			//0158 	0C74
+		BTSC 	STATUS,0 		//0159 	1403
+		RET		 					//015A 	0004
 
 		//;CX588.c: 16: {
 		//;CX588.c: 17: __nop();
-		NOP		 					//013E 	0000
-		INCR	74H,1 			//013F 	09F4
-		LJUMP 	13AH 			//0140 	393A
+		NOP		 					//015B 	0000
+		INCR	74H,1 			//015C 	09F4
+		LJUMP 	157H 			//015D 	3957
 
-		//;CX588.c: 41: TRISA |= 0b00000001;
-		BSR 	5H,0 			//0141 	1805
+		//;CX588_SOUND.C: 162: srand(Seed_Val);
+		LDR 	73H,0 			//015E 	0873
+		BCR 	STATUS,5 		//015F 	1283
+		STR 	4AH 			//0160 	01CA
+		LDR 	74H,0 			//0161 	0874
+		STR 	4BH 			//0162 	01CB
+		CLRR 	4CH 			//0163 	014C
+		CLRR 	4DH 			//0164 	014D
+		RET		 					//0165 	0004
 
-		//;CX588.c: 42: PSRCA |= 0b00000000;
-		LDR 	8H,0 			//0142 	0808
+		//;CX588_SOUND.C: 97: TRISA2 = 1;
+		BSR 	5H,2 			//0166 	1905
 
-		//;CX588.c: 48: PSINKA |= 0b00000000;
-		LDR 	17H,0 			//0143 	0817
+		//;CX588_SOUND.C: 98: ReadAPin = PORTA;
+		BCR 	STATUS,5 		//0167 	1283
+		LDR 	5H,0 			//0168 	0805
 
-		//;CX588.c: 49: PORTA |= 0b00010001;
-		LDWI 	11H 			//0144 	2A11
-		BCR 	STATUS,5 		//0145 	1283
-		IORWR 	5H,1 			//0146 	0385
+		//;CX588_SOUND.C: 99: PAIF = 0;
+		BCR 	INTCON,0 		//0169 	100B
 
-		//;CX588.c: 50: WPUA |= 0b00000001;
-		BSR 	STATUS,5 		//0147 	1A83
-		BSR 	15H,0 			//0148 	1815
-		RET		 					//0149 	0004
+		//;CX588_SOUND.C: 100: IOCA2 = 1;
+		BSR 	STATUS,5 		//016A 	1A83
+		BSR 	16H,2 			//016B 	1916
 
-		//;CX588_SOUND.C: 136: srand(Seed_Val);
-		LDR 	73H,0 			//014A 	0873
-		BCR 	STATUS,5 		//014B 	1283
-		STR 	4AH 			//014C 	01CA
-		LDR 	74H,0 			//014D 	0874
-		STR 	4BH 			//014E 	01CB
-		CLRR 	4CH 			//014F 	014C
-		CLRR 	4DH 			//0150 	014D
-		RET		 					//0151 	0004
-
-		//;CX588_SOUND.C: 93: TRISA2 = 1;
-		BSR 	5H,2 			//0152 	1905
-
-		//;CX588_SOUND.C: 94: ReadAPin = PORTA;
-		BCR 	STATUS,5 		//0153 	1283
-		LDR 	5H,0 			//0154 	0805
-
-		//;CX588_SOUND.C: 95: PAIF = 0;
-		BCR 	INTCON,0 		//0155 	100B
-
-		//;CX588_SOUND.C: 96: IOCA2 = 1;
-		BSR 	STATUS,5 		//0156 	1A83
-		BSR 	16H,2 			//0157 	1916
-
-		//;CX588_SOUND.C: 97: PAIE = 1;
-		BSR 	INTCON,3 		//0158 	198B
-		RET		 					//0159 	0004
+		//;CX588_SOUND.C: 101: PAIE = 1;
+		BSR 	INTCON,3 		//016C 	198B
+		RET		 					//016D 	0004
 
 		//;CX588.c: 117: if(PA0)
-		BCR 	STATUS,5 		//015A 	1283
-		BTSC 	5H,0 			//015B 	1405
+		BCR 	STATUS,5 		//016E 	1283
+		BTSC 	5H,0 			//016F 	1405
 
 		//;CX588.c: 118: return 1;
-		RETW 	1H 			//015C 	2101
+		RETW 	1H 			//0170 	2101
 
 		//;CX588.c: 119: else
 		//;CX588.c: 120: return 0;
-		RETW 	0H 			//015D 	2100
-		BCR 	STATUS,5 		//015E 	1283
-		STR 	42H 			//015F 	01C2
+		RETW 	0H 			//0171 	2100
+		BCR 	STATUS,5 		//0172 	1283
+		STR 	42H 			//0173 	01C2
 
 		//;CX588.c: 92: CX588_OneWire_WriteByte(Sound_Code);
-		LJUMP 	EEH 			//0160 	38EE
+		LJUMP 	EEH 			//0174 	38EE
 			END

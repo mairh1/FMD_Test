@@ -1,15 +1,12 @@
-#include "SYSCFG.h"
 #include <stdlib.h>  // 包含rand()和srand()函数
+#include "SYSCFG.h"
 #include "FT60F21X.h"
+#include "CX588_SOUND.h"
 #include "CX588.h"
 
-#define VIBRATION_BUT PA2 //震动开关按键
-int Seed_Val = 0;	//假随机数种子
-
 unsigned char ReadAPin;
-#define TIME_FLAG 5 //超时时间
+int Seed_Val = 0;	//假随机数种子
 int TIME_OUT = 0;	//空闲计数值
-void PA2_Level_Change_INITIAL();
 
 void TIME_OUT_Enter_Sleep(void)
 {
@@ -39,6 +36,12 @@ void TIME_OUT_Enter_Sleep(void)
 	}
 }
 
+/*-------------------------------------------------
+ * 函数名：Play_Sound
+ * 功能：  CX588播放声音
+ * 输入：  无
+ * 输出：  无
+ --------------------------------------------------*/
 void Play_Sound(void)
 {
 	if(VIBRATION_BUT == 0)
@@ -63,7 +66,8 @@ void Play_Sound(void)
  --------------------------------------------------*/	
 void interrupt ISR(void)
 {
-	if(TMR2IE && TMR2IF)			//1s中断一次 = 1Hz
+	//1s中断一次 = 1Hz
+	if(TMR2IE && TMR2IF)			
 	{
 		TMR2IF = 0;
         
@@ -98,6 +102,28 @@ void PA2_Level_Change_INITIAL(void)
 }
 
 /*-------------------------------------------------
+ * 函数名：TIMER2_INITIAL
+ * 功能：  初始化设置定时器1 
+ * 设置Timer2定时时长 = (1/系统时钟频率)*4*预分频值*后分频值*PR2
+ *					  = (1/16000000)*4*16*10*25000=1000000us=1S
+ -------------------------------------------------*/
+void TIMER2_INITIAL (void) 
+{
+	T2CON0 = 0B01001011;
+	//Bit[6:3]=0000,T2时钟后分频比1:10
+    //Bit[1:0]=01,T2时钟预分频比1:16
+    
+    T2CON1 = 0B00001000;			//Bit[2:0] 000:	指令周期 100:HIRC Timer2时钟源选择	
+    TMR2H = 0;
+	TMR2L = 0;  					//TMR2赋初值
+    PR2H = 100;
+	PR2L = 250; 					//设置PR2=25000
+    
+	TMR2IF = 0;						//清TIMER2中断标志
+	TMR2ON = 1;						//使能TIMER2启动
+}
+
+/*-------------------------------------------------
  * 函数名：POWER_INITIAL
  * 功能： 上电系统初始化
  * 输入：  无
@@ -124,7 +150,7 @@ void POWER_INITIAL (void)
 void main()
 {
  	POWER_INITIAL();		//系统初始化
-
+	TIMER2_INITIAL();		//初始化定时器
 	CX588_GPIO_Init();		//初始化CX588
     CX588_SET_Sound_Size(SoundLeve_10);
     srand(Seed_Val);		//生成随机数;
@@ -133,6 +159,6 @@ void main()
 	{
 		Play_Sound();  
         TIME_OUT_Enter_Sleep();
-        srand(Seed_Val);		//生成随机数;    
+        srand(Seed_Val);		//生成随机数种子;    
 	}   	
 }
