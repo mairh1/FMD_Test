@@ -6,7 +6,38 @@
 #define VIBRATION_BUT PA2 //震动开关按键
 int Seed_Val = 0;	//假随机数种子
 
+unsigned char ReadAPin;
+#define TIME_FLAG 5 //超时时间
+int TIME_OUT = 0;	//空闲计数值
+void PA2_Level_Change_INITIAL();
 
+void TIME_OUT_Enter_Sleep(void)
+{
+	if(CX588_Get_Busy_State() == 1)
+	{	
+		TMR2IE = 1;						//使能TIMER2的中断  
+		PEIE=1;    						//使能外设中断
+		GIE = 1;   						//使能全局中断
+		if(TIME_OUT > TIME_FLAG)
+		{
+			TIME_OUT = 0;//清空计数值
+			TMR2IE = 0;						//失能TIMER2的中断  
+			PEIE = 0;    					//失能外设中断
+			GIE = 0;   						//失能全局中断
+			
+            PA2_Level_Change_INITIAL();
+			SLEEP(); 						//进入休眠模式
+			NOP();							//SLEEP()后面要接NOP()
+		}
+	}
+	else
+	{
+		TIME_OUT = 0;//清空计数值
+		TMR2IE = 0;						//失能TIMER2的中断  
+		PEIE = 0;    					//失能外设中断
+		GIE = 0;   						//失能全局中断
+	}
+}
 
 void Play_Sound(void)
 {
@@ -32,7 +63,38 @@ void Play_Sound(void)
  --------------------------------------------------*/	
 void interrupt ISR(void)
 {
+	if(TMR2IE && TMR2IF)			//1s中断一次 = 1Hz
+	{
+		TMR2IF = 0;
+        
+		if(TIME_OUT < 0xff)
+			TIME_OUT++;   
+	} 
+         
+    //PA电平变化中
+	if(PAIE && PAIF)		
+    {
+		ReadAPin = PORTA; 		//读取PORTA数据清PAIF标志
+		PAIF = 0;  				//清PAIF标志位
+		PAIE = 0;  				//暂先禁止PA0中断
+		IOCA2 =0;  				//禁止PA0电平变化中断
+        GIE = 1;   						//使能全局中断
+    }
+}
 
+/*-------------------------------------------------
+ * 函数名: PA2_Level_Change_INITIAL
+ * 功能：  PA端口(PA2)电平变化中断初始化
+ * 输入：  无
+ * 输出：  无
+--------------------------------------------------*/
+void PA2_Level_Change_INITIAL(void)
+{
+	TRISA2 = 1; 			     	//设置 PA2 输入
+	ReadAPin = PORTA;	     		//清PA电平变化中断
+	PAIF = 0;   			     	//清PA INT中断标志位
+    IOCA2 = 1;  			     	//使能PA2电平变化中断
+	PAIE = 1;   			     	//使能PA INT中断
 }
 
 /*-------------------------------------------------
@@ -70,6 +132,7 @@ void main()
 	while(1)
 	{
 		Play_Sound();  
+        TIME_OUT_Enter_Sleep();
         srand(Seed_Val);		//生成随机数;    
 	}   	
 }

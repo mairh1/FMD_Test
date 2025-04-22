@@ -1059,7 +1059,38 @@ unsigned char CX588_Get_Busy_State(void);
 # 7 "CX588_SOUND.C"
 int Seed_Val = 0;
 
+unsigned char ReadAPin;
 
+int TIME_OUT = 0;
+void PA2_Level_Change_INITIAL();
+
+void TIME_OUT_Enter_Sleep(void)
+{
+if(CX588_Get_Busy_State() == 1)
+{
+TMR2IE = 1;
+PEIE=1;
+GIE = 1;
+if(TIME_OUT > 5)
+{
+TIME_OUT = 0;
+TMR2IE = 0;
+PEIE = 0;
+GIE = 0;
+
+PA2_Level_Change_INITIAL();
+asm("sleep");
+__nop();
+}
+}
+else
+{
+TIME_OUT = 0;
+TMR2IE = 0;
+PEIE = 0;
+GIE = 0;
+}
+}
 
 void Play_Sound(void)
 {
@@ -1077,13 +1108,39 @@ Seed_Val++;
 }
 }
 
-# 33
+# 64
 void interrupt ISR(void)
 {
+if(TMR2IE && TMR2IF)
+{
+TMR2IF = 0;
 
+if(TIME_OUT < 0xff)
+TIME_OUT++;
 }
 
-# 44
+
+if(PAIE && PAIF)
+{
+ReadAPin = PORTA;
+PAIF = 0;
+PAIE = 0;
+IOCA2 =0;
+GIE = 1;
+}
+}
+
+# 91
+void PA2_Level_Change_INITIAL(void)
+{
+TRISA2 = 1;
+ReadAPin = PORTA;
+PAIF = 0;
+IOCA2 = 1;
+PAIE = 1;
+}
+
+# 106
 void POWER_INITIAL (void)
 {
 OSCCON = 0B01110001;
@@ -1097,7 +1154,7 @@ PORTA = 0B00000000;
 WPUA = 0B00000100;
 }
 
-# 62
+# 124
 void main()
 {
 POWER_INITIAL();
@@ -1109,6 +1166,7 @@ srand(Seed_Val);
 while(1)
 {
 Play_Sound();
+TIME_OUT_Enter_Sleep();
 srand(Seed_Val);
 }
 }

@@ -4,8 +4,8 @@ Linker command line:
 
 --edf=C:\Program Files (x86)\CCompiler\Compiler\data\dat\en_msgs.txt -cs \
   -h+cx588_sound.sym --cmf=cx588_sound.cmf -z -QFT60F21X \
-  -oC:\Users\Mai\AppData\Local\Temp\s8vg.2 -Mcx588_sound.map -E1 -ver=XC8 \
-  -ASTACK=04Ah-06fh -pstack=STACK -ACODE=00h-03FFh -ASTRCODE=00h-03FFh \
+  -oC:\Users\Mai\AppData\Local\Temp\sfos.2 -Mcx588_sound.map -E1 -ver=XC8 \
+  -ASTACK=050h-06fh -pstack=STACK -ACODE=00h-03FFh -ASTRCODE=00h-03FFh \
   -ASTRING=00h-0FFhx4 -ACONST=00h-0FFhx4 -AENTRY=00h-0FFhx4 \
   -ACOMMON=070h-07Fh -ABANK0=040h-06Fh -ARAM=040h-06Fh -AABS1=040h-07Fh \
   -ASFR0=00h-03Fh -ASFR1=080h-0EFh \
@@ -13,7 +13,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-07Fh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\Mai\AppData\Local\Temp\s8vg.obj cx588_sound.obj 
+  -DENTRY=2 -k C:\Users\Mai\AppData\Local\Temp\sfos.obj cx588_sound.obj 
 
 Object code version is 3.11
 
@@ -22,54 +22,59 @@ Machine type is FT60F21X
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Mai\AppData\Local\Temp\s8vg.obj
-                end_init                              A        A        1        8       0
+C:\Users\Mai\AppData\Local\Temp\sfos.obj
+                end_init                              D        D        1        8       0
                 reset_vec                             0        0        1        0       0
-cx588_sound.obj cinit                                 B        B        9        8       0
-                intentry                              4        4        6        8       0
-                text14                              101      101        7        8       0
-                text13                               F0       F0        9        8       0
-                text12                               E7       E7        9        8       0
-                text11                               B1       B1       10        8       0
-                text10                               74       74       17        8       0
-                text9                                9F       9F       12        8       0
-                text8                               10B      10B        3        8       0
-                text7                                C1       C1        E        8       0
-                text6                               108      108        3        8       0
-                text5                                CF       CF        D        8       0
-                text4                                14       14       33        8       0
-                text3                                47       47       2D        8       0
-                text2                                8B       8B       14        8       0
-                text1                                F9       F9        8        8       0
-                maintext                             DC       DC        B        8       0
-                cstackBANK0                          40       40        6       40       1
-                cstackCOMMON                         70       70        A       70       1
-                dataBANK0                            46       46        4       40       1
-                bssCOMMON                            7A       7A        2       70       1
+cx588_sound.obj cinit                                 E        E        B        8       0
+                intentry                              4        4        9        8       0
+                text16                               79       79       2C        8       0
+                text15                              141      141        9        8       0
+                text14                              138      138        9        8       0
+                text13                              101      101       10        8       0
+                text12                               C4       C4       16        8       0
+                text11                               EE       EE       13        8       0
+                text10                              15E      15E        3        8       0
+                text9                               111      111        E        8       0
+                text8                               15A      15A        4        8       0
+                text7                               11F      11F        D        8       0
+                text6                                19       19       33        8       0
+                text5                                4C       4C       2D        8       0
+                text4                                DA       DA       14        8       0
+                text3                               152      152        8        8       0
+                text2                                A5       A5       1F        8       0
+                text1                               14A      14A        8        8       0
+                maintext                            12C      12C        C        8       0
+                cstackBANK0                          40       40        A       40       1
+                cstackCOMMON                         70       70        9       70       1
+                dataBANK0                            4A       4A        4       40       1
+                bssBANK0                             4E       4E        2       40       1
+                bssCOMMON                            79       79        2       70       1
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
-                end_init                              A        A        1         0
-                cinit                                 B        B        9         0
-                intentry                              4        4        6         0
+                end_init                              D        D        1         0
+                cinit                                 E        E        B         0
+                intentry                              4        4        9         0
                 reset_vec                             0        0        1         0
-                text14                              101      101        7         0
-                text13                               F0       F0        9         0
-                text12                               E7       E7        9         0
-                text11                               B1       B1       10         0
-                text10                               74       74       17         0
-                text9                                9F       9F       12         0
-                text8                               10B      10B        3         0
-                text7                                C1       C1        E         0
-                text6                               108      108        3         0
-                text5                                CF       CF        D         0
-                text4                                14       14       33         0
-                text3                                47       47       2D         0
-                text2                                8B       8B       14         0
-                text1                                F9       F9        8         0
-                maintext                             DC       DC        B         0
+                text16                               79       79       2C         0
+                text15                              141      141        9         0
+                text14                              138      138        9         0
+                text13                              101      101       10         0
+                text12                               C4       C4       16         0
+                text11                               EE       EE       13         0
+                text10                              15E      15E        3         0
+                text9                               111      111        E         0
+                text8                               15A      15A        4         0
+                text7                               11F      11F        D         0
+                text6                                19       19       33         0
+                text5                                4C       4C       2D         0
+                text4                                DA       DA       14         0
+                text3                               152      152        8         0
+                text2                                A5       A5       1F         0
+                text1                               14A      14A        8         0
+                maintext                            12C      12C        C         0
 
         CLASS   STRCODE        
 
@@ -80,12 +85,13 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         70       70        A         1
-                bssCOMMON                            7A       7A        2         1
+                cstackCOMMON                         70       70        9         1
+                bssCOMMON                            79       79        2         1
 
         CLASS   BANK0          
-                cstackBANK0                          40       40        6         1
-                dataBANK0                            46       46        4         1
+                cstackBANK0                          40       40        A         1
+                dataBANK0                            4A       4A        4         1
+                bssBANK0                             4E       4E        2         1
 
         CLASS   RAM            
 
@@ -109,229 +115,253 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000001  000001         0       0  CODE        2
-                intentry                       000004  00010A  00010E         8       0  CODE        2
-                cstackBANK0                    000040  00000A  00004A        40       1  BANK0       1
-                cstackCOMMON                   000070  00000C  00007C        70       1  COMMON      1
+                intentry                       000004  00015D  000161         8       0  CODE        2
+                cstackBANK0                    000040  000010  000050        40       1  BANK0       1
+                cstackCOMMON                   000070  00000B  00007B        70       1  COMMON      1
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            04A-06F            26           1
+        BANK0            050-06F            20           1
         CODE             001-003             3           2
-                         10E-3FF           2F2
-        COMMON           07C-07D             2           1
+                         161-3FF           29F
+        COMMON           07B-07D             3           1
         CONFIG           2007-2007             1           2
         CONST            001-003             3           2
-                         10E-3FF           100
+                         161-3FF           100
         EEDATA           2100-217F            80           2
         ENTRY            001-003             3           2
-                         10E-3FF           100
+                         161-3FF           100
         IDLOC            2000-2003             4           2
-        RAM              04A-06F            26           1
+        RAM              050-06F            20           1
         SFR0             000-03F            40           1
         SFR1             080-0EF            70           1
-        STACK            04A-06F            26           1
+        STACK            050-06F            20           1
         STRCODE          001-003             3           2
-                         10E-3FF           2F2
+                         161-3FF           29F
         STRING           001-003             3           2
-                         10E-3FF           100
+                         161-3FF           100
 
                                   Symbol Table
 
-?___lmul                          cstackCOMMON 072
-?_rand                            cstackBANK0  044
-CX588_OneWire_WriteBit@bit_bit    cstackCOMMON 077
-CX588_OneWire_WriteByte@byte_byte cstackCOMMON 078
-CX588_OneWire_WriteByte@i         cstackCOMMON 079
-CX588_Play_Sound@Sound_Code       cstackBANK0  040
-CX588_SET_Sound_Size@Sound_Code   cstackBANK0  040
-DelayMs@Time                      cstackCOMMON 074
-DelayMs@a                         cstackCOMMON 075
-DelayMs@b                         cstackCOMMON 076
-DelayUs@Time                      cstackCOMMON 072
-DelayUs@a                         cstackCOMMON 073
-_CX588_GPIO_Init                  text13       0F0
-_CX588_Get_Busy_State             text6        108
-_CX588_OneWire_WriteBit           text10       074
-_CX588_OneWire_WriteByte          text9        09F
-_CX588_Play_Sound                 text5        0CF
-_CX588_SET_Sound_Size             text8        10B
-_DelayMs                          text11       0B1
-_DelayUs                          text12       0E7
-_INTCON                           (abs)        00B
-_ISR                              text14       101
-_OPTION                           (abs)        081
-_OSCCON                           (abs)        08F
-_PA0                              (abs)        028
-_PA2                              (abs)        02A
-_PA4                              (abs)        02C
-_PORTA                            (abs)        005
-_POWER_INITIAL                    text7        0C1
-_PSINKA                           (abs)        097
-_PSRCA                            (abs)        088
-_Play_Sound                       text2        08B
-_Seed_Val                         bssCOMMON    07A
-_TRISA                            (abs)        085
-_WPUA                             (abs)        095
-__Habs1                           abs1         000
-__Hbank0                          bank0        000
-__Hbank1                          bank1        000
-__HbssCOMMON                      bssCOMMON    000
-__Hcinit                          cinit        014
-__Hclrtext                        clrtext      000
-__Hcode                           code         000
-__Hcommon                         common       000
-__Hconfig                         config       000
-__HcstackBANK0                    cstackBANK0  000
-__HcstackCOMMON                   cstackCOMMON 000
-__HdataBANK0                      dataBANK0    000
-__Heeprom_data                    eeprom_data  000
-__Hend_init                       end_init     00B
-__Hfunctab                        functab      000
-__HidataBANK0                     idataBANK0   000
-__Hidloc                          idloc        000
-__Hinit                           init         00A
-__Hintentry                       intentry     00A
-__Hmaintext                       maintext     000
-__Hpa_nodes0                      pa_nodes0    000
-__Hpowerup                        powerup      000
-__Hram                            ram          000
-__Hreset_vec                      reset_vec    001
-__Hsfr0                           sfr0         000
-__Hsfr1                           sfr1         000
-__Hspace_0                        (abs)        10E
-__Hspace_1                        (abs)        07C
-__Hspace_2                        (abs)        000
-__Hspace_3                        (abs)        000
-__Hstack                          stack        000
-__Hstrings                        strings      000
-__Htext                           text         000
-__Labs1                           abs1         000
-__Lbank0                          bank0        000
-__Lbank1                          bank1        000
-__LbssCOMMON                      bssCOMMON    000
-__Lcinit                          cinit        00B
-__Lclrtext                        clrtext      000
-__Lcode                           code         000
-__Lcommon                         common       000
-__Lconfig                         config       000
-__LcstackBANK0                    cstackBANK0  000
-__LcstackCOMMON                   cstackCOMMON 000
-__LdataBANK0                      dataBANK0    000
-__Leeprom_data                    eeprom_data  000
-__Lend_init                       end_init     00A
-__Lfunctab                        functab      000
-__LidataBANK0                     idataBANK0   000
-__Lidloc                          idloc        000
-__Linit                           init         00A
-__Lintentry                       intentry     004
-__Lmaintext                       maintext     000
-__Lpa_nodes0                      pa_nodes0    000
-__Lpowerup                        powerup      000
-__Lram                            ram          000
-__Lreset_vec                      reset_vec    000
-__Lsfr0                           sfr0         000
-__Lsfr1                           sfr1         000
-__Lspace_0                        (abs)        000
-__Lspace_1                        (abs)        000
-__Lspace_2                        (abs)        000
-__Lspace_3                        (abs)        000
-__Lstack                          stack        000
-__Lstrings                        strings      000
-__Ltext                           text         000
-__S0                              (abs)        10E
-__S1                              (abs)        07C
-__S2                              (abs)        000
-__S3                              (abs)        000
-___int_sp                         stack        000
-___latbits                        (abs)        000
-___lmul                           text4        014
-___lmul@multiplicand              cstackCOMMON 076
-___lmul@multiplier                cstackCOMMON 072
-___lmul@product                   cstackBANK0  040
-___sp                             stack        000
-__end_of_CX588_GPIO_Init          text13       0F9
-__end_of_CX588_Get_Busy_State     text6        10B
-__end_of_CX588_OneWire_WriteBit   text10       08B
-__end_of_CX588_OneWire_WriteByte  text9        0B1
-__end_of_CX588_Play_Sound         text5        0DC
-__end_of_CX588_SET_Sound_Size     text8        10E
-__end_of_DelayMs                  text11       0C1
-__end_of_DelayUs                  text12       0F0
-__end_of_ISR                      text14       108
-__end_of_POWER_INITIAL            text7        0CF
-__end_of_Play_Sound               text2        09F
-__end_of___lmul                   text4        047
-__end_of__initialization          cinit        012
-__end_of_main                     maintext     0E7
-__end_of_rand                     text3        074
-__end_of_srand                    text1        101
-__initialization                  cinit        00B
-__pbssCOMMON                      bssCOMMON    07A
-__pcstackBANK0                    cstackBANK0  040
-__pcstackCOMMON                   cstackCOMMON 070
-__pdataBANK0                      dataBANK0    046
-__pidataBANK0                     idataBANK0   000
-__pintentry                       intentry     004
-__pmaintext                       maintext     0DC
-__ptext1                          text1        0F9
-__ptext10                         text10       074
-__ptext11                         text11       0B1
-__ptext12                         text12       0E7
-__ptext13                         text13       0F0
-__ptext14                         text14       101
-__ptext2                          text2        08B
-__ptext3                          text3        047
-__ptext4                          text4        014
-__ptext5                          text5        0CF
-__ptext6                          text6        108
-__ptext7                          text7        0C1
-__ptext8                          text8        10B
-__ptext9                          text9        09F
-__size_of_CX588_GPIO_Init         (abs)        000
-__size_of_CX588_Get_Busy_State    (abs)        000
-__size_of_CX588_OneWire_WriteBit  (abs)        000
-__size_of_CX588_OneWire_WriteByte (abs)        000
-__size_of_CX588_Play_Sound        (abs)        000
-__size_of_CX588_SET_Sound_Size    (abs)        000
-__size_of_DelayMs                 (abs)        000
-__size_of_DelayUs                 (abs)        000
-__size_of_ISR                     (abs)        000
-__size_of_POWER_INITIAL           (abs)        000
-__size_of_Play_Sound              (abs)        000
-__size_of___lmul                  (abs)        000
-__size_of_main                    (abs)        000
-__size_of_rand                    (abs)        000
-__size_of_srand                   (abs)        000
-_main                             maintext     0DC
-_rand                             text3        047
-_randx                            dataBANK0    046
-_srand                            text1        0F9
-btemp                             (abs)        07E
-end_of_initialization             cinit        012
-interrupt_function                intentry     004
-intlevel0                         functab      000
-intlevel1                         functab      000
-intlevel2                         functab      000
-intlevel3                         functab      000
-intlevel4                         functab      000
-intlevel5                         functab      000
-reset_vec                         reset_vec    000
-saved_w                           (abs)        07E
-srand@x                           cstackCOMMON 072
-stackhi                           (abs)        000
-stacklo                           (abs)        000
-start                             init         00A
-start_initialization              cinit        00B
-wtemp0                            (abs)        07E
+?___lmul                           cstackBANK0  040
+?_rand                             cstackBANK0  048
+CX588_OneWire_WriteBit@bit_bit     cstackCOMMON 078
+CX588_OneWire_WriteByte@byte_byte  cstackBANK0  040
+CX588_OneWire_WriteByte@i          cstackBANK0  041
+CX588_Play_Sound@Sound_Code        cstackBANK0  042
+CX588_SET_Sound_Size@Sound_Code    cstackBANK0  042
+DelayMs@Time                       cstackCOMMON 075
+DelayMs@a                          cstackCOMMON 076
+DelayMs@b                          cstackCOMMON 077
+DelayUs@Time                       cstackCOMMON 073
+DelayUs@a                          cstackCOMMON 074
+PL2                                text2        0BD
+PL4                                text16       09F
+_CX588_GPIO_Init                   text15       141
+_CX588_Get_Busy_State              text8        15A
+_CX588_OneWire_WriteBit            text12       0C4
+_CX588_OneWire_WriteByte           text11       0EE
+_CX588_Play_Sound                  text7        11F
+_CX588_SET_Sound_Size              text10       15E
+_DelayMs                           text13       101
+_DelayUs                           text14       138
+_GIE                               (abs)        05F
+_INTCON                            (abs)        00B
+_IOCA2                             (abs)        4B2
+_ISR                               text16       079
+_OPTION                            (abs)        081
+_OSCCON                            (abs)        08F
+_PA0                               (abs)        028
+_PA2                               (abs)        02A
+_PA2_Level_Change_INITIAL          text3        152
+_PA4                               (abs)        02C
+_PAIE                              (abs)        05B
+_PAIF                              (abs)        058
+_PEIE                              (abs)        05E
+_PORTA                             (abs)        005
+_POWER_INITIAL                     text9        111
+_PSINKA                            (abs)        097
+_PSRCA                             (abs)        088
+_Play_Sound                        text4        0DA
+_Seed_Val                          bssCOMMON    079
+_TIME_OUT                          bssBANK0     04E
+_TIME_OUT_Enter_Sleep              text2        0A5
+_TMR2IE                            (abs)        461
+_TMR2IF                            (abs)        061
+_TRISA                             (abs)        085
+_TRISA2                            (abs)        42A
+_WPUA                              (abs)        095
+__Habs1                            abs1         000
+__Hbank0                           bank0        000
+__Hbank1                           bank1        000
+__HbssBANK0                        bssBANK0     000
+__HbssCOMMON                       bssCOMMON    000
+__Hcinit                           cinit        019
+__Hclrtext                         clrtext      000
+__Hcode                            code         000
+__Hcommon                          common       000
+__Hconfig                          config       000
+__HcstackBANK0                     cstackBANK0  000
+__HcstackCOMMON                    cstackCOMMON 000
+__HdataBANK0                       dataBANK0    000
+__Heeprom_data                     eeprom_data  000
+__Hend_init                        end_init     00E
+__Hfunctab                         functab      000
+__HidataBANK0                      idataBANK0   000
+__Hidloc                           idloc        000
+__Hinit                            init         00D
+__Hintentry                        intentry     00D
+__Hmaintext                        maintext     000
+__Hpa_nodes0                       pa_nodes0    000
+__Hpowerup                         powerup      000
+__Hram                             ram          000
+__Hreset_vec                       reset_vec    001
+__Hsfr0                            sfr0         000
+__Hsfr1                            sfr1         000
+__Hspace_0                         (abs)        161
+__Hspace_1                         (abs)        07B
+__Hspace_2                         (abs)        000
+__Hspace_3                         (abs)        000
+__Hstack                           stack        000
+__Hstrings                         strings      000
+__Htext                            text         000
+__Labs1                            abs1         000
+__Lbank0                           bank0        000
+__Lbank1                           bank1        000
+__LbssBANK0                        bssBANK0     000
+__LbssCOMMON                       bssCOMMON    000
+__Lcinit                           cinit        00E
+__Lclrtext                         clrtext      000
+__Lcode                            code         000
+__Lcommon                          common       000
+__Lconfig                          config       000
+__LcstackBANK0                     cstackBANK0  000
+__LcstackCOMMON                    cstackCOMMON 000
+__LdataBANK0                       dataBANK0    000
+__Leeprom_data                     eeprom_data  000
+__Lend_init                        end_init     00D
+__Lfunctab                         functab      000
+__LidataBANK0                      idataBANK0   000
+__Lidloc                           idloc        000
+__Linit                            init         00D
+__Lintentry                        intentry     004
+__Lmaintext                        maintext     000
+__Lpa_nodes0                       pa_nodes0    000
+__Lpowerup                         powerup      000
+__Lram                             ram          000
+__Lreset_vec                       reset_vec    000
+__Lsfr0                            sfr0         000
+__Lsfr1                            sfr1         000
+__Lspace_0                         (abs)        000
+__Lspace_1                         (abs)        000
+__Lspace_2                         (abs)        000
+__Lspace_3                         (abs)        000
+__Lstack                           stack        000
+__Lstrings                         strings      000
+__Ltext                            text         000
+__S0                               (abs)        161
+__S1                               (abs)        07B
+__S2                               (abs)        000
+__S3                               (abs)        000
+___int_sp                          stack        000
+___latbits                         (abs)        000
+___lmul                            text6        019
+___lmul@multiplicand               cstackBANK0  044
+___lmul@multiplier                 cstackBANK0  040
+___lmul@product                    cstackCOMMON 073
+___sp                              stack        000
+__end_ofPL2                        text2        0C4
+__end_ofPL4                        text16       0A5
+__end_of_CX588_GPIO_Init           text15       14A
+__end_of_CX588_Get_Busy_State      text8        15E
+__end_of_CX588_OneWire_WriteBit    text12       0DA
+__end_of_CX588_OneWire_WriteByte   text11       101
+__end_of_CX588_Play_Sound          text7        12C
+__end_of_CX588_SET_Sound_Size      text10       161
+__end_of_DelayMs                   text13       111
+__end_of_DelayUs                   text14       141
+__end_of_ISR                       text16       09F
+__end_of_PA2_Level_Change_INITIAL  text3        15A
+__end_of_POWER_INITIAL             text9        11F
+__end_of_Play_Sound                text4        0EE
+__end_of_TIME_OUT_Enter_Sleep      text2        0BD
+__end_of___lmul                    text6        04C
+__end_of__initialization           cinit        017
+__end_of_main                      maintext     138
+__end_of_rand                      text5        079
+__end_of_srand                     text1        152
+__initialization                   cinit        00E
+__pbssBANK0                        bssBANK0     04E
+__pbssCOMMON                       bssCOMMON    079
+__pcstackBANK0                     cstackBANK0  040
+__pcstackCOMMON                    cstackCOMMON 070
+__pdataBANK0                       dataBANK0    04A
+__pidataBANK0                      idataBANK0   000
+__pintentry                        intentry     004
+__pmaintext                        maintext     12C
+__ptext1                           text1        14A
+__ptext10                          text10       15E
+__ptext11                          text11       0EE
+__ptext12                          text12       0C4
+__ptext13                          text13       101
+__ptext14                          text14       138
+__ptext15                          text15       141
+__ptext16                          text16       079
+__ptext2                           text2        0A5
+__ptext3                           text3        152
+__ptext4                           text4        0DA
+__ptext5                           text5        04C
+__ptext6                           text6        019
+__ptext7                           text7        11F
+__ptext8                           text8        15A
+__ptext9                           text9        111
+__size_of_CX588_GPIO_Init          (abs)        000
+__size_of_CX588_Get_Busy_State     (abs)        000
+__size_of_CX588_OneWire_WriteBit   (abs)        000
+__size_of_CX588_OneWire_WriteByte  (abs)        000
+__size_of_CX588_Play_Sound         (abs)        000
+__size_of_CX588_SET_Sound_Size     (abs)        000
+__size_of_DelayMs                  (abs)        000
+__size_of_DelayUs                  (abs)        000
+__size_of_ISR                      (abs)        000
+__size_of_PA2_Level_Change_INITIAL (abs)        000
+__size_of_POWER_INITIAL            (abs)        000
+__size_of_Play_Sound               (abs)        000
+__size_of_TIME_OUT_Enter_Sleep     (abs)        000
+__size_of___lmul                   (abs)        000
+__size_of_main                     (abs)        000
+__size_of_rand                     (abs)        000
+__size_of_srand                    (abs)        000
+_main                              maintext     12C
+_rand                              text5        04C
+_randx                             dataBANK0    04A
+_srand                             text1        14A
+btemp                              (abs)        07E
+end_of_initialization              cinit        017
+interrupt_function                 intentry     004
+intlevel0                          functab      000
+intlevel1                          functab      000
+intlevel2                          functab      000
+intlevel3                          functab      000
+intlevel4                          functab      000
+intlevel5                          functab      000
+reset_vec                          reset_vec    000
+saved_w                            (abs)        07E
+srand@x                            cstackCOMMON 073
+stackhi                            (abs)        000
+stacklo                            (abs)        000
+start                              init         00D
+start_initialization               cinit        00E
+wtemp0                             (abs)        07E
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 62 in file "CX588_SOUND.C"
+		line 124 in file "CX588_SOUND.C"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -339,7 +369,7 @@ FUNCTION INFORMATION:
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0, pclath, cstack
+		wreg, status,2, status,0, btemp+1, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -356,6 +386,7 @@ Total ram usage:        0 bytes
 		_CX588_SET_Sound_Size
 		_POWER_INITIAL
 		_Play_Sound
+		_TIME_OUT_Enter_Sleep
 		_srand
  This function is called by:
 		Startup code after reset
@@ -366,7 +397,7 @@ Total ram usage:        0 bytes
  Defined at:
 		line 6 in file "C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c"
  Parameters:    Size  Location     Type
-  x               2    2[COMMON] unsigned int 
+  x               2    3[COMMON] unsigned int 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -392,9 +423,70 @@ Total ram usage:        2 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _TIME_OUT_Enter_Sleep *****************
+ Defined at:
+		line 14 in file "CX588_SOUND.C"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, btemp+1, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		_CX588_Get_Busy_State
+		_PA2_Level_Change_INITIAL
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _PA2_Level_Change_INITIAL *****************
+ Defined at:
+		line 91 in file "CX588_SOUND.C"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_TIME_OUT_Enter_Sleep
+ This function uses a non-reentrant model
+
+
  *************** function _Play_Sound *****************
  Defined at:
-		line 11 in file "CX588_SOUND.C"
+		line 42 in file "CX588_SOUND.C"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -433,7 +525,7 @@ Total ram usage:        0 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  2    4[BANK0 ] int 
+                  2    8[BANK0 ] int 
  Registers used:
 		wreg, status,2, status,0, pclath, cstack
  Tracked objects:
@@ -459,12 +551,12 @@ Total ram usage:        2 bytes
  Defined at:
 		line 15 in file "C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c"
  Parameters:    Size  Location     Type
-  multiplier      4    2[COMMON] unsigned long 
-  multiplicand    4    6[COMMON] unsigned long 
+  multiplier      4    0[BANK0 ] unsigned long 
+  multiplicand    4    4[BANK0 ] unsigned long 
  Auto vars:     Size  Location     Type
-  product         4    0[BANK0 ] unsigned long 
+  product         4    3[COMMON] unsigned long 
  Return value:  Size  Location     Type
-                  4    2[COMMON] unsigned long 
+                  4    0[BANK0 ] unsigned long 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -472,10 +564,10 @@ Total ram usage:        2 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0
-      Params:         8       0
-      Locals:         0       4
+      Params:         0       8
+      Locals:         4       0
       Temps:          0       0
-      Totals:         8       4
+      Totals:         4       8
 Total ram usage:       12 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
@@ -492,7 +584,7 @@ Total ram usage:       12 bytes
  Parameters:    Size  Location     Type
   Sound_Code      1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  Sound_Code      1    0[BANK0 ] unsigned char 
+  Sound_Code      1    2[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -544,6 +636,7 @@ Total ram usage:        0 bytes
  This function calls:
 		Nothing
  This function is called by:
+		_TIME_OUT_Enter_Sleep
 		_Play_Sound
 		_CX588_Play_Sound
  This function uses a non-reentrant model
@@ -551,7 +644,7 @@ Total ram usage:        0 bytes
 
  *************** function _POWER_INITIAL *****************
  Defined at:
-		line 44 in file "CX588_SOUND.C"
+		line 106 in file "CX588_SOUND.C"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -585,7 +678,7 @@ Total ram usage:        0 bytes
  Parameters:    Size  Location     Type
   Sound_Code      1    wreg     enum E873
  Auto vars:     Size  Location     Type
-  Sound_Code      1    0[BANK0 ] enum E873
+  Sound_Code      1    2[BANK0 ] enum E873
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -615,8 +708,8 @@ Total ram usage:        1 bytes
  Parameters:    Size  Location     Type
   byte_byte       1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  byte_byte       1    8[COMMON] unsigned char 
-  i               1    9[COMMON] unsigned char 
+  byte_byte       1    0[BANK0 ] unsigned char 
+  i               1    1[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -627,9 +720,9 @@ Total ram usage:        1 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0
       Params:         0       0
-      Locals:         2       0
+      Locals:         0       2
       Temps:          0       0
-      Totals:         2       0
+      Totals:         0       2
 Total ram usage:        2 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
@@ -648,7 +741,7 @@ Total ram usage:        2 bytes
  Parameters:    Size  Location     Type
   bit_bit         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  bit_bit         1    7[COMMON] unsigned char 
+  bit_bit         1    8[COMMON] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -679,9 +772,9 @@ Total ram usage:        1 bytes
  Parameters:    Size  Location     Type
   Time            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  Time            1    4[COMMON] unsigned char 
-  b               1    6[COMMON] unsigned char 
-  a               1    5[COMMON] unsigned char 
+  Time            1    5[COMMON] unsigned char 
+  b               1    7[COMMON] unsigned char 
+  a               1    6[COMMON] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -714,8 +807,8 @@ Total ram usage:        3 bytes
  Parameters:    Size  Location     Type
   Time            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  Time            1    2[COMMON] unsigned char 
-  a               1    3[COMMON] unsigned char 
+  Time            1    3[COMMON] unsigned char 
+  a               1    4[COMMON] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -772,7 +865,7 @@ Total ram usage:        0 bytes
 
  *************** function _ISR *****************
  Defined at:
-		line 33 in file "CX588_SOUND.C"
+		line 64 in file "CX588_SOUND.C"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -780,7 +873,7 @@ Total ram usage:        0 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		None
+		wreg, status,2, status,0, btemp+1
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -788,9 +881,9 @@ Total ram usage:        0 bytes
  Data sizes:     COMMON   BANK0
       Params:         0       0
       Locals:         0       0
-      Temps:          2       0
-      Totals:         2       0
-Total ram usage:        2 bytes
+      Temps:          3       0
+      Totals:         3       0
+Total ram usage:        3 bytes
  Hardware stack levels used:    1
  This function calls:
 		Nothing
@@ -804,38 +897,42 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
-		_srand         		CODE           	00F9	0000	9
-		_rand          		CODE           	0047	0000	46
+		_srand         		CODE           	014A	0000	9
+		_rand          		CODE           	004C	0000	46
 
 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c estimated size: 55
 
 CX588.c
-		_DelayUs       		CODE           	00E7	0000	10
-		_CX588_OneWire_WriteBit		CODE           	0074	0000	24
-		_CX588_Play_Sound		CODE           	00CF	0000	14
-		_CX588_SET_Sound_Size		CODE           	010B	0000	4
-		_DelayMs       		CODE           	00B1	0000	17
-		_CX588_OneWire_WriteByte		CODE           	009F	0000	19
-		_CX588_GPIO_Init		CODE           	00F0	0000	10
-		_CX588_Get_Busy_State		CODE           	0108	0000	4
+		_DelayUs       		CODE           	0138	0000	10
+		_CX588_OneWire_WriteBit		CODE           	00C4	0000	23
+		_CX588_Play_Sound		CODE           	011F	0000	14
+		_CX588_SET_Sound_Size		CODE           	015E	0000	4
+		_DelayMs       		CODE           	0101	0000	17
+		_CX588_OneWire_WriteByte		CODE           	00EE	0000	20
+		_CX588_GPIO_Init		CODE           	0141	0000	10
+		_CX588_Get_Busy_State		CODE           	015A	0000	5
 
-CX588.c estimated size: 102
+CX588.c estimated size: 103
 
 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c
-		___lmul        		CODE           	0014	0000	52
+		___lmul        		CODE           	0019	0000	52
 
 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\Umul32.c estimated size: 52
 
 shared
-		__initialization		CODE           	000B	0000	8
+		__initialization		CODE           	000E	0000	10
+		PL2            		CODE           	00BD	0000	8
+		PL4            		CODE           	009F	0000	7
 
-shared estimated size: 8
+shared estimated size: 25
 
 CX588_SOUND.C
-		_Play_Sound    		CODE           	008B	0000	21
-		_ISR           		CODE           	0101	0000	8
-		_main          		CODE           	00DC	0000	12
-		_POWER_INITIAL 		CODE           	00C1	0000	15
+		_TIME_OUT_Enter_Sleep		CODE           	00A5	0000	25
+		_Play_Sound    		CODE           	00DA	0000	21
+		_ISR           		CODE           	0079	0000	39
+		_PA2_Level_Change_INITIAL		CODE           	0152	0000	9
+		_main          		CODE           	012C	0000	13
+		_POWER_INITIAL 		CODE           	0111	0000	15
 
-CX588_SOUND.C estimated size: 56
+CX588_SOUND.C estimated size: 122
 

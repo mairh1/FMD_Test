@@ -3,8 +3,8 @@
 
 #include "FT60F21X.h"
 
-#define	GPIO_OneLine PA4
 #define GPIO_Busy	 PA0
+#define	GPIO_OneLine PA4
 
 
 typedef enum
