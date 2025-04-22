@@ -1066,6 +1066,7 @@ unsigned char ReadAPin;
 int Seed_Val = 0;
 int TIME_OUT = 0;
 
+# 17
 void TIME_OUT_Enter_Sleep(void)
 {
 if(CX588_Get_Busy_State() == 1)
@@ -1094,7 +1095,7 @@ GIE = 0;
 }
 }
 
-# 45
+# 51
 void Play_Sound(void)
 {
 if(PA2 == 0)
@@ -1111,7 +1112,7 @@ Seed_Val++;
 }
 }
 
-# 67
+# 73
 void interrupt ISR(void)
 {
 
@@ -1134,7 +1135,7 @@ GIE = 1;
 }
 }
 
-# 95
+# 101
 void PA2_Level_Change_INITIAL(void)
 {
 TRISA2 = 1;
@@ -1144,7 +1145,7 @@ IOCA2 = 1;
 PAIE = 1;
 }
 
-# 110
+# 116
 void TIMER2_INITIAL (void)
 {
 T2CON0 = 0B01001011;
@@ -1161,7 +1162,7 @@ TMR2IF = 0;
 TMR2ON = 1;
 }
 
-# 132
+# 138
 void POWER_INITIAL (void)
 {
 OSCCON = 0B01110001;
@@ -1175,7 +1176,7 @@ PORTA = 0B00000000;
 WPUA = 0B00000100;
 }
 
-# 150
+# 156
 void main()
 {
 POWER_INITIAL();

@@ -270,7 +270,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [p mainexit ]
 "35 CX588.h
 [v _CX588_GPIO_Init `(v ~T0 @X0 0 ef ]
-"155 CX588_SOUND.C
+"161 CX588_SOUND.C
 [c E1026 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 .. ]
 [n E1026 . SoundLeve_0 SoundLeve_1 SoundLeve_2 SoundLeve_3 SoundLeve_4 SoundLeve_5 SoundLeve_6 SoundLeve_7 SoundLeve_8 SoundLeve_9 SoundLeve_10 SoundLeve_11 SoundLeve_12 SoundLeve_13 SoundLeve_14 SoundLeve_15  ]
 "36 CX588.h
@@ -1732,346 +1732,346 @@ Version 3.2   GCC8 Compiled Intermediate Code
 -> 0 `i
 ]
 [; ;CX588_SOUND.C: 9: int TIME_OUT = 0;
-"11
+"17
 [v _TIME_OUT_Enter_Sleep `(v ~T0 @X0 1 ef ]
-"12
+"18
 {
-[; ;CX588_SOUND.C: 11: void TIME_OUT_Enter_Sleep(void)
-[; ;CX588_SOUND.C: 12: {
+[; ;CX588_SOUND.C: 17: void TIME_OUT_Enter_Sleep(void)
+[; ;CX588_SOUND.C: 18: {
 [e :U _TIME_OUT_Enter_Sleep ]
 [f ]
-[; ;CX588_SOUND.C: 13: if(CX588_Get_Busy_State() == 1)
-"13
-[e $ ! == -> ( _CX588_Get_Busy_State ..  `i -> 1 `i 91  ]
-[; ;CX588_SOUND.C: 14: {
-"14
-{
-[; ;CX588_SOUND.C: 15: TMR2IE = 1;
-"15
-[e = _TMR2IE -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 16: PEIE=1;
-"16
-[e = _PEIE -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 17: GIE = 1;
-"17
-[e = _GIE -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 18: if(TIME_OUT > 5)
-"18
-[e $ ! > _TIME_OUT -> 5 `i 92  ]
-[; ;CX588_SOUND.C: 19: {
+[; ;CX588_SOUND.C: 19: if(CX588_Get_Busy_State() == 1)
 "19
-{
-[; ;CX588_SOUND.C: 20: TIME_OUT = 0;
+[e $ ! == -> ( _CX588_Get_Busy_State ..  `i -> 1 `i 91  ]
+[; ;CX588_SOUND.C: 20: {
 "20
-[e = _TIME_OUT -> 0 `i ]
-[; ;CX588_SOUND.C: 21: TMR2IE = 0;
+{
+[; ;CX588_SOUND.C: 21: TMR2IE = 1;
 "21
-[e = _TMR2IE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 22: PEIE = 0;
+[e = _TMR2IE -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 22: PEIE=1;
 "22
-[e = _PEIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 23: GIE = 0;
+[e = _PEIE -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 23: GIE = 1;
 "23
-[e = _GIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 25: PA2_Level_Change_INITIAL();
+[e = _GIE -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 24: if(TIME_OUT > 5)
+"24
+[e $ ! > _TIME_OUT -> 5 `i 92  ]
+[; ;CX588_SOUND.C: 25: {
 "25
-[e ( _PA2_Level_Change_INITIAL ..  ]
-[; ;CX588_SOUND.C: 26: asm("sleep");
+{
+[; ;CX588_SOUND.C: 26: TIME_OUT = 0;
 "26
-[; <" sleep ;# ">
-[; ;CX588_SOUND.C: 27: __nop();
+[e = _TIME_OUT -> 0 `i ]
+[; ;CX588_SOUND.C: 27: TMR2IE = 0;
 "27
-[e ( ___nop ..  ]
+[e = _TMR2IE -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 28: PEIE = 0;
 "28
+[e = _PEIE -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 29: GIE = 0;
+"29
+[e = _GIE -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 31: PA2_Level_Change_INITIAL();
+"31
+[e ( _PA2_Level_Change_INITIAL ..  ]
+[; ;CX588_SOUND.C: 32: asm("sleep");
+"32
+[; <" sleep ;# ">
+[; ;CX588_SOUND.C: 33: __nop();
+"33
+[e ( ___nop ..  ]
+"34
 }
 [e :U 92 ]
-"29
-}
-[; ;CX588_SOUND.C: 28: }
-[; ;CX588_SOUND.C: 29: }
-[e $U 93  ]
-"30
-[e :U 91 ]
-[; ;CX588_SOUND.C: 30: else
-[; ;CX588_SOUND.C: 31: {
-"31
-{
-[; ;CX588_SOUND.C: 32: TIME_OUT = 0;
-"32
-[e = _TIME_OUT -> 0 `i ]
-[; ;CX588_SOUND.C: 33: TMR2IE = 0;
-"33
-[e = _TMR2IE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 34: PEIE = 0;
-"34
-[e = _PEIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 35: GIE = 0;
 "35
-[e = _GIE -> -> 0 `i `b ]
+}
+[; ;CX588_SOUND.C: 34: }
+[; ;CX588_SOUND.C: 35: }
+[e $U 93  ]
 "36
+[e :U 91 ]
+[; ;CX588_SOUND.C: 36: else
+[; ;CX588_SOUND.C: 37: {
+"37
+{
+[; ;CX588_SOUND.C: 38: TIME_OUT = 0;
+"38
+[e = _TIME_OUT -> 0 `i ]
+[; ;CX588_SOUND.C: 39: TMR2IE = 0;
+"39
+[e = _TMR2IE -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 40: PEIE = 0;
+"40
+[e = _PEIE -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 41: GIE = 0;
+"41
+[e = _GIE -> -> 0 `i `b ]
+"42
 }
 [e :U 93 ]
-[; ;CX588_SOUND.C: 36: }
-[; ;CX588_SOUND.C: 37: }
-"37
+[; ;CX588_SOUND.C: 42: }
+[; ;CX588_SOUND.C: 43: }
+"43
 [e :UE 90 ]
 }
-"45
+"51
 [v _Play_Sound `(v ~T0 @X0 1 ef ]
-"46
+"52
 {
-[; ;CX588_SOUND.C: 45: void Play_Sound(void)
-[; ;CX588_SOUND.C: 46: {
+[; ;CX588_SOUND.C: 51: void Play_Sound(void)
+[; ;CX588_SOUND.C: 52: {
 [e :U _Play_Sound ]
 [f ]
-[; ;CX588_SOUND.C: 47: if(PA2 == 0)
-"47
-[e $ ! == -> _PA2 `i -> 0 `i 95  ]
-[; ;CX588_SOUND.C: 48: {
-"48
-{
-[; ;CX588_SOUND.C: 49: DelayMs(20);
-"49
-[e ( _DelayMs (1 -> -> 20 `i `uc ]
-[; ;CX588_SOUND.C: 50: if(PA2 == 0)
-"50
-[e $ ! == -> _PA2 `i -> 0 `i 96  ]
-[; ;CX588_SOUND.C: 51: {
-"51
-{
-[; ;CX588_SOUND.C: 52: if(CX588_Get_Busy_State())
-"52
-[e $ ! != -> ( _CX588_Get_Busy_State ..  `i -> -> -> 0 `i `uc `i 97  ]
-[; ;CX588_SOUND.C: 53: {
+[; ;CX588_SOUND.C: 53: if(PA2 == 0)
 "53
-{
-[; ;CX588_SOUND.C: 54: CX588_Play_Sound((rand()%8)+1);
+[e $ ! == -> _PA2 `i -> 0 `i 95  ]
+[; ;CX588_SOUND.C: 54: {
 "54
-[e ( _CX588_Play_Sound (1 -> + % ( _rand ..  -> 8 `i -> 1 `i `uc ]
-[; ;CX588_SOUND.C: 55: Seed_Val++;
+{
+[; ;CX588_SOUND.C: 55: DelayMs(20);
 "55
-[e ++ _Seed_Val -> 1 `i ]
+[e ( _DelayMs (1 -> -> 20 `i `uc ]
+[; ;CX588_SOUND.C: 56: if(PA2 == 0)
 "56
+[e $ ! == -> _PA2 `i -> 0 `i 96  ]
+[; ;CX588_SOUND.C: 57: {
+"57
+{
+[; ;CX588_SOUND.C: 58: if(CX588_Get_Busy_State())
+"58
+[e $ ! != -> ( _CX588_Get_Busy_State ..  `i -> -> -> 0 `i `uc `i 97  ]
+[; ;CX588_SOUND.C: 59: {
+"59
+{
+[; ;CX588_SOUND.C: 60: CX588_Play_Sound((rand()%8)+1);
+"60
+[e ( _CX588_Play_Sound (1 -> + % ( _rand ..  -> 8 `i -> 1 `i `uc ]
+[; ;CX588_SOUND.C: 61: Seed_Val++;
+"61
+[e ++ _Seed_Val -> 1 `i ]
+"62
 }
 [e :U 97 ]
-"57
+"63
 }
 [e :U 96 ]
-"58
+"64
 }
 [e :U 95 ]
-[; ;CX588_SOUND.C: 56: }
-[; ;CX588_SOUND.C: 57: }
-[; ;CX588_SOUND.C: 58: }
-[; ;CX588_SOUND.C: 59: }
-"59
+[; ;CX588_SOUND.C: 62: }
+[; ;CX588_SOUND.C: 63: }
+[; ;CX588_SOUND.C: 64: }
+[; ;CX588_SOUND.C: 65: }
+"65
 [e :UE 94 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
 [v F1065 `(v ~T0 @X0 1 tf ]
-"67
+"73
 [v _ISR `IF1065 ~T0 @X0 1 e ]
-"68
+"74
 {
-[; ;CX588_SOUND.C: 67: void interrupt ISR(void)
-[; ;CX588_SOUND.C: 68: {
+[; ;CX588_SOUND.C: 73: void interrupt ISR(void)
+[; ;CX588_SOUND.C: 74: {
 [e :U _ISR ]
 [f ]
-[; ;CX588_SOUND.C: 70: if(TMR2IE && TMR2IF)
-"70
+[; ;CX588_SOUND.C: 76: if(TMR2IE && TMR2IF)
+"76
 [e $ ! && _TMR2IE _TMR2IF 99  ]
-[; ;CX588_SOUND.C: 71: {
-"71
+[; ;CX588_SOUND.C: 77: {
+"77
 {
-[; ;CX588_SOUND.C: 72: TMR2IF = 0;
-"72
+[; ;CX588_SOUND.C: 78: TMR2IF = 0;
+"78
 [e = _TMR2IF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 74: if(TIME_OUT < 0xff)
-"74
+[; ;CX588_SOUND.C: 80: if(TIME_OUT < 0xff)
+"80
 [e $ ! < _TIME_OUT -> 255 `i 100  ]
-[; ;CX588_SOUND.C: 75: TIME_OUT++;
-"75
+[; ;CX588_SOUND.C: 81: TIME_OUT++;
+"81
 [e ++ _TIME_OUT -> 1 `i ]
 [e :U 100 ]
-"76
+"82
 }
 [e :U 99 ]
-[; ;CX588_SOUND.C: 76: }
-[; ;CX588_SOUND.C: 79: if(PAIE && PAIF)
-"79
-[e $ ! && _PAIE _PAIF 101  ]
-[; ;CX588_SOUND.C: 80: {
-"80
-{
-[; ;CX588_SOUND.C: 81: ReadAPin = PORTA;
-"81
-[e = _ReadAPin _PORTA ]
-[; ;CX588_SOUND.C: 82: PAIF = 0;
-"82
-[e = _PAIF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 83: PAIE = 0;
-"83
-[e = _PAIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 84: IOCA2 =0;
-"84
-[e = _IOCA2 -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 85: GIE = 1;
+[; ;CX588_SOUND.C: 82: }
+[; ;CX588_SOUND.C: 85: if(PAIE && PAIF)
 "85
-[e = _GIE -> -> 1 `i `b ]
+[e $ ! && _PAIE _PAIF 101  ]
+[; ;CX588_SOUND.C: 86: {
 "86
+{
+[; ;CX588_SOUND.C: 87: ReadAPin = PORTA;
+"87
+[e = _ReadAPin _PORTA ]
+[; ;CX588_SOUND.C: 88: PAIF = 0;
+"88
+[e = _PAIF -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 89: PAIE = 0;
+"89
+[e = _PAIE -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 90: IOCA2 =0;
+"90
+[e = _IOCA2 -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 91: GIE = 1;
+"91
+[e = _GIE -> -> 1 `i `b ]
+"92
 }
 [e :U 101 ]
-[; ;CX588_SOUND.C: 86: }
-[; ;CX588_SOUND.C: 87: }
-"87
+[; ;CX588_SOUND.C: 92: }
+[; ;CX588_SOUND.C: 93: }
+"93
 [e :UE 98 ]
 }
-"95
+"101
 [v _PA2_Level_Change_INITIAL `(v ~T0 @X0 1 ef ]
-"96
+"102
 {
-[; ;CX588_SOUND.C: 95: void PA2_Level_Change_INITIAL(void)
-[; ;CX588_SOUND.C: 96: {
+[; ;CX588_SOUND.C: 101: void PA2_Level_Change_INITIAL(void)
+[; ;CX588_SOUND.C: 102: {
 [e :U _PA2_Level_Change_INITIAL ]
 [f ]
-[; ;CX588_SOUND.C: 97: TRISA2 = 1;
-"97
+[; ;CX588_SOUND.C: 103: TRISA2 = 1;
+"103
 [e = _TRISA2 -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 98: ReadAPin = PORTA;
-"98
+[; ;CX588_SOUND.C: 104: ReadAPin = PORTA;
+"104
 [e = _ReadAPin _PORTA ]
-[; ;CX588_SOUND.C: 99: PAIF = 0;
-"99
+[; ;CX588_SOUND.C: 105: PAIF = 0;
+"105
 [e = _PAIF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 100: IOCA2 = 1;
-"100
+[; ;CX588_SOUND.C: 106: IOCA2 = 1;
+"106
 [e = _IOCA2 -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 101: PAIE = 1;
-"101
+[; ;CX588_SOUND.C: 107: PAIE = 1;
+"107
 [e = _PAIE -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 102: }
-"102
+[; ;CX588_SOUND.C: 108: }
+"108
 [e :UE 102 ]
 }
-"110
+"116
 [v _TIMER2_INITIAL `(v ~T0 @X0 1 ef ]
-"111
+"117
 {
-[; ;CX588_SOUND.C: 110: void TIMER2_INITIAL (void)
-[; ;CX588_SOUND.C: 111: {
+[; ;CX588_SOUND.C: 116: void TIMER2_INITIAL (void)
+[; ;CX588_SOUND.C: 117: {
 [e :U _TIMER2_INITIAL ]
 [f ]
-[; ;CX588_SOUND.C: 112: T2CON0 = 0B01001011;
-"112
-[e = _T2CON0 -> -> 75 `i `uc ]
-[; ;CX588_SOUND.C: 116: T2CON1 = 0B00001000;
-"116
-[e = _T2CON1 -> -> 8 `i `uc ]
-[; ;CX588_SOUND.C: 117: TMR2H = 0;
-"117
-[e = _TMR2H -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 118: TMR2L = 0;
+[; ;CX588_SOUND.C: 118: T2CON0 = 0B01001011;
 "118
-[e = _TMR2L -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 119: PR2H = 100;
-"119
-[e = _PR2H -> -> 100 `i `uc ]
-[; ;CX588_SOUND.C: 120: PR2L = 250;
-"120
-[e = _PR2L -> -> 250 `i `uc ]
-[; ;CX588_SOUND.C: 122: TMR2IF = 0;
+[e = _T2CON0 -> -> 75 `i `uc ]
+[; ;CX588_SOUND.C: 122: T2CON1 = 0B00001000;
 "122
-[e = _TMR2IF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 123: TMR2ON = 1;
+[e = _T2CON1 -> -> 8 `i `uc ]
+[; ;CX588_SOUND.C: 123: TMR2H = 0;
 "123
-[e = _TMR2ON -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 124: }
+[e = _TMR2H -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 124: TMR2L = 0;
 "124
+[e = _TMR2L -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 125: PR2H = 100;
+"125
+[e = _PR2H -> -> 100 `i `uc ]
+[; ;CX588_SOUND.C: 126: PR2L = 250;
+"126
+[e = _PR2L -> -> 250 `i `uc ]
+[; ;CX588_SOUND.C: 128: TMR2IF = 0;
+"128
+[e = _TMR2IF -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 129: TMR2ON = 1;
+"129
+[e = _TMR2ON -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 130: }
+"130
 [e :UE 103 ]
 }
-"132
+"138
 [v _POWER_INITIAL `(v ~T0 @X0 1 ef ]
-"133
+"139
 {
-[; ;CX588_SOUND.C: 132: void POWER_INITIAL (void)
-[; ;CX588_SOUND.C: 133: {
+[; ;CX588_SOUND.C: 138: void POWER_INITIAL (void)
+[; ;CX588_SOUND.C: 139: {
 [e :U _POWER_INITIAL ]
 [f ]
-[; ;CX588_SOUND.C: 134: OSCCON = 0B01110001;
-"134
-[e = _OSCCON -> -> 113 `i `uc ]
-[; ;CX588_SOUND.C: 135: INTCON = 0;
-"135
-[e = _INTCON -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 137: OPTION = 0;
-"137
-[e = _OPTION -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 138: TRISA = 0B00000100;
-"138
-[e = _TRISA -> -> 4 `i `uc ]
-[; ;CX588_SOUND.C: 139: PSRCA = 0;
-"139
-[e = _PSRCA -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 140: PSINKA = 0;
+[; ;CX588_SOUND.C: 140: OSCCON = 0B01110001;
 "140
-[e = _PSINKA -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 141: PORTA = 0B00000000;
+[e = _OSCCON -> -> 113 `i `uc ]
+[; ;CX588_SOUND.C: 141: INTCON = 0;
 "141
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 142: WPUA = 0B00000100;
-"142
-[e = _WPUA -> -> 4 `i `uc ]
-[; ;CX588_SOUND.C: 143: }
+[e = _INTCON -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 143: OPTION = 0;
 "143
+[e = _OPTION -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 144: TRISA = 0B00000100;
+"144
+[e = _TRISA -> -> 4 `i `uc ]
+[; ;CX588_SOUND.C: 145: PSRCA = 0;
+"145
+[e = _PSRCA -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 146: PSINKA = 0;
+"146
+[e = _PSINKA -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 147: PORTA = 0B00000000;
+"147
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 148: WPUA = 0B00000100;
+"148
+[e = _WPUA -> -> 4 `i `uc ]
+[; ;CX588_SOUND.C: 149: }
+"149
 [e :UE 104 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"150
+"156
 [v _main `(v ~T0 @X0 1 ef ]
-"151
+"157
 {
-[; ;CX588_SOUND.C: 150: void main()
-[; ;CX588_SOUND.C: 151: {
+[; ;CX588_SOUND.C: 156: void main()
+[; ;CX588_SOUND.C: 157: {
 [e :U _main ]
 [f ]
-[; ;CX588_SOUND.C: 152: POWER_INITIAL();
-"152
-[e ( _POWER_INITIAL ..  ]
-[; ;CX588_SOUND.C: 153: TIMER2_INITIAL();
-"153
-[e ( _TIMER2_INITIAL ..  ]
-[; ;CX588_SOUND.C: 154: CX588_GPIO_Init();
-"154
-[e ( _CX588_GPIO_Init ..  ]
-[; ;CX588_SOUND.C: 155: CX588_SET_Sound_Size(SoundLeve_10);
-"155
-[e ( _CX588_SET_Sound_Size (1 . `E1026 10 ]
-[; ;CX588_SOUND.C: 156: srand(Seed_Val);
-"156
-[e ( _srand (1 -> _Seed_Val `ui ]
-[; ;CX588_SOUND.C: 158: while(1)
+[; ;CX588_SOUND.C: 158: POWER_INITIAL();
 "158
-[e :U 107 ]
-[; ;CX588_SOUND.C: 159: {
+[e ( _POWER_INITIAL ..  ]
+[; ;CX588_SOUND.C: 159: TIMER2_INITIAL();
 "159
-{
-[; ;CX588_SOUND.C: 160: Play_Sound();
+[e ( _TIMER2_INITIAL ..  ]
+[; ;CX588_SOUND.C: 160: CX588_GPIO_Init();
 "160
-[e ( _Play_Sound ..  ]
-[; ;CX588_SOUND.C: 161: TIME_OUT_Enter_Sleep();
+[e ( _CX588_GPIO_Init ..  ]
+[; ;CX588_SOUND.C: 161: CX588_SET_Sound_Size(SoundLeve_10);
 "161
-[e ( _TIME_OUT_Enter_Sleep ..  ]
+[e ( _CX588_SET_Sound_Size (1 . `E1026 10 ]
 [; ;CX588_SOUND.C: 162: srand(Seed_Val);
 "162
 [e ( _srand (1 -> _Seed_Val `ui ]
-"163
+[; ;CX588_SOUND.C: 164: while(1)
+"164
+[e :U 107 ]
+[; ;CX588_SOUND.C: 165: {
+"165
+{
+[; ;CX588_SOUND.C: 166: Play_Sound();
+"166
+[e ( _Play_Sound ..  ]
+[; ;CX588_SOUND.C: 167: TIME_OUT_Enter_Sleep();
+"167
+[e ( _TIME_OUT_Enter_Sleep ..  ]
+[; ;CX588_SOUND.C: 168: srand(Seed_Val);
+"168
+[e ( _srand (1 -> _Seed_Val `ui ]
+"169
 }
 [e :U 106 ]
-"158
+"164
 [e $U 107  ]
 [e :U 108 ]
-[; ;CX588_SOUND.C: 163: }
-[; ;CX588_SOUND.C: 164: }
-"164
+[; ;CX588_SOUND.C: 169: }
+[; ;CX588_SOUND.C: 170: }
+"170
 [e :UE 105 ]
 }

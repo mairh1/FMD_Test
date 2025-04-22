@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip FT60F21X ]
 [d frameptr 6 ]
-"155 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+"161 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 [e E1026 . `uc
 SoundLeve_0 224
 SoundLeve_1 225
@@ -67,19 +67,19 @@ SoundLeve_15 239
 [v _CX588_Play_Sound CX588_Play_Sound `(v  1 e 1 0 ]
 "115
 [v _CX588_Get_Busy_State CX588_Get_Busy_State `(uc  1 e 1 0 ]
-"11 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+"17 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 [v _TIME_OUT_Enter_Sleep TIME_OUT_Enter_Sleep `(v  1 e 1 0 ]
-"45
+"51
 [v _Play_Sound Play_Sound `(v  1 e 1 0 ]
-"67
+"73
 [v _ISR ISR `II(v  1 e 1 0 ]
-"95
+"101
 [v _PA2_Level_Change_INITIAL PA2_Level_Change_INITIAL `(v  1 e 1 0 ]
-"110
+"116
 [v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
-"132
+"138
 [v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
-"150
+"156
 [v _main main `(v  1 e 1 0 ]
 "59 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F21X.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -139,10 +139,10 @@ SoundLeve_15 239
 [v _Seed_Val Seed_Val `i  1 e 2 0 ]
 "9
 [v _TIME_OUT TIME_OUT `i  1 e 2 0 ]
-"150
+"156
 [v _main main `(v  1 e 1 0 ]
 {
-"164
+"170
 } 0
 "6 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
 [v _srand srand `(v  1 e 1 0 ]
@@ -150,25 +150,25 @@ SoundLeve_15 239
 [v srand@x x `ui  1 p 2 3 ]
 "9
 } 0
-"11 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+"17 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 [v _TIME_OUT_Enter_Sleep TIME_OUT_Enter_Sleep `(v  1 e 1 0 ]
 {
-"37
+"43
 } 0
-"95
+"101
 [v _PA2_Level_Change_INITIAL PA2_Level_Change_INITIAL `(v  1 e 1 0 ]
 {
-"102
+"108
 } 0
-"110
+"116
 [v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
 {
-"124
+"130
 } 0
-"45
+"51
 [v _Play_Sound Play_Sound `(v  1 e 1 0 ]
 {
-"59
+"65
 } 0
 "12 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
 [v _rand rand `(i  1 e 2 0 ]
@@ -199,10 +199,10 @@ SoundLeve_15 239
 {
 "121
 } 0
-"132 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+"138 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 [v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
 {
-"143
+"149
 } 0
 "90 E:\program\FMD\Project\CX588_SOUND\CX588.c
 [v _CX588_SET_Sound_Size CX588_SET_Sound_Size `(v  1 e 1 0 ]
@@ -264,8 +264,8 @@ SoundLeve_15 239
 {
 "51
 } 0
-"67 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+"73 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"87
+"93
 } 0
