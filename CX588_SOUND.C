@@ -1,4 +1,5 @@
 #include <stdlib.h>  // 包含rand()和srand()函数
+#include <stdbool.h>
 #include "SYSCFG.h"
 #include "FT60F21X.h"
 #include "CX588_SOUND.h"
@@ -8,6 +9,9 @@ unsigned char ReadAPin;
 int Seed_Val = 0;	//假随机数种子
 int TIME_OUT = 0;	//空闲计数值
 
+bool SW1_state = false;     //SW1开关震动状态
+unsigned char SW1_vibrate = 0;    //SW1震动计数
+
 /*-------------------------------------------------
  * 函数名：TIME_OUT_Enter_Sleep
  * 功能：  空闲超时进入Sleep模式
@@ -16,7 +20,7 @@ int TIME_OUT = 0;	//空闲计数值
  --------------------------------------------------*/
 void TIME_OUT_Enter_Sleep(void)
 {
-	if(CX588_Get_Busy_State() == 1)
+	if(CX588_Get_Busy_State())
 	{	
 		TMR2IE = 1;						//使能TIMER2的中断  
 		PEIE=1;    						//使能外设中断
@@ -49,19 +53,28 @@ void TIME_OUT_Enter_Sleep(void)
  * 输入：  无
  * 输出：  无
  --------------------------------------------------*/
-void Play_Sound(void)
+void Play_Sound(unsigned char* val)
 {
-	if(VIBRATION_BUT == 0)
+	if(SW1_state != VIBRATION_BUT)
 	{
-		DelayMs(20);
-		if(VIBRATION_BUT == 0)
+		SW1_state = VIBRATION_BUT;
+		if((*val) < 0xff)
+            (*val)++;
+        else
+            (*val) = 0xff;
+        //Delay_Ms(10);
+	}
+	
+	if((*val) >= 10)
+	{	
+		if(CX588_Get_Busy_State())
 		{
-			if(CX588_Get_Busy_State())
-			{
-				CX588_Play_Sound((rand()%8)+1);
-                Seed_Val++;              
-			}
-		}		
+			CX588_Play_Sound((rand()%8)+1);
+			Seed_Val++;   
+			(*val) = 0;			
+		}
+		else
+			(*val) = 10;	
 	}
 }
 
@@ -208,7 +221,7 @@ void main()
     
 	while(1)
 	{
-		Play_Sound();  
+		Play_Sound(&SW1_vibrate);  
         TIME_OUT_Enter_Sleep();
         srand(Seed_Val);		//生成随机数种子;    
 	}   	

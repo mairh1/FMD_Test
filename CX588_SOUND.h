@@ -11,6 +11,6 @@ void EEPROMwrite(unsigned char EEAddr,unsigned char Data);
 
 void PA2_Level_Change_INITIAL();
 void TIME_OUT_Enter_Sleep(void);
-void Play_Sound(void);
+void Play_Sound(unsigned char* val);
 
 #endif
