@@ -6,11 +6,13 @@
 
 #define Seed_EEPROM_ADD 0x00 //随机种子地址
 
-unsigned char EEPROMread(unsigned char EEAddr);
-void EEPROMwrite(unsigned char EEAddr,unsigned char Data);
-
-void PA2_Level_Change_INITIAL();
 void TIME_OUT_Enter_Sleep(void);
 void Play_Sound(unsigned char* val);
+
+unsigned char EEPROMread(unsigned char EEAddr);
+void EEPROMwrite(unsigned char EEAddr,unsigned char Data);
+void PA2_Level_Change_INITIAL();
+void TIMER2_INITIAL (void);
+void POWER_INITIAL (void);
 
 #endif

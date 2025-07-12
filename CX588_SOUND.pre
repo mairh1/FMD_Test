@@ -1028,12 +1028,14 @@ extern __bit __powerdown;
 extern __bit __timeout;
 
 # 9 "CX588_SOUND.h"
-unsigned char EEPROMread(unsigned char EEAddr);
-void EEPROMwrite(unsigned char EEAddr,unsigned char Data);
-
-void PA2_Level_Change_INITIAL();
 void TIME_OUT_Enter_Sleep(void);
 void Play_Sound(unsigned char* val);
+
+unsigned char EEPROMread(unsigned char EEAddr);
+void EEPROMwrite(unsigned char EEAddr,unsigned char Data);
+void PA2_Level_Change_INITIAL();
+void TIMER2_INITIAL (void);
+void POWER_INITIAL (void);
 
 # 10 "CX588.h"
 typedef enum
@@ -1056,21 +1058,21 @@ SoundLeve_14,
 SoundLeve_15
 }CX588_SoundSize;
 
-
-
-
+# 34
 void DelayUs(unsigned char Time);
 void DelayMs(unsigned char Time);
 void CX588_GPIO_Init(void);
 void CX588_SET_Sound_Size(CX588_SoundSize Sound_Code);
 void CX588_Play_Sound(unsigned char Sound_Code);
+void CX588_Shut_Down(void);
+void CX588_Wake_UP(void);
 void CX588_Stop_Sound(void);
 unsigned char CX588_Get_Busy_State(void);
 
 # 8 "CX588_SOUND.C"
 unsigned char ReadAPin;
-int Seed_Val = 0;
-int TIME_OUT = 0;
+unsigned int Seed_Val = 0;
+unsigned int TIME_OUT = 0;
 
 bool SW1_state = 0;
 unsigned char SW1_vibrate = 0;
@@ -1089,6 +1091,7 @@ TIME_OUT = 0;
 TMR2IE = 0;
 PEIE = 0;
 GIE = 0;
+CX588_Shut_Down();
 EEPROMwrite(0x00,Seed_Val);
 
 PA2_Level_Change_INITIAL();
@@ -1105,17 +1108,16 @@ GIE = 0;
 }
 }
 
-# 56
+# 57
 void Play_Sound(unsigned char* val)
 {
 if(SW1_state != PA2)
 {
 SW1_state = PA2;
-if((*val) < 0xff)
+if((*val) < 0xfe)
 (*val)++;
 else
 (*val) = 0xff;
-
 }
 
 if((*val) >= 10)
@@ -1127,11 +1129,15 @@ Seed_Val++;
 (*val) = 0;
 }
 else
-(*val) = 10;
+{
+Seed_Val++;
+(*val) = 0;
+}
+
 }
 }
 
-# 87
+# 91
 void interrupt ISR(void)
 {
 
@@ -1151,10 +1157,12 @@ PAIF = 0;
 PAIE = 0;
 IOCA2 =0;
 GIE = 1;
+
+CX588_Wake_UP();
 }
 }
 
-# 115
+# 121
 unsigned char EEPROMread(unsigned char EEAddr)
 {
 unsigned char ReEEPROMread;
@@ -1168,7 +1176,7 @@ ReEEPROMread =EEDAT;
 return ReEEPROMread;
 }
 
-# 135
+# 141
 void EEPROMwrite(unsigned char EEAddr,unsigned char Data)
 {
 GIE = 0;
@@ -1186,7 +1194,7 @@ while(WR);
 GIE = 1;
 }
 
-# 158
+# 164
 void PA2_Level_Change_INITIAL(void)
 {
 TRISA2 = 1;
@@ -1196,7 +1204,7 @@ IOCA2 = 1;
 PAIE = 1;
 }
 
-# 173
+# 179
 void TIMER2_INITIAL (void)
 {
 T2CON0 = 0B01001011;
@@ -1213,13 +1221,13 @@ TMR2IF = 0;
 TMR2ON = 1;
 }
 
-# 195
+# 201
 void POWER_INITIAL (void)
 {
-OSCCON = 0B01110001;
+OSCCON = 0B01110000;
 INTCON = 0;
 
-OPTION = 0;
+OPTION = 0B00000000;
 TRISA = 0B00000100;
 PSRCA = 0;
 PSINKA = 0;
@@ -1227,15 +1235,17 @@ PORTA = 0B00000000;
 WPUA = 0B00000000;
 }
 
-# 213
+# 219
 void main()
 {
 POWER_INITIAL();
 TIMER2_INITIAL();
+
 CX588_GPIO_Init();
 CX588_SET_Sound_Size(SoundLeve_15);
+
 Seed_Val = EEPROMread(0x00);
-srand(Seed_Val);
+
 
 while(1)
 {

@@ -260,7 +260,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 "91 CX588.c
 [c E873 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 .. ]
 [n E873 . SoundLeve_0 SoundLeve_1 SoundLeve_2 SoundLeve_3 SoundLeve_4 SoundLeve_5 SoundLeve_6 SoundLeve_7 SoundLeve_8 SoundLeve_9 SoundLeve_10 SoundLeve_11 SoundLeve_12 SoundLeve_13 SoundLeve_14 SoundLeve_15  ]
-"39 CX588.h
+"42 CX588.h
 [v _CX588_Get_Busy_State `(uc ~T0 @X0 0 ef ]
 "6 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F21X.h
 [v _INDF `Vuc ~T0 @X0 1 e@0 ]
@@ -1628,13 +1628,15 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;CX588.h: 26: SoundLeve_14,
 [; ;CX588.h: 27: SoundLeve_15
 [; ;CX588.h: 28: }CX588_SoundSize;
-[; ;CX588.h: 33: void DelayUs(unsigned char Time);
-[; ;CX588.h: 34: void DelayMs(unsigned char Time);
-[; ;CX588.h: 35: void CX588_GPIO_Init(void);
-[; ;CX588.h: 36: void CX588_SET_Sound_Size(CX588_SoundSize Sound_Code);
-[; ;CX588.h: 37: void CX588_Play_Sound(unsigned char Sound_Code);
-[; ;CX588.h: 38: void CX588_Stop_Sound(void);
-[; ;CX588.h: 39: unsigned char CX588_Get_Busy_State(void);
+[; ;CX588.h: 34: void DelayUs(unsigned char Time);
+[; ;CX588.h: 35: void DelayMs(unsigned char Time);
+[; ;CX588.h: 36: void CX588_GPIO_Init(void);
+[; ;CX588.h: 37: void CX588_SET_Sound_Size(CX588_SoundSize Sound_Code);
+[; ;CX588.h: 38: void CX588_Play_Sound(unsigned char Sound_Code);
+[; ;CX588.h: 39: void CX588_Shut_Down(void);
+[; ;CX588.h: 40: void CX588_Wake_UP(void);
+[; ;CX588.h: 41: void CX588_Stop_Sound(void);
+[; ;CX588.h: 42: unsigned char CX588_Get_Busy_State(void);
 [; ;fmd.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;fmd.h: 28: extern double __fpnormalize(double);
 [; ;gcc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1957,38 +1959,80 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;CX588.c: 110: {
 [e :U _CX588_Stop_Sound ]
 [f ]
-[; ;CX588.c: 111: CX588_OneWire_WriteByte(0xF0);
+[; ;CX588.c: 111: CX588_OneWire_WriteByte(0xFE);
 "111
-[e ( _CX588_OneWire_WriteByte (1 -> -> 240 `i `uc ]
+[e ( _CX588_OneWire_WriteByte (1 -> -> 254 `i `uc ]
 [; ;CX588.c: 112: }
 "112
 [e :UE 111 ]
 }
 "115
-[v _CX588_Get_Busy_State `(uc ~T0 @X0 1 ef ]
+[v _CX588_Shut_Down `(v ~T0 @X0 1 ef ]
 "116
 {
-[; ;CX588.c: 115: unsigned char CX588_Get_Busy_State(void)
+[; ;CX588.c: 115: void CX588_Shut_Down(void)
 [; ;CX588.c: 116: {
+[e :U _CX588_Shut_Down ]
+[f ]
+[; ;CX588.c: 117: CX588_OneWire_WriteByte(0xF0);
+"117
+[e ( _CX588_OneWire_WriteByte (1 -> -> 240 `i `uc ]
+[; ;CX588.c: 118: }
+"118
+[e :UE 112 ]
+}
+"121
+[v _CX588_Wake_UP `(v ~T0 @X0 1 ef ]
+"122
+{
+[; ;CX588.c: 121: void CX588_Wake_UP(void)
+[; ;CX588.c: 122: {
+[e :U _CX588_Wake_UP ]
+[f ]
+[; ;CX588.c: 124: PA4 = 1;
+"124
+[e = _PA4 -> -> 1 `i `b ]
+[; ;CX588.c: 125: DelayMs(1);
+"125
+[e ( _DelayMs (1 -> -> 1 `i `uc ]
+[; ;CX588.c: 126: PA4 = 0;
+"126
+[e = _PA4 -> -> 0 `i `b ]
+[; ;CX588.c: 127: DelayMs(40);
+"127
+[e ( _DelayMs (1 -> -> 40 `i `uc ]
+[; ;CX588.c: 128: PA4 = 1;
+"128
+[e = _PA4 -> -> 1 `i `b ]
+[; ;CX588.c: 129: }
+"129
+[e :UE 113 ]
+}
+"132
+[v _CX588_Get_Busy_State `(uc ~T0 @X0 1 ef ]
+"133
+{
+[; ;CX588.c: 132: unsigned char CX588_Get_Busy_State(void)
+[; ;CX588.c: 133: {
 [e :U _CX588_Get_Busy_State ]
 [f ]
-[; ;CX588.c: 117: if(PA0)
-"117
-[e $ ! _PA0 113  ]
-[; ;CX588.c: 118: return 1;
-"118
+[; ;CX588.c: 134: if(PA0)
+"134
+[e $ ! _PA0 115  ]
+[; ;CX588.c: 135: return 1;
+"135
 [e ) -> -> 1 `i `uc ]
-[e $UE 112  ]
-[e $U 114  ]
-"119
-[e :U 113 ]
-[; ;CX588.c: 119: else
-[; ;CX588.c: 120: return 0;
-"120
+[e $UE 114  ]
+[e $U 116  ]
+"136
+[e :U 115 ]
+[; ;CX588.c: 136: else
+[; ;CX588.c: 137: return 0;
+"137
 [e ) -> -> 0 `i `uc ]
-[e $UE 112  ]
-[e :U 114 ]
-[; ;CX588.c: 121: }
-"121
-[e :UE 112 ]
+[e $UE 114  ]
+[e :U 116 ]
+[; ;CX588.c: 138: }
+"138
+[e :UE 114 ]
 }

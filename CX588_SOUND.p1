@@ -254,27 +254,31 @@ Version 3.2   GCC8 Compiled Intermediate Code
 "844
 [u S87 `S88 1 `S89 1 ]
 [n S87 . . . ]
-"39 CX588.h
+"42 CX588.h
 [v _CX588_Get_Busy_State `(uc ~T0 @X0 0 ef ]
-"10 CX588_SOUND.h
+"39
+[v _CX588_Shut_Down `(v ~T0 @X0 0 ef ]
+"13 CX588_SOUND.h
 [v _EEPROMwrite `(v ~T0 @X0 0 ef2`uc`uc ]
-"12
+"14
 [v _PA2_Level_Change_INITIAL `(v ~T0 @X0 0 ef ]
 "31 C:\Program Files (x86)\CCompiler\Compiler\data\include\SYSCFG.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"37 CX588.h
+"38 CX588.h
 [v _CX588_Play_Sound `(v ~T0 @X0 0 ef1`uc ]
 "60 C:\Program Files (x86)\CCompiler\Compiler\data\include\stdlib.h
 [v _rand `(i ~T0 @X0 0 ef ]
+"40 CX588.h
+[v _CX588_Wake_UP `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"35 CX588.h
+"36
 [v _CX588_GPIO_Init `(v ~T0 @X0 0 ef ]
-"218 CX588_SOUND.C
-[c E1032 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 .. ]
-[n E1032 . SoundLeve_0 SoundLeve_1 SoundLeve_2 SoundLeve_3 SoundLeve_4 SoundLeve_5 SoundLeve_6 SoundLeve_7 SoundLeve_8 SoundLeve_9 SoundLeve_10 SoundLeve_11 SoundLeve_12 SoundLeve_13 SoundLeve_14 SoundLeve_15  ]
-"36 CX588.h
-[v _CX588_SET_Sound_Size `(v ~T0 @X0 0 ef1`E1032 ]
+"225 CX588_SOUND.C
+[c E1036 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 .. ]
+[n E1036 . SoundLeve_0 SoundLeve_1 SoundLeve_2 SoundLeve_3 SoundLeve_4 SoundLeve_5 SoundLeve_6 SoundLeve_7 SoundLeve_8 SoundLeve_9 SoundLeve_10 SoundLeve_11 SoundLeve_12 SoundLeve_13 SoundLeve_14 SoundLeve_15  ]
+"37 CX588.h
+[v _CX588_SET_Sound_Size `(v ~T0 @X0 0 ef1`E1036 ]
 "61 C:\Program Files (x86)\CCompiler\Compiler\data\include\stdlib.h
 [v _srand `(v ~T0 @X0 0 ef1`ui ]
 [; ;__size_t.h: 4: typedef unsigned size_t;
@@ -1689,11 +1693,13 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;SYSCFG.h: 157: extern unsigned char __resetbits;
 [; ;SYSCFG.h: 158: extern __bit __powerdown;
 [; ;SYSCFG.h: 159: extern __bit __timeout;
-[; ;CX588_SOUND.h: 9: unsigned char EEPROMread(unsigned char EEAddr);
-[; ;CX588_SOUND.h: 10: void EEPROMwrite(unsigned char EEAddr,unsigned char Data);
-[; ;CX588_SOUND.h: 12: void PA2_Level_Change_INITIAL();
-[; ;CX588_SOUND.h: 13: void TIME_OUT_Enter_Sleep(void);
-[; ;CX588_SOUND.h: 14: void Play_Sound(unsigned char* val);
+[; ;CX588_SOUND.h: 9: void TIME_OUT_Enter_Sleep(void);
+[; ;CX588_SOUND.h: 10: void Play_Sound(unsigned char* val);
+[; ;CX588_SOUND.h: 12: unsigned char EEPROMread(unsigned char EEAddr);
+[; ;CX588_SOUND.h: 13: void EEPROMwrite(unsigned char EEAddr,unsigned char Data);
+[; ;CX588_SOUND.h: 14: void PA2_Level_Change_INITIAL();
+[; ;CX588_SOUND.h: 15: void TIMER2_INITIAL (void);
+[; ;CX588_SOUND.h: 16: void POWER_INITIAL (void);
 [; ;CX588.h: 10: typedef enum
 [; ;CX588.h: 11: {
 [; ;CX588.h: 12: SoundLeve_0=0xE0,
@@ -1713,28 +1719,30 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;CX588.h: 26: SoundLeve_14,
 [; ;CX588.h: 27: SoundLeve_15
 [; ;CX588.h: 28: }CX588_SoundSize;
-[; ;CX588.h: 33: void DelayUs(unsigned char Time);
-[; ;CX588.h: 34: void DelayMs(unsigned char Time);
-[; ;CX588.h: 35: void CX588_GPIO_Init(void);
-[; ;CX588.h: 36: void CX588_SET_Sound_Size(CX588_SoundSize Sound_Code);
-[; ;CX588.h: 37: void CX588_Play_Sound(unsigned char Sound_Code);
-[; ;CX588.h: 38: void CX588_Stop_Sound(void);
-[; ;CX588.h: 39: unsigned char CX588_Get_Busy_State(void);
+[; ;CX588.h: 34: void DelayUs(unsigned char Time);
+[; ;CX588.h: 35: void DelayMs(unsigned char Time);
+[; ;CX588.h: 36: void CX588_GPIO_Init(void);
+[; ;CX588.h: 37: void CX588_SET_Sound_Size(CX588_SoundSize Sound_Code);
+[; ;CX588.h: 38: void CX588_Play_Sound(unsigned char Sound_Code);
+[; ;CX588.h: 39: void CX588_Shut_Down(void);
+[; ;CX588.h: 40: void CX588_Wake_UP(void);
+[; ;CX588.h: 41: void CX588_Stop_Sound(void);
+[; ;CX588.h: 42: unsigned char CX588_Get_Busy_State(void);
 "8 CX588_SOUND.C
 [v _ReadAPin `uc ~T0 @X0 1 e ]
 [; ;CX588_SOUND.C: 8: unsigned char ReadAPin;
 "9
-[v _Seed_Val `i ~T0 @X0 1 e ]
+[v _Seed_Val `ui ~T0 @X0 1 e ]
 [i _Seed_Val
--> 0 `i
+-> -> 0 `i `ui
 ]
-[; ;CX588_SOUND.C: 9: int Seed_Val = 0;
+[; ;CX588_SOUND.C: 9: unsigned int Seed_Val = 0;
 "10
-[v _TIME_OUT `i ~T0 @X0 1 e ]
+[v _TIME_OUT `ui ~T0 @X0 1 e ]
 [i _TIME_OUT
--> 0 `i
+-> -> 0 `i `ui
 ]
-[; ;CX588_SOUND.C: 10: int TIME_OUT = 0;
+[; ;CX588_SOUND.C: 10: unsigned int TIME_OUT = 0;
 "12
 [v _SW1_state `uc ~T0 @X0 1 e ]
 [i _SW1_state
@@ -1772,13 +1780,13 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [e = _GIE -> -> 1 `i `b ]
 [; ;CX588_SOUND.C: 28: if(TIME_OUT > 3)
 "28
-[e $ ! > _TIME_OUT -> 3 `i 92  ]
+[e $ ! > _TIME_OUT -> -> 3 `i `ui 92  ]
 [; ;CX588_SOUND.C: 29: {
 "29
 {
 [; ;CX588_SOUND.C: 30: TIME_OUT = 0;
 "30
-[e = _TIME_OUT -> 0 `i ]
+[e = _TIME_OUT -> -> 0 `i `ui ]
 [; ;CX588_SOUND.C: 31: TMR2IE = 0;
 "31
 [e = _TMR2IE -> -> 0 `i `b ]
@@ -1788,84 +1796,87 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [; ;CX588_SOUND.C: 33: GIE = 0;
 "33
 [e = _GIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 34: EEPROMwrite(0x00,Seed_Val);
+[; ;CX588_SOUND.C: 34: CX588_Shut_Down();
 "34
+[e ( _CX588_Shut_Down ..  ]
+[; ;CX588_SOUND.C: 35: EEPROMwrite(0x00,Seed_Val);
+"35
 [e ( _EEPROMwrite (2 , -> -> 0 `i `uc -> _Seed_Val `uc ]
-[; ;CX588_SOUND.C: 36: PA2_Level_Change_INITIAL();
-"36
-[e ( _PA2_Level_Change_INITIAL ..  ]
-[; ;CX588_SOUND.C: 37: asm("sleep");
+[; ;CX588_SOUND.C: 37: PA2_Level_Change_INITIAL();
 "37
-[; <" sleep ;# ">
-[; ;CX588_SOUND.C: 38: __nop();
+[e ( _PA2_Level_Change_INITIAL ..  ]
+[; ;CX588_SOUND.C: 38: asm("sleep");
 "38
-[e ( ___nop ..  ]
+[; <" sleep ;# ">
+[; ;CX588_SOUND.C: 39: __nop();
 "39
-}
-[e :U 92 ]
+[e ( ___nop ..  ]
 "40
 }
-[; ;CX588_SOUND.C: 39: }
-[; ;CX588_SOUND.C: 40: }
-[e $U 93  ]
+[e :U 92 ]
 "41
-[e :U 91 ]
-[; ;CX588_SOUND.C: 41: else
-[; ;CX588_SOUND.C: 42: {
+}
+[; ;CX588_SOUND.C: 40: }
+[; ;CX588_SOUND.C: 41: }
+[e $U 93  ]
 "42
-{
-[; ;CX588_SOUND.C: 43: TIME_OUT = 0;
+[e :U 91 ]
+[; ;CX588_SOUND.C: 42: else
+[; ;CX588_SOUND.C: 43: {
 "43
-[e = _TIME_OUT -> 0 `i ]
-[; ;CX588_SOUND.C: 44: TMR2IE = 0;
+{
+[; ;CX588_SOUND.C: 44: TIME_OUT = 0;
 "44
-[e = _TMR2IE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 45: PEIE = 0;
+[e = _TIME_OUT -> -> 0 `i `ui ]
+[; ;CX588_SOUND.C: 45: TMR2IE = 0;
 "45
-[e = _PEIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 46: GIE = 0;
+[e = _TMR2IE -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 46: PEIE = 0;
 "46
-[e = _GIE -> -> 0 `i `b ]
+[e = _PEIE -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 47: GIE = 0;
 "47
+[e = _GIE -> -> 0 `i `b ]
+"48
 }
 [e :U 93 ]
-[; ;CX588_SOUND.C: 47: }
 [; ;CX588_SOUND.C: 48: }
-"48
+[; ;CX588_SOUND.C: 49: }
+"49
 [e :UE 90 ]
 }
-"56
+"57
 [v _Play_Sound `(v ~T0 @X0 1 ef1`*uc ]
-"57
-{
-[; ;CX588_SOUND.C: 56: void Play_Sound(unsigned char* val)
-[; ;CX588_SOUND.C: 57: {
-[e :U _Play_Sound ]
-"56
-[v _val `*uc ~T0 @X0 1 r1 ]
-"57
-[f ]
-[; ;CX588_SOUND.C: 58: if(SW1_state != PA2)
 "58
-[e $ ! != -> _SW1_state `i -> _PA2 `i 95  ]
-[; ;CX588_SOUND.C: 59: {
-"59
 {
-[; ;CX588_SOUND.C: 60: SW1_state = PA2;
+[; ;CX588_SOUND.C: 57: void Play_Sound(unsigned char* val)
+[; ;CX588_SOUND.C: 58: {
+[e :U _Play_Sound ]
+"57
+[v _val `*uc ~T0 @X0 1 r1 ]
+"58
+[f ]
+[; ;CX588_SOUND.C: 59: if(SW1_state != PA2)
+"59
+[e $ ! != -> _SW1_state `i -> _PA2 `i 95  ]
+[; ;CX588_SOUND.C: 60: {
 "60
-[e = _SW1_state -> -> _PA2 `i `uc ]
-[; ;CX588_SOUND.C: 61: if((*val) < 0xff)
+{
+[; ;CX588_SOUND.C: 61: SW1_state = PA2;
 "61
-[e $ ! < -> *U _val `i -> 255 `i 96  ]
-[; ;CX588_SOUND.C: 62: (*val)++;
+[e = _SW1_state -> -> _PA2 `i `uc ]
+[; ;CX588_SOUND.C: 62: if((*val) < 0xfe)
 "62
+[e $ ! < -> *U _val `i -> 254 `i 96  ]
+[; ;CX588_SOUND.C: 63: (*val)++;
+"63
 [e ++ *U _val -> -> 1 `i `uc ]
 [e $U 97  ]
-"63
-[e :U 96 ]
-[; ;CX588_SOUND.C: 63: else
-[; ;CX588_SOUND.C: 64: (*val) = 0xff;
 "64
+[e :U 96 ]
+[; ;CX588_SOUND.C: 64: else
+[; ;CX588_SOUND.C: 65: (*val) = 0xff;
+"65
 [e = *U _val -> -> 255 `i `uc ]
 [e :U 97 ]
 "66
@@ -1889,7 +1900,7 @@ Version 3.2   GCC8 Compiled Intermediate Code
 [e ( _CX588_Play_Sound (1 -> + % ( _rand ..  -> 8 `i -> 1 `i `uc ]
 [; ;CX588_SOUND.C: 73: Seed_Val++;
 "73
-[e ++ _Seed_Val -> 1 `i ]
+[e ++ _Seed_Val -> -> 1 `i `ui ]
 [; ;CX588_SOUND.C: 74: (*val) = 0;
 "74
 [e = *U _val -> -> 0 `i `uc ]
@@ -1900,332 +1911,341 @@ Version 3.2   GCC8 Compiled Intermediate Code
 "76
 [e :U 99 ]
 [; ;CX588_SOUND.C: 76: else
-[; ;CX588_SOUND.C: 77: (*val) = 10;
+[; ;CX588_SOUND.C: 77: {
 "77
-[e = *U _val -> -> 10 `i `uc ]
-[e :U 100 ]
+{
+[; ;CX588_SOUND.C: 78: Seed_Val++;
 "78
+[e ++ _Seed_Val -> -> 1 `i `ui ]
+[; ;CX588_SOUND.C: 79: (*val) = 0;
+"79
+[e = *U _val -> -> 0 `i `uc ]
+"80
+}
+[e :U 100 ]
+"82
 }
 [e :U 98 ]
-[; ;CX588_SOUND.C: 78: }
-[; ;CX588_SOUND.C: 79: }
-"79
+[; ;CX588_SOUND.C: 80: }
+[; ;CX588_SOUND.C: 82: }
+[; ;CX588_SOUND.C: 83: }
+"83
 [e :UE 94 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-[v F1073 `(v ~T0 @X0 1 tf ]
-"87
-[v _ISR `IF1073 ~T0 @X0 1 e ]
-"88
+[v F1081 `(v ~T0 @X0 1 tf ]
+"91
+[v _ISR `IF1081 ~T0 @X0 1 e ]
+"92
 {
-[; ;CX588_SOUND.C: 87: void interrupt ISR(void)
-[; ;CX588_SOUND.C: 88: {
+[; ;CX588_SOUND.C: 91: void interrupt ISR(void)
+[; ;CX588_SOUND.C: 92: {
 [e :U _ISR ]
 [f ]
-[; ;CX588_SOUND.C: 90: if(TMR2IE && TMR2IF)
-"90
-[e $ ! && _TMR2IE _TMR2IF 102  ]
-[; ;CX588_SOUND.C: 91: {
-"91
-{
-[; ;CX588_SOUND.C: 92: TMR2IF = 0;
-"92
-[e = _TMR2IF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 94: if(TIME_OUT < 0xff)
+[; ;CX588_SOUND.C: 94: if(TMR2IE && TMR2IF)
 "94
-[e $ ! < _TIME_OUT -> 255 `i 103  ]
-[; ;CX588_SOUND.C: 95: TIME_OUT++;
+[e $ ! && _TMR2IE _TMR2IF 102  ]
+[; ;CX588_SOUND.C: 95: {
 "95
-[e ++ _TIME_OUT -> 1 `i ]
-[e :U 103 ]
+{
+[; ;CX588_SOUND.C: 96: TMR2IF = 0;
 "96
+[e = _TMR2IF -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 98: if(TIME_OUT < 0xff)
+"98
+[e $ ! < _TIME_OUT -> -> 255 `i `ui 103  ]
+[; ;CX588_SOUND.C: 99: TIME_OUT++;
+"99
+[e ++ _TIME_OUT -> -> 1 `i `ui ]
+[e :U 103 ]
+"100
 }
 [e :U 102 ]
-[; ;CX588_SOUND.C: 96: }
-[; ;CX588_SOUND.C: 99: if(PAIE && PAIF)
-"99
-[e $ ! && _PAIE _PAIF 104  ]
-[; ;CX588_SOUND.C: 100: {
-"100
-{
-[; ;CX588_SOUND.C: 101: ReadAPin = PORTA;
-"101
-[e = _ReadAPin _PORTA ]
-[; ;CX588_SOUND.C: 102: PAIF = 0;
-"102
-[e = _PAIF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 103: PAIE = 0;
+[; ;CX588_SOUND.C: 100: }
+[; ;CX588_SOUND.C: 103: if(PAIE && PAIF)
 "103
-[e = _PAIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 104: IOCA2 =0;
+[e $ ! && _PAIE _PAIF 104  ]
+[; ;CX588_SOUND.C: 104: {
 "104
-[e = _IOCA2 -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 105: GIE = 1;
+{
+[; ;CX588_SOUND.C: 105: ReadAPin = PORTA;
 "105
-[e = _GIE -> -> 1 `i `b ]
+[e = _ReadAPin _PORTA ]
+[; ;CX588_SOUND.C: 106: PAIF = 0;
 "106
+[e = _PAIF -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 107: PAIE = 0;
+"107
+[e = _PAIE -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 108: IOCA2 =0;
+"108
+[e = _IOCA2 -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 109: GIE = 1;
+"109
+[e = _GIE -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 111: CX588_Wake_UP();
+"111
+[e ( _CX588_Wake_UP ..  ]
+"112
 }
 [e :U 104 ]
-[; ;CX588_SOUND.C: 106: }
-[; ;CX588_SOUND.C: 107: }
-"107
+[; ;CX588_SOUND.C: 112: }
+[; ;CX588_SOUND.C: 113: }
+"113
 [e :UE 101 ]
 }
-"115
-[v _EEPROMread `(uc ~T0 @X0 1 ef1`uc ]
-"116
-{
-[; ;CX588_SOUND.C: 115: unsigned char EEPROMread(unsigned char EEAddr)
-[; ;CX588_SOUND.C: 116: {
-[e :U _EEPROMread ]
-"115
-[v _EEAddr `uc ~T0 @X0 1 r1 ]
-"116
-[f ]
-"117
-[v _ReEEPROMread `uc ~T0 @X0 1 a ]
-[; ;CX588_SOUND.C: 117: unsigned char ReEEPROMread;
-[; ;CX588_SOUND.C: 118: EEADR = EEAddr;
-"118
-[e = _EEADR _EEAddr ]
-[; ;CX588_SOUND.C: 119: RD=1;
-"119
-[e = _RD -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 120: __nop();
-"120
-[e ( ___nop ..  ]
-[; ;CX588_SOUND.C: 121: __nop();
 "121
-[e ( ___nop ..  ]
-[; ;CX588_SOUND.C: 122: __nop();
+[v _EEPROMread `(uc ~T0 @X0 1 ef1`uc ]
 "122
-[e ( ___nop ..  ]
-[; ;CX588_SOUND.C: 123: __nop();
+{
+[; ;CX588_SOUND.C: 121: unsigned char EEPROMread(unsigned char EEAddr)
+[; ;CX588_SOUND.C: 122: {
+[e :U _EEPROMread ]
+"121
+[v _EEAddr `uc ~T0 @X0 1 r1 ]
+"122
+[f ]
 "123
-[e ( ___nop ..  ]
-[; ;CX588_SOUND.C: 124: ReEEPROMread =EEDAT;
+[v _ReEEPROMread `uc ~T0 @X0 1 a ]
+[; ;CX588_SOUND.C: 123: unsigned char ReEEPROMread;
+[; ;CX588_SOUND.C: 124: EEADR = EEAddr;
 "124
-[e = _ReEEPROMread _EEDAT ]
-[; ;CX588_SOUND.C: 125: return ReEEPROMread;
+[e = _EEADR _EEAddr ]
+[; ;CX588_SOUND.C: 125: RD=1;
 "125
+[e = _RD -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 126: __nop();
+"126
+[e ( ___nop ..  ]
+[; ;CX588_SOUND.C: 127: __nop();
+"127
+[e ( ___nop ..  ]
+[; ;CX588_SOUND.C: 128: __nop();
+"128
+[e ( ___nop ..  ]
+[; ;CX588_SOUND.C: 129: __nop();
+"129
+[e ( ___nop ..  ]
+[; ;CX588_SOUND.C: 130: ReEEPROMread =EEDAT;
+"130
+[e = _ReEEPROMread _EEDAT ]
+[; ;CX588_SOUND.C: 131: return ReEEPROMread;
+"131
 [e ) _ReEEPROMread ]
 [e $UE 105  ]
-[; ;CX588_SOUND.C: 126: }
-"126
+[; ;CX588_SOUND.C: 132: }
+"132
 [e :UE 105 ]
 }
-"135
+"141
 [v _EEPROMwrite `(v ~T0 @X0 1 ef2`uc`uc ]
-"136
+"142
 {
-[; ;CX588_SOUND.C: 135: void EEPROMwrite(unsigned char EEAddr,unsigned char Data)
-[; ;CX588_SOUND.C: 136: {
+[; ;CX588_SOUND.C: 141: void EEPROMwrite(unsigned char EEAddr,unsigned char Data)
+[; ;CX588_SOUND.C: 142: {
 [e :U _EEPROMwrite ]
-"135
+"141
 [v _EEAddr `uc ~T0 @X0 1 r1 ]
 [v _Data `uc ~T0 @X0 1 r2 ]
-"136
+"142
 [f ]
-[; ;CX588_SOUND.C: 137: GIE = 0;
-"137
+[; ;CX588_SOUND.C: 143: GIE = 0;
+"143
 [e = _GIE -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 138: while(GIE);
-"138
+[; ;CX588_SOUND.C: 144: while(GIE);
+"144
 [e $U 107  ]
 [e :U 108 ]
 [e :U 107 ]
 [e $ _GIE 108  ]
 [e :U 109 ]
-[; ;CX588_SOUND.C: 139: EEADR = EEAddr;
-"139
-[e = _EEADR _EEAddr ]
-[; ;CX588_SOUND.C: 140: EEDAT = Data;
-"140
-[e = _EEDAT _Data ]
-[; ;CX588_SOUND.C: 141: EEIF = 0;
-"141
-[e = _EEIF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 142: EECON1 |= 0x34;
-"142
-[e =| _EECON1 -> -> 52 `i `uc ]
-[; ;CX588_SOUND.C: 143: WR = 1;
-"143
-[e = _WR -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 144: __nop();
-"144
-[e ( ___nop ..  ]
-[; ;CX588_SOUND.C: 145: __nop();
+[; ;CX588_SOUND.C: 145: EEADR = EEAddr;
 "145
-[e ( ___nop ..  ]
-[; ;CX588_SOUND.C: 146: __nop();
+[e = _EEADR _EEAddr ]
+[; ;CX588_SOUND.C: 146: EEDAT = Data;
 "146
-[e ( ___nop ..  ]
-[; ;CX588_SOUND.C: 147: __nop();
+[e = _EEDAT _Data ]
+[; ;CX588_SOUND.C: 147: EEIF = 0;
 "147
-[e ( ___nop ..  ]
-[; ;CX588_SOUND.C: 148: while(WR);
+[e = _EEIF -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 148: EECON1 |= 0x34;
 "148
+[e =| _EECON1 -> -> 52 `i `uc ]
+[; ;CX588_SOUND.C: 149: WR = 1;
+"149
+[e = _WR -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 150: __nop();
+"150
+[e ( ___nop ..  ]
+[; ;CX588_SOUND.C: 151: __nop();
+"151
+[e ( ___nop ..  ]
+[; ;CX588_SOUND.C: 152: __nop();
+"152
+[e ( ___nop ..  ]
+[; ;CX588_SOUND.C: 153: __nop();
+"153
+[e ( ___nop ..  ]
+[; ;CX588_SOUND.C: 154: while(WR);
+"154
 [e $U 110  ]
 [e :U 111 ]
 [e :U 110 ]
 [e $ _WR 111  ]
 [e :U 112 ]
-[; ;CX588_SOUND.C: 149: GIE = 1;
-"149
+[; ;CX588_SOUND.C: 155: GIE = 1;
+"155
 [e = _GIE -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 150: }
-"150
+[; ;CX588_SOUND.C: 156: }
+"156
 [e :UE 106 ]
 }
-"158
+"164
 [v _PA2_Level_Change_INITIAL `(v ~T0 @X0 1 ef ]
-"159
+"165
 {
-[; ;CX588_SOUND.C: 158: void PA2_Level_Change_INITIAL(void)
-[; ;CX588_SOUND.C: 159: {
+[; ;CX588_SOUND.C: 164: void PA2_Level_Change_INITIAL(void)
+[; ;CX588_SOUND.C: 165: {
 [e :U _PA2_Level_Change_INITIAL ]
 [f ]
-[; ;CX588_SOUND.C: 160: TRISA2 = 1;
-"160
+[; ;CX588_SOUND.C: 166: TRISA2 = 1;
+"166
 [e = _TRISA2 -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 161: ReadAPin = PORTA;
-"161
+[; ;CX588_SOUND.C: 167: ReadAPin = PORTA;
+"167
 [e = _ReadAPin _PORTA ]
-[; ;CX588_SOUND.C: 162: PAIF = 0;
-"162
+[; ;CX588_SOUND.C: 168: PAIF = 0;
+"168
 [e = _PAIF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 163: IOCA2 = 1;
-"163
+[; ;CX588_SOUND.C: 169: IOCA2 = 1;
+"169
 [e = _IOCA2 -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 164: PAIE = 1;
-"164
+[; ;CX588_SOUND.C: 170: PAIE = 1;
+"170
 [e = _PAIE -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 165: }
-"165
+[; ;CX588_SOUND.C: 171: }
+"171
 [e :UE 113 ]
 }
-"173
+"179
 [v _TIMER2_INITIAL `(v ~T0 @X0 1 ef ]
-"174
+"180
 {
-[; ;CX588_SOUND.C: 173: void TIMER2_INITIAL (void)
-[; ;CX588_SOUND.C: 174: {
+[; ;CX588_SOUND.C: 179: void TIMER2_INITIAL (void)
+[; ;CX588_SOUND.C: 180: {
 [e :U _TIMER2_INITIAL ]
 [f ]
-[; ;CX588_SOUND.C: 175: T2CON0 = 0B01001011;
-"175
-[e = _T2CON0 -> -> 75 `i `uc ]
-[; ;CX588_SOUND.C: 179: T2CON1 = 0B00001000;
-"179
-[e = _T2CON1 -> -> 8 `i `uc ]
-[; ;CX588_SOUND.C: 180: TMR2H = 0;
-"180
-[e = _TMR2H -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 181: TMR2L = 0;
+[; ;CX588_SOUND.C: 181: T2CON0 = 0B01001011;
 "181
-[e = _TMR2L -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 182: PR2H = 100;
-"182
-[e = _PR2H -> -> 100 `i `uc ]
-[; ;CX588_SOUND.C: 183: PR2L = 250;
-"183
-[e = _PR2L -> -> 250 `i `uc ]
-[; ;CX588_SOUND.C: 185: TMR2IF = 0;
+[e = _T2CON0 -> -> 75 `i `uc ]
+[; ;CX588_SOUND.C: 185: T2CON1 = 0B00001000;
 "185
-[e = _TMR2IF -> -> 0 `i `b ]
-[; ;CX588_SOUND.C: 186: TMR2ON = 1;
+[e = _T2CON1 -> -> 8 `i `uc ]
+[; ;CX588_SOUND.C: 186: TMR2H = 0;
 "186
-[e = _TMR2ON -> -> 1 `i `b ]
-[; ;CX588_SOUND.C: 187: }
+[e = _TMR2H -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 187: TMR2L = 0;
 "187
+[e = _TMR2L -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 188: PR2H = 100;
+"188
+[e = _PR2H -> -> 100 `i `uc ]
+[; ;CX588_SOUND.C: 189: PR2L = 250;
+"189
+[e = _PR2L -> -> 250 `i `uc ]
+[; ;CX588_SOUND.C: 191: TMR2IF = 0;
+"191
+[e = _TMR2IF -> -> 0 `i `b ]
+[; ;CX588_SOUND.C: 192: TMR2ON = 1;
+"192
+[e = _TMR2ON -> -> 1 `i `b ]
+[; ;CX588_SOUND.C: 193: }
+"193
 [e :UE 114 ]
 }
-"195
+"201
 [v _POWER_INITIAL `(v ~T0 @X0 1 ef ]
-"196
+"202
 {
-[; ;CX588_SOUND.C: 195: void POWER_INITIAL (void)
-[; ;CX588_SOUND.C: 196: {
+[; ;CX588_SOUND.C: 201: void POWER_INITIAL (void)
+[; ;CX588_SOUND.C: 202: {
 [e :U _POWER_INITIAL ]
 [f ]
-[; ;CX588_SOUND.C: 197: OSCCON = 0B01110001;
-"197
-[e = _OSCCON -> -> 113 `i `uc ]
-[; ;CX588_SOUND.C: 198: INTCON = 0;
-"198
-[e = _INTCON -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 200: OPTION = 0;
-"200
-[e = _OPTION -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 201: TRISA = 0B00000100;
-"201
-[e = _TRISA -> -> 4 `i `uc ]
-[; ;CX588_SOUND.C: 202: PSRCA = 0;
-"202
-[e = _PSRCA -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 203: PSINKA = 0;
+[; ;CX588_SOUND.C: 203: OSCCON = 0B01110000;
 "203
-[e = _PSINKA -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 204: PORTA = 0B00000000;
+[e = _OSCCON -> -> 112 `i `uc ]
+[; ;CX588_SOUND.C: 204: INTCON = 0;
 "204
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 205: WPUA = 0B00000000;
-"205
-[e = _WPUA -> -> 0 `i `uc ]
-[; ;CX588_SOUND.C: 206: }
+[e = _INTCON -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 206: OPTION = 0B00000000;
 "206
+[e = _OPTION -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 207: TRISA = 0B00000100;
+"207
+[e = _TRISA -> -> 4 `i `uc ]
+[; ;CX588_SOUND.C: 208: PSRCA = 0;
+"208
+[e = _PSRCA -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 209: PSINKA = 0;
+"209
+[e = _PSINKA -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 210: PORTA = 0B00000000;
+"210
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 211: WPUA = 0B00000000;
+"211
+[e = _WPUA -> -> 0 `i `uc ]
+[; ;CX588_SOUND.C: 212: }
+"212
 [e :UE 115 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"213
+"219
 [v _main `(v ~T0 @X0 1 ef ]
-"214
+"220
 {
-[; ;CX588_SOUND.C: 213: void main()
-[; ;CX588_SOUND.C: 214: {
+[; ;CX588_SOUND.C: 219: void main()
+[; ;CX588_SOUND.C: 220: {
 [e :U _main ]
 [f ]
-[; ;CX588_SOUND.C: 215: POWER_INITIAL();
-"215
+[; ;CX588_SOUND.C: 221: POWER_INITIAL();
+"221
 [e ( _POWER_INITIAL ..  ]
-[; ;CX588_SOUND.C: 216: TIMER2_INITIAL();
-"216
-[e ( _TIMER2_INITIAL ..  ]
-[; ;CX588_SOUND.C: 217: CX588_GPIO_Init();
-"217
-[e ( _CX588_GPIO_Init ..  ]
-[; ;CX588_SOUND.C: 218: CX588_SET_Sound_Size(SoundLeve_15);
-"218
-[e ( _CX588_SET_Sound_Size (1 . `E1032 15 ]
-[; ;CX588_SOUND.C: 219: Seed_Val = EEPROMread(0x00);
-"219
-[e = _Seed_Val -> ( _EEPROMread (1 -> -> 0 `i `uc `i ]
-[; ;CX588_SOUND.C: 220: srand(Seed_Val);
-"220
-[e ( _srand (1 -> _Seed_Val `ui ]
-[; ;CX588_SOUND.C: 222: while(1)
+[; ;CX588_SOUND.C: 222: TIMER2_INITIAL();
 "222
-[e :U 118 ]
-[; ;CX588_SOUND.C: 223: {
-"223
-{
-[; ;CX588_SOUND.C: 224: Play_Sound(&SW1_vibrate);
+[e ( _TIMER2_INITIAL ..  ]
+[; ;CX588_SOUND.C: 224: CX588_GPIO_Init();
 "224
-[e ( _Play_Sound (1 &U _SW1_vibrate ]
-[; ;CX588_SOUND.C: 225: TIME_OUT_Enter_Sleep();
+[e ( _CX588_GPIO_Init ..  ]
+[; ;CX588_SOUND.C: 225: CX588_SET_Sound_Size(SoundLeve_15);
 "225
-[e ( _TIME_OUT_Enter_Sleep ..  ]
-[; ;CX588_SOUND.C: 226: srand(Seed_Val);
-"226
-[e ( _srand (1 -> _Seed_Val `ui ]
+[e ( _CX588_SET_Sound_Size (1 . `E1036 15 ]
+[; ;CX588_SOUND.C: 227: Seed_Val = EEPROMread(0x00);
 "227
+[e = _Seed_Val -> ( _EEPROMread (1 -> -> 0 `i `uc `ui ]
+[; ;CX588_SOUND.C: 230: while(1)
+"230
+[e :U 118 ]
+[; ;CX588_SOUND.C: 231: {
+"231
+{
+[; ;CX588_SOUND.C: 232: Play_Sound(&SW1_vibrate);
+"232
+[e ( _Play_Sound (1 &U _SW1_vibrate ]
+[; ;CX588_SOUND.C: 233: TIME_OUT_Enter_Sleep();
+"233
+[e ( _TIME_OUT_Enter_Sleep ..  ]
+[; ;CX588_SOUND.C: 234: srand(Seed_Val);
+"234
+[e ( _srand (1 _Seed_Val ]
+"235
 }
 [e :U 117 ]
-"222
+"230
 [e $U 118  ]
 [e :U 119 ]
-[; ;CX588_SOUND.C: 227: }
-[; ;CX588_SOUND.C: 228: }
-"228
+[; ;CX588_SOUND.C: 235: }
+[; ;CX588_SOUND.C: 236: }
+"236
 [e :UE 116 ]
 }

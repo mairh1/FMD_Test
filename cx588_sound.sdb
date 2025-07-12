@@ -3,8 +3,8 @@
 [d edition pro ]
 [d chip FT60F21X ]
 [d frameptr 6 ]
-"218 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-[e E1032 . `uc
+"225 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+[e E1036 . `uc
 SoundLeve_0 224
 SoundLeve_1 225
 SoundLeve_2 226
@@ -53,8 +53,10 @@ SoundLeve_15 239
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "12 E:\program\FMD\Project\CX588_SOUND\CX588.c
 [v _DelayUs DelayUs `(v  1 e 1 0 ]
+[v i1_DelayUs DelayUs `(v  1 e 1 0 ]
 "27
 [v _DelayMs DelayMs `(v  1 e 1 0 ]
+[v i1_DelayMs DelayMs `(v  1 e 1 0 ]
 "39
 [v _CX588_GPIO_Init CX588_GPIO_Init `(v  1 e 1 0 ]
 "55
@@ -66,24 +68,28 @@ SoundLeve_15 239
 "96
 [v _CX588_Play_Sound CX588_Play_Sound `(v  1 e 1 0 ]
 "115
+[v _CX588_Shut_Down CX588_Shut_Down `(v  1 e 1 0 ]
+"121
+[v _CX588_Wake_UP CX588_Wake_UP `(v  1 e 1 0 ]
+"132
 [v _CX588_Get_Busy_State CX588_Get_Busy_State `(uc  1 e 1 0 ]
 "21 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 [v _TIME_OUT_Enter_Sleep TIME_OUT_Enter_Sleep `(v  1 e 1 0 ]
-"56
+"57
 [v _Play_Sound Play_Sound `(v  1 e 1 0 ]
-"87
+"91
 [v _ISR ISR `II(v  1 e 1 0 ]
-"115
+"121
 [v _EEPROMread EEPROMread `(uc  1 e 1 0 ]
-"135
+"141
 [v _EEPROMwrite EEPROMwrite `(v  1 e 1 0 ]
-"158
+"164
 [v _PA2_Level_Change_INITIAL PA2_Level_Change_INITIAL `(v  1 e 1 0 ]
-"173
+"179
 [v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
-"195
+"201
 [v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
-"213
+"219
 [v _main main `(v  1 e 1 0 ]
 "59 C:\Program Files (x86)\CCompiler\Compiler\data\include\FT60F21X.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -152,57 +158,62 @@ SoundLeve_15 239
 "3 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
 [v _randx randx `l  1 s 4 randx ]
 "9 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
-[v _Seed_Val Seed_Val `i  1 e 2 0 ]
+[v _Seed_Val Seed_Val `ui  1 e 2 0 ]
 "10
-[v _TIME_OUT TIME_OUT `i  1 e 2 0 ]
+[v _TIME_OUT TIME_OUT `ui  1 e 2 0 ]
 "12
 [v _SW1_state SW1_state `uc  1 e 1 0 ]
 "13
 [v _SW1_vibrate SW1_vibrate `uc  1 e 1 0 ]
-"213
+"219
 [v _main main `(v  1 e 1 0 ]
 {
-"228
+"236
 } 0
 "6 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
 [v _srand srand `(v  1 e 1 0 ]
 {
-[v srand@x x `ui  1 p 2 3 ]
+[v srand@x x `ui  1 p 2 0 ]
 "9
 } 0
 "21 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 [v _TIME_OUT_Enter_Sleep TIME_OUT_Enter_Sleep `(v  1 e 1 0 ]
 {
-"48
+"49
 } 0
-"158
+"164
 [v _PA2_Level_Change_INITIAL PA2_Level_Change_INITIAL `(v  1 e 1 0 ]
 {
-"165
+"171
 } 0
-"135
+"141
 [v _EEPROMwrite EEPROMwrite `(v  1 e 1 0 ]
 {
 [v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 wreg ]
 [v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 wreg ]
-[v EEPROMwrite@Data Data `uc  1 p 1 3 ]
-"137
-[v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 4 ]
-"150
+[v EEPROMwrite@Data Data `uc  1 p 1 0 ]
+"143
+[v EEPROMwrite@EEAddr EEAddr `uc  1 a 1 1 ]
+"156
 } 0
-"173
+"115 E:\program\FMD\Project\CX588_SOUND\CX588.c
+[v _CX588_Shut_Down CX588_Shut_Down `(v  1 e 1 0 ]
+{
+"118
+} 0
+"179 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 [v _TIMER2_INITIAL TIMER2_INITIAL `(v  1 e 1 0 ]
 {
-"187
+"193
 } 0
-"56
+"57
 [v _Play_Sound Play_Sound `(v  1 e 1 0 ]
 {
-[v Play_Sound@val val `*.1uc  1 a 1 wreg ]
-[v Play_Sound@val val `*.1uc  1 a 1 wreg ]
-"58
-[v Play_Sound@val val `*.1uc  1 a 1 10 ]
-"79
+[v Play_Sound@val val `*.4uc  1 a 1 wreg ]
+[v Play_Sound@val val `*.4uc  1 a 1 wreg ]
+"59
+[v Play_Sound@val val `*.4uc  1 a 1 14 ]
+"83
 } 0
 "12 C:\Program Files (x86)\CCompiler\Compiler\data\sources\common\rand.c
 [v _rand rand `(i  1 e 2 0 ]
@@ -213,7 +224,7 @@ SoundLeve_15 239
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 {
 "17
-[v ___lmul@product product `ul  1 a 4 3 ]
+[v ___lmul@product product `ul  1 a 4 8 ]
 "15
 [v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
@@ -225,30 +236,30 @@ SoundLeve_15 239
 [v CX588_Play_Sound@Sound_Code Sound_Code `uc  1 a 1 wreg ]
 [v CX588_Play_Sound@Sound_Code Sound_Code `uc  1 a 1 wreg ]
 "98
-[v CX588_Play_Sound@Sound_Code Sound_Code `uc  1 a 1 3 ]
+[v CX588_Play_Sound@Sound_Code Sound_Code `uc  1 a 1 8 ]
 "106
 } 0
-"115
+"132
 [v _CX588_Get_Busy_State CX588_Get_Busy_State `(uc  1 e 1 0 ]
 {
-"121
+"138
 } 0
-"195 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+"201 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 [v _POWER_INITIAL POWER_INITIAL `(v  1 e 1 0 ]
 {
-"206
+"212
 } 0
-"115
+"121
 [v _EEPROMread EEPROMread `(uc  1 e 1 0 ]
 {
 [v EEPROMread@EEAddr EEAddr `uc  1 a 1 wreg ]
-"117
-[v EEPROMread@ReEEPROMread ReEEPROMread `uc  1 a 1 4 ]
-"115
+"123
+[v EEPROMread@ReEEPROMread ReEEPROMread `uc  1 a 1 1 ]
+"121
 [v EEPROMread@EEAddr EEAddr `uc  1 a 1 wreg ]
-"118
-[v EEPROMread@EEAddr EEAddr `uc  1 a 1 3 ]
-"126
+"124
+[v EEPROMread@EEAddr EEAddr `uc  1 a 1 0 ]
+"132
 } 0
 "90 E:\program\FMD\Project\CX588_SOUND\CX588.c
 [v _CX588_SET_Sound_Size CX588_SET_Sound_Size `(v  1 e 1 0 ]
@@ -256,7 +267,7 @@ SoundLeve_15 239
 [v CX588_SET_Sound_Size@Sound_Code Sound_Code `E873  1 a 1 wreg ]
 [v CX588_SET_Sound_Size@Sound_Code Sound_Code `E873  1 a 1 wreg ]
 "92
-[v CX588_SET_Sound_Size@Sound_Code Sound_Code `E873  1 a 1 3 ]
+[v CX588_SET_Sound_Size@Sound_Code Sound_Code `E873  1 a 1 8 ]
 "93
 } 0
 "76
@@ -264,11 +275,11 @@ SoundLeve_15 239
 {
 [v CX588_OneWire_WriteByte@byte_byte byte_byte `uc  1 a 1 wreg ]
 "81
-[v CX588_OneWire_WriteByte@i i `uc  1 a 1 2 ]
+[v CX588_OneWire_WriteByte@i i `uc  1 a 1 7 ]
 "76
 [v CX588_OneWire_WriteByte@byte_byte byte_byte `uc  1 a 1 wreg ]
 "78
-[v CX588_OneWire_WriteByte@byte_byte byte_byte `uc  1 a 1 1 ]
+[v CX588_OneWire_WriteByte@byte_byte byte_byte `uc  1 a 1 6 ]
 "87
 } 0
 "55
@@ -277,7 +288,7 @@ SoundLeve_15 239
 [v CX588_OneWire_WriteBit@bit_bit bit_bit `uc  1 a 1 wreg ]
 [v CX588_OneWire_WriteBit@bit_bit bit_bit `uc  1 a 1 wreg ]
 "57
-[v CX588_OneWire_WriteBit@bit_bit bit_bit `uc  1 a 1 0 ]
+[v CX588_OneWire_WriteBit@bit_bit bit_bit `uc  1 a 1 5 ]
 "73
 } 0
 "27
@@ -285,12 +296,12 @@ SoundLeve_15 239
 {
 [v DelayMs@Time Time `uc  1 a 1 wreg ]
 "29
-[v DelayMs@b b `uc  1 a 1 7 ]
-[v DelayMs@a a `uc  1 a 1 6 ]
+[v DelayMs@b b `uc  1 a 1 4 ]
+[v DelayMs@a a `uc  1 a 1 3 ]
 "27
 [v DelayMs@Time Time `uc  1 a 1 wreg ]
 "30
-[v DelayMs@Time Time `uc  1 a 1 5 ]
+[v DelayMs@Time Time `uc  1 a 1 2 ]
 "37
 } 0
 "12
@@ -298,11 +309,11 @@ SoundLeve_15 239
 {
 [v DelayUs@Time Time `uc  1 a 1 wreg ]
 "14
-[v DelayUs@a a `uc  1 a 1 4 ]
+[v DelayUs@a a `uc  1 a 1 1 ]
 "12
 [v DelayUs@Time Time `uc  1 a 1 wreg ]
 "15
-[v DelayUs@Time Time `uc  1 a 1 3 ]
+[v DelayUs@Time Time `uc  1 a 1 0 ]
 "19
 } 0
 "39
@@ -310,8 +321,34 @@ SoundLeve_15 239
 {
 "51
 } 0
-"87 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
+"91 E:\program\FMD\Project\CX588_SOUND\CX588_SOUND.C
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"107
+"113
+} 0
+"121 E:\program\FMD\Project\CX588_SOUND\CX588.c
+[v _CX588_Wake_UP CX588_Wake_UP `(v  1 e 1 0 ]
+{
+"129
+} 0
+"27
+[v i1_DelayMs DelayMs `(v  1 e 1 0 ]
+{
+[v i1DelayMs@Time Time `uc  1 a 1 wreg ]
+[v i1DelayMs@b DelayMs `uc  1 a 1 4 ]
+[v i1DelayMs@a DelayMs `uc  1 a 1 3 ]
+[v i1DelayMs@Time Time `uc  1 a 1 wreg ]
+"30
+[v i1DelayMs@Time Time `uc  1 a 1 2 ]
+"37
+} 0
+"12
+[v i1_DelayUs DelayUs `(v  1 e 1 0 ]
+{
+[v i1DelayUs@Time Time `uc  1 a 1 wreg ]
+[v i1DelayUs@a DelayUs `uc  1 a 1 1 ]
+[v i1DelayUs@Time Time `uc  1 a 1 wreg ]
+"15
+[v i1DelayUs@Time Time `uc  1 a 1 0 ]
+"19
 } 0

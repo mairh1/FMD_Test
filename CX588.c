@@ -111,6 +111,23 @@ void CX588_Stop_Sound(void)
     CX588_OneWire_WriteByte(CX588_STOPPLAY_CMD);
 }
 
+//CX588关机（进入低功耗模式）
+void CX588_Shut_Down(void)
+{
+    CX588_OneWire_WriteByte(CX588_SHOTDOWN_CMD);
+}
+
+//CX588从低功耗模式中唤醒
+void CX588_Wake_UP(void)
+{
+	/* 数据引脚拉低40ms唤醒 */
+    GPIO_OneLine = 1;
+    DelayMs(1);
+    GPIO_OneLine = 0;
+	DelayMs(40);
+    GPIO_OneLine = 1;
+}
+
 // 检查CX588是否为忙碌状态
 unsigned char CX588_Get_Busy_State(void)
 {

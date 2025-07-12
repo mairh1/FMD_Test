@@ -939,14 +939,14 @@ SoundLeve_14,
 SoundLeve_15
 }CX588_SoundSize;
 
-
-
-
+# 34
 void DelayUs(unsigned char Time);
 void DelayMs(unsigned char Time);
 void CX588_GPIO_Init(void);
 void CX588_SET_Sound_Size(CX588_SoundSize Sound_Code);
 void CX588_Play_Sound(unsigned char Sound_Code);
+void CX588_Shut_Down(void);
+void CX588_Wake_UP(void);
 void CX588_Stop_Sound(void);
 unsigned char CX588_Get_Busy_State(void);
 
@@ -1076,7 +1076,24 @@ DelayMs(20);
 
 void CX588_Stop_Sound(void)
 {
+CX588_OneWire_WriteByte(0xFE);
+}
+
+
+void CX588_Shut_Down(void)
+{
 CX588_OneWire_WriteByte(0xF0);
+}
+
+
+void CX588_Wake_UP(void)
+{
+
+PA4 = 1;
+DelayMs(1);
+PA4 = 0;
+DelayMs(40);
+PA4 = 1;
 }
 
 

@@ -6,8 +6,8 @@
 #include "CX588.h"
 
 unsigned char ReadAPin;
-int Seed_Val = 0;	//假随机数种子
-int TIME_OUT = 0;	//空闲计数值
+unsigned int Seed_Val = 0;	//假随机数种子
+unsigned int TIME_OUT = 0;	//空闲计数值
 
 bool SW1_state = false;     //SW1开关震动状态
 unsigned char SW1_vibrate = 0;    //SW1震动计数
@@ -31,6 +31,7 @@ void TIME_OUT_Enter_Sleep(void)
 			TMR2IE = 0;						//失能TIMER2的中断  
 			PEIE = 0;    					//失能外设中断
 			GIE = 0;   						//失能全局中断
+            CX588_Shut_Down();				//CX588进入低功耗模式
             EEPROMwrite(Seed_EEPROM_ADD,Seed_Val);//写入随机种子地址
 			
             PA2_Level_Change_INITIAL();
@@ -58,11 +59,10 @@ void Play_Sound(unsigned char* val)
 	if(SW1_state != VIBRATION_BUT)
 	{
 		SW1_state = VIBRATION_BUT;
-		if((*val) < 0xff)
+		if((*val) < 0xfe)
             (*val)++;
         else
             (*val) = 0xff;
-        //Delay_Ms(10);
 	}
 	
 	if((*val) >= 10)
@@ -74,7 +74,11 @@ void Play_Sound(unsigned char* val)
 			(*val) = 0;			
 		}
 		else
-			(*val) = 10;	
+        {
+			Seed_Val++;
+			(*val) = 0;	           
+        }
+			
 	}
 }
 
@@ -102,7 +106,9 @@ void interrupt ISR(void)
 		PAIF = 0;  				//清PAIF标志位
 		PAIE = 0;  				//暂先禁止PA0中断
 		IOCA2 =0;  				//禁止PA0电平变化中断
-        GIE = 1;   						//使能全局中断
+        GIE = 1;   				//使能全局中断
+        
+        CX588_Wake_UP();		//唤醒CX588
     }
 }
 
@@ -194,10 +200,10 @@ void TIMER2_INITIAL (void)
  --------------------------------------------------*/	
 void POWER_INITIAL (void) 
 { 
-	OSCCON = 0B01110001;	//16MHz 1:1
+	OSCCON = 0B01110000;	//16MHz 1:1
 	INTCON = 0;  			//暂禁止所有中断
     
-	OPTION = 0;
+	OPTION = 0B00000000;		//Bit3=1 WDT MODE,PS=000=1:1 WDT RATE
     TRISA = 0B00000100;		//1:输入 0:输出 
     PSRCA = 0;				//00:4mA	01/10:8mA	11:28mA	bit[3:2]控制PA5源电流	bit[1:0]控制PA4源电流
     PSINKA = 0;				//bit[1:0]	控制PA5和PA4 0:灌电流最小 1:灌电流最大
@@ -214,10 +220,12 @@ void main()
 {
  	POWER_INITIAL();		//系统初始化
 	TIMER2_INITIAL();		//初始化定时器
+	
 	CX588_GPIO_Init();		//初始化CX588
     CX588_SET_Sound_Size(SoundLeve_15);//设置CX588音量最大
+	
     Seed_Val = EEPROMread(Seed_EEPROM_ADD);//从eeprom中读取随机数种子
-    srand(Seed_Val);		//生成随机数;
+    //srand(Seed_Val);		//生成随机数;
     
 	while(1)
 	{
