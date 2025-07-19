@@ -3,9 +3,10 @@
 
 #include "FT60F21X.h"
 
+#define CX588_WAREHOUSE	8	//CX588内部存了多少声音
+
 #define GPIO_Busy	 PA0
 #define	GPIO_OneLine PA4
-
 
 typedef enum
 {
