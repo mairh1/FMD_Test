@@ -3,9 +3,10 @@
 
 #include "FT60F21X.h"
 
+#define CX588_WAREHOUSE	8	//CX588内部存了多少声音
+
 #define GPIO_Busy	 PA0
 #define	GPIO_OneLine PA4
-
 
 typedef enum
 {
@@ -34,7 +35,7 @@ typedef enum
 void DelayUs(unsigned char Time);
 void DelayMs(unsigned char Time);
 void CX588_GPIO_Init(void);
-void CX588_SET_Sound_Size(CX588_SoundSize Sound_Code);
+void CX588_SET_Sound_Size(CX588_SoundSize Sound_codes);
 void CX588_Play_Sound(unsigned char Sound_Code);
 void CX588_Shut_Down(void);
 void CX588_Wake_UP(void);
